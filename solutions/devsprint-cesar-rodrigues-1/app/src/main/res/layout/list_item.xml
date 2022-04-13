@@ -3,23 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/white">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/iv_logo"
+        android:id="@+id/card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="@dimen/dimens"
+        android:background="@color/white"
         app:cardCornerRadius="25dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/iv_logo"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            tools:src="@drawable/ic_launcher_background"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/ic_launcher_background" />
 
     </androidx.cardview.widget.CardView>
 
@@ -27,30 +31,30 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="@dimen/dimens"
         app:layout_constraintBottom_toTopOf="@id/tv_date"
-        app:layout_constraintStart_toEndOf="@id/iv_logo"
-        app:layout_constraintTop_toTopOf="@id/iv_logo"
+        app:layout_constraintStart_toEndOf="@id/card"
+        app:layout_constraintTop_toTopOf="@id/card"
         tools:text="CRS-20" />
 
     <TextView
         android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="@dimen/dimens"
         app:layout_constraintBottom_toTopOf="@id/tv_status"
-        app:layout_constraintStart_toEndOf="@id/iv_logo"
+        app:layout_constraintStart_toEndOf="@id/card"
         app:layout_constraintTop_toBottomOf="@id/tv_name"
-        tools:text="July 03, 2020" />
+        tools:text="@string/label_date" />
 
     <TextView
         android:id="@+id/tv_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        app:layout_constraintBottom_toBottomOf="@id/iv_logo"
-        app:layout_constraintStart_toEndOf="@id/iv_logo"
+        android:layout_marginStart="@dimen/dimens"
+        app:layout_constraintBottom_toBottomOf="@id/card"
+        app:layout_constraintStart_toEndOf="@id/card"
         app:layout_constraintTop_toBottomOf="@id/tv_date"
-        tools:text="Success" />
+        tools:text="@string/label_status" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
