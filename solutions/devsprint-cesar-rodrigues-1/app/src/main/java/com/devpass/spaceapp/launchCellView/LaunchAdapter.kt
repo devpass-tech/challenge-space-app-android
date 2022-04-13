@@ -33,12 +33,14 @@ class LaunchAdapter : RecyclerView.Adapter<LaunchViewHolder>() {
 class LaunchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val imageLaunch = itemView.findViewById<ImageView>(R.id.iv_logo)
     private val nameLaunch = itemView.findViewById<TextView>(R.id.tv_name)
+    private val numberLaunch = itemView.findViewById<TextView>(R.id.tv_number)
     private val dateLaunch = itemView.findViewById<TextView>(R.id.tv_date)
     private val statusLaunch = itemView.findViewById<TextView>(R.id.tv_status)
 
     fun bind(model: LaunchModel) {
         imageLaunch.setImageResource(model.image)
         nameLaunch.text = model.name
+        numberLaunch.text = model.number
         dateLaunch.text = model.date
         statusLaunch.text = model.status
     }
