@@ -10,10 +10,9 @@
         android:id="@+id/card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimens"
+        android:layout_margin="@dimen/margins"
         android:background="@color/white"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="0dp"
+        app:cardCornerRadius="@dimen/cornerRadius"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,7 +21,6 @@
             android:id="@+id/iv_logo"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            tools:ignore="ContentDescription"
             tools:src="@drawable/ic_launcher_background" />
 
     </androidx.cardview.widget.CardView>
@@ -31,7 +29,7 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimens"
+        android:layout_marginStart="@dimen/margins"
         app:layout_constraintBottom_toTopOf="@id/tv_date"
         app:layout_constraintStart_toEndOf="@id/card"
         app:layout_constraintTop_toTopOf="@id/card"
@@ -41,7 +39,7 @@
         android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimens"
+        android:layout_marginStart="@dimen/margins"
         app:layout_constraintBottom_toTopOf="@id/tv_status"
         app:layout_constraintStart_toEndOf="@id/card"
         app:layout_constraintTop_toBottomOf="@id/tv_name"
@@ -51,7 +49,7 @@
         android:id="@+id/tv_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimens"
+        android:layout_marginStart="@dimen/margins"
         app:layout_constraintBottom_toBottomOf="@id/card"
         app:layout_constraintStart_toEndOf="@id/card"
         app:layout_constraintTop_toBottomOf="@id/tv_date"
@@ -61,7 +59,7 @@
         android:id="@+id/tv_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/dimens"
+        android:layout_marginEnd="@dimen/margins"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/tv_name"
         tools:text="@string/label_number" />
