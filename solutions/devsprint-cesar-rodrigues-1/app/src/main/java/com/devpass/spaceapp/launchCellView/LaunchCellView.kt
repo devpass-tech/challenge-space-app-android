@@ -40,7 +40,7 @@ class LaunchCellView : AppCompatActivity() {
             LaunchModel(R.drawable.starlink, "#75","Starlink 4-2", "July 03, 2020", "Success"),
             LaunchModel(R.drawable.falcon_sat, "#74","FalconSat", "July 03, 2020", "Success"),
         )
-        adapter.updateList(list)
+        adapter.submitList(list)
     }
 
     private fun setupRecycleView() {
