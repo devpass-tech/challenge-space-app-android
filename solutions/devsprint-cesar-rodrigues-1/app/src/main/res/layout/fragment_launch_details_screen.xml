@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".LaunchDetailsScreen">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#0091EA"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,10 +16,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imBack"
+            android:id="@+id/btRunBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#0091EA"
+            android:backgroundTint="@color/color_background_toolbar"
             android:src="@drawable/ic_back_24" />
 
         <TextView
@@ -30,7 +29,7 @@
             android:layout_gravity="center"
             android:text="@string/label_tittle"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="@dimen/size_tittle"
             android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
@@ -38,13 +37,13 @@
 
     <TextView
         android:id="@+id/tvDescription"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="@dimen/margin_text_description"
         android:justificationMode="inter_word"
         android:lineSpacingMultiplier="1.6"
         android:text="@string/label_description"
-        android:textSize="16sp"
+        android:textSize="@dimen/size_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />

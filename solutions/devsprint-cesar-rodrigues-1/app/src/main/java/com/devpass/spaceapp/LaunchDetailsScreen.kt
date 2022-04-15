@@ -6,9 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-
 class LaunchDetailsScreen : Fragment() {
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -17,5 +15,4 @@ class LaunchDetailsScreen : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_launch_details_screen, container, false)
     }
-
 }
