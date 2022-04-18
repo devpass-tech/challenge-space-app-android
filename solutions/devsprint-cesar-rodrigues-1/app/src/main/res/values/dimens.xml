@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_default_recyclerview">16dp</dimen>
+    <dimen name="margin_default_text">16dp</dimen>
+    <dimen name="margin_default_title">16dp</dimen>
+    <dimen name="margin_default_cardView">16dp</dimen>
+    <dimen name="cornerRadius_size_for_circular_image">25dp</dimen>
+</resources>
