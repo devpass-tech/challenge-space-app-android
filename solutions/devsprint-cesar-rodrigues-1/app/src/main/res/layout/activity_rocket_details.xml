@@ -33,7 +33,7 @@
 
     <ImageView
         android:id="@+id/imageViewRocketDetails"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/rocket_details_0dp"
         android:layout_height="180dp"
         android:scaleType="fitXY"
         android:src="@drawable/ic_launcher_background"
