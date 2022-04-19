@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RocketDetailsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbRocketDetails"
+        android:layout_width="@dimen/rocket_details_0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_outline_arrow_back_24"
+            android:background="?selectableItemBackgroundBorderless"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mock_falcon_heavy"
+            android:textSize="@dimen/rocket_details_text_size"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/imageViewRocketDetails"
+        android:layout_width="@dimen/rocket_details_0dp"
+        android:layout_height="180dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbRocketDetails" />
+
+    <TextView
+        android:id="@+id/textViewNameRocketDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/rocket_details_margin_start"
+        android:layout_marginTop="@dimen/rocket_detail_margin_top2"
+        android:text="@string/mock_falcon_heavy"
+        android:textColor="@color/black"
+        android:textSize="@dimen/rocket_details_text_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewRocketDetails" />
+
+    <TextView
+        android:id="@+id/textViewDetailsRocketDetails"
+        android:layout_width="@dimen/rocket_details_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rocket_detail_margin_top"
+        android:layout_marginStart="@dimen/rocket_details_margin_start_2"
+        android:layout_marginEnd="@dimen/rocket_detail_margin_end"
+        android:text="@string/mock_rocket_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNameRocketDetails" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

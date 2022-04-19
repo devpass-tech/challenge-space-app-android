@@ -8,4 +8,11 @@
     <dimen name="size_tittle">24sp</dimen>
     <dimen name="margin_text_description">20dp</dimen>
     <dimen name="size_description">16sp</dimen>
+    <dimen name="rocket_details_text_size">20sp</dimen>
+    <dimen name="rocket_details_margin_start">16dp</dimen>
+    <dimen name="rocket_details_margin_start_2">24dp</dimen>
+    <dimen name="rocket_details_0dp">0dp</dimen>
+    <dimen name="rocket_detail_margin_end">24dp</dimen>
+    <dimen name="rocket_detail_margin_top">16dp</dimen>
+    <dimen name="rocket_detail_margin_top2">20dp</dimen>
 </resources>
