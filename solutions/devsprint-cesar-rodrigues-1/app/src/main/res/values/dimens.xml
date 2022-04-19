@@ -15,4 +15,24 @@
     <dimen name="rocket_detail_margin_end">24dp</dimen>
     <dimen name="rocket_detail_margin_top">16dp</dimen>
     <dimen name="rocket_detail_margin_top2">20dp</dimen>
+    <dimen name="width_image">96dp</dimen>
+    <dimen name="height_image">96dp</dimen>
+    <dimen name="margin_top_image">30dp</dimen>
+    <dimen name="margin_top_tittle">8dp</dimen>
+    <dimen name="margin_top_date">6dp</dimen>
+    <dimen name="margin_top_status">10dp</dimen>
+    <dimen name="margin_tabLayout">16dp</dimen>
+    <dimen name="width_card">344dp</dimen>
+    <dimen name="height_card">184dp</dimen>
+    <dimen name="margin_top_card">16dp</dimen>
+    <dimen name="elevation_card">4dp</dimen>
+    <dimen name="corner_card">4dp</dimen>
+    <dimen name="width_text_card">297dp</dimen>
+    <dimen name="height_text_card">124dp</dimen>
+    <dimen name="top_text_card">16dp</dimen>
+    <dimen name="end_text_card">29dp</dimen>
+    <dimen name="start_text_card">18dp</dimen>
+    <dimen name="start_view_more">18dp</dimen>
+    <dimen name="bottom_view_more">15dp</dimen>
+    <dimen name="size_view_more">14sp</dimen>
 </resources>
