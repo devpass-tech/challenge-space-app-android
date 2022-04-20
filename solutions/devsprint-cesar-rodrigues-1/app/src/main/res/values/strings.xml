@@ -4,4 +4,10 @@
     <string name="label_date">July 03, 2020</string>
     <string name="label_status">Success</string>
     <string name="label_number">#91</string>
+    <string name="title_activity_launchpad_details_screen">LauchpadDetailsScreenActivity</string>
+    <string name="label_launch_successes">Launch Successes: 15</string>
+    <string name="label_launch_attempts">Launch Attempts: 15</string>
+    <string name="label_site_launch">California</string>
+    <string name="label_name_launchpad">Vandenberg Air Force Base</string>
+    <string name="label_launchpad">VAFB SLC 4E</string>
 </resources>
