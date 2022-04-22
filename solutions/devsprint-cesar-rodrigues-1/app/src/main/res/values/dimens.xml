@@ -35,4 +35,11 @@
     <dimen name="start_view_more">18dp</dimen>
     <dimen name="bottom_view_more">15dp</dimen>
     <dimen name="size_view_more">14sp</dimen>
+    <dimen name="height_card_rocket">273dp</dimen>
+    <dimen name="margin_bottom_card_rocket">8dp</dimen>
+    <dimen name="margin_top_card_rocket">40dp</dimen>
+    <dimen name="margin_start_card_rocket">16dp</dimen>
+    <dimen name="text_margin_bottom_card_rocket">18dp</dimen>
+    <dimen name="width_image_card_rocket">344dp</dimen>
+    <dimen name="image_height_card_rocket">151dp</dimen>
 </resources>
