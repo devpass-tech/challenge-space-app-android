@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".launchCellView.RocketFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarRocket"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/color_background_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btRunBackRocket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/color_background_toolbar"
+            android:src="@drawable/ic_back_24" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/ivRocketImage"
+        android:layout_width="@dimen/width_image"
+        android:layout_height="@dimen/height_image"
+        android:layout_marginTop="@dimen/margin_top_image"
+        android:src="@drawable/spacex_dragon_crs20_patch01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/tvRocketTittle"
+        style="@style/TittleStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_tittle"
+        android:text="@string/text_tittle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivRocketImage" />
+
+
+    <TextView
+        android:id="@+id/tvDateRocket"
+        style="@style/DateStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_date"
+        android:text="@string/launch_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRocketTittle" />
+
+    <TextView
+        android:id="@+id/tvStatusRocket"
+        style="@style/StatusStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_status"
+        android:text="@string/label_status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDateRocket" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayoutRocket"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_tabLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvStatusRocket">
+
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_details" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_rocket" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_launchpad" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="@dimen/width_card"
+        android:layout_height="@dimen/height_card_rocket"
+        android:layout_marginTop="@dimen/margin_top_card"
+        android:layout_marginBottom="@dimen/margin_bottom_card_rocket"
+        app:cardCornerRadius="@dimen/corner_card"
+        app:cardElevation="@dimen/elevation_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabLayoutRocket"
+        app:layout_constraintVertical_bias="0.9">
+
+
+        <ImageView
+            android:id="@+id/ivImageCard"
+            android:layout_width="@dimen/width_image_card_rocket"
+            android:layout_height="@dimen/image_height_card_rocket"
+            android:scaleType="fitXY"
+            android:src="@drawable/heavy" />
+
+        <TextView
+            android:id="@+id/tvTittleCardRocket"
+            style="@style/TittleStyleCardRocket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_start_card_rocket"
+            android:layout_marginTop="@dimen/margin_top_card_rocket"
+            android:text="@string/tittle_card_rocket" />
+
+        <TextView
+            android:id="@+id/tvTextCardRocket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextCardRocketStyle"
+            android:layout_marginStart="@dimen/margin_start_card_rocket"
+            android:layout_marginBottom="@dimen/text_margin_bottom_card_rocket"
+            android:text="@string/text_card_rocket"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
