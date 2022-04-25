@@ -23,7 +23,6 @@ class LaunchCellView : AppCompatActivity() {
         binding = ActivityLaunchCellViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         setupRecycleView()
         initListLaunches()
     }
