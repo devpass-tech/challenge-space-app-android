@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/include_toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent" />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toBottomOf="@id/include_toolbar"
+        tools:context=".LaunchpadDetailsScreenActivity" />
+
+    <TextView
+        android:id="@+id/tv_launchpad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_default_text"
+        android:text="@string/label_launchpad"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toBottomOf="@id/map" />
+
+    <TextView
+        android:id="@+id/tv_name_launchpad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_default_text"
+        android:text="@string/label_name_launchpad"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toBottomOf="@id/tv_launchpad" />
+
+    <TextView
+        android:id="@+id/tv_launch_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_default_text"
+        android:text="@string/label_site_launch"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toBottomOf="@id/tv_name_launchpad" />
+
+    <TextView
+        android:id="@+id/tv_launch_attempts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_default_text"
+        android:text="@string/label_launch_attempts"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toBottomOf="@id/tv_launch_site" />
+
+    <TextView
+        android:id="@+id/tv_launch_successes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_default_text"
+        android:text="@string/label_launch_successes"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toBottomOf="@id/tv_launch_attempts" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
