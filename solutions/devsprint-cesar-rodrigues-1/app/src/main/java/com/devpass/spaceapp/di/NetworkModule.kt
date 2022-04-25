@@ -10,6 +10,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+const val BASE_URL = "https://api.spacexdata.com/v4/"
+
 @Module
 @InstallIn(SingletonComponent::class)
 class NetworkModule {
@@ -26,7 +28,7 @@ class NetworkModule {
             .build()
 
         return Retrofit.Builder()
-            .baseUrl("https://api.spacexdata.com/v4/")
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
