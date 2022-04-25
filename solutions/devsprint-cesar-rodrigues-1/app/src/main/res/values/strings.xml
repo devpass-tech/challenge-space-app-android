@@ -16,5 +16,6 @@
     <string name="tab_rocket">Rocket</string>
     <string name="tab_launchpad">Launchpad</string>
     <string name="view_more">VIEW MORE</string>
+    <string name="label_msg_error">Erro ao carregar dados</string>
 
 </resources>

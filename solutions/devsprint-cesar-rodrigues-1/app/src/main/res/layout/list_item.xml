@@ -20,6 +20,7 @@
         <ImageView
             android:id="@+id/iv_logo"
             android:layout_width="80dp"
+            android:scaleType="centerCrop"
             android:layout_height="80dp"
             tools:src="@drawable/ic_launcher_background" />
 
