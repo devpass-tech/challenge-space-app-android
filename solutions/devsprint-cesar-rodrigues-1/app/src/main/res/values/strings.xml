@@ -4,6 +4,12 @@
     <string name="label_date">July 03, 2020</string>
     <string name="label_status">Success</string>
     <string name="label_number">#91</string>
+    <string name="title_activity_launchpad_details_screen">LauchpadDetailsScreenActivity</string>
+    <string name="label_launch_successes">Launch Successes: 15</string>
+    <string name="label_launch_attempts">Launch Attempts: 15</string>
+    <string name="label_site_launch">California</string>
+    <string name="label_name_launchpad">Vandenberg Air Force Base</string>
+    <string name="label_launchpad">VAFB SLC 4E</string>
     <string name="label_tittle">Details</string>
     <string name="label_description">SpaceX\'s 20th and final Crew Resupply Mission under the original NASA CRS contract, this mission brings essential supplies to the international Space Station using SpaceX\'s reusable Dragon spacecraft. it is the last scheduled flight of a Dragon 1 capsule. (CRS-21 and up under the new Commercial Resupply Services 2 contract will use Dragon 2.) The external payload for this mission is the Bartolomeo ISS external payload hosting platform. Falcon 9 and Dragon will launch from SLC-40, Cape Canaveral Air Force Station and the booster will land at LZ-1. The mission will be complete with return and recovery of the Dragon capsule and down cargo.</string>
     <string name="mock_rocket_detail">With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737 jetliner loaded with passengers, crew, luggage and fuel Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost.</string>
@@ -18,5 +24,4 @@
     <string name="view_more">VIEW MORE</string>
     <string name="tittle_card_rocket">Falcon Heavy</string>
     <string name="text_card_rocket">With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737 jetliner loaded...</string>
-
 </resources>

@@ -10,12 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SpaceApp">
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${apiKey}"/>
+
+        <activity
+            android:name=".LaunchpadDetailsScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".launchCellView.LaunchCellView"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
             </intent-filter>
         </activity>
 
@@ -28,7 +40,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
