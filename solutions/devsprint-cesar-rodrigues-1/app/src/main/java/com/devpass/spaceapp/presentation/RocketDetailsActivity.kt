@@ -1,8 +1,8 @@
-package com.devpass.spaceapp
+package com.devpass.spaceapp.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.widget.Toolbar
+import com.devpass.spaceapp.R
 
 class RocketDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,12 +1,14 @@
-package com.devpass.spaceapp.launchCellView
+package com.devpass.spaceapp.presentation.launchCellView
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.devpass.spaceapp.data.model.DocModel
 import com.devpass.spaceapp.databinding.ListItemBinding
 
-class LaunchAdapter : ListAdapter<LaunchModel, LaunchViewHolder>(LaunchModel) {
+class LaunchAdapter : ListAdapter<DocModel, LaunchViewHolder>(DocModel) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LaunchViewHolder {
         return LaunchViewHolder.from(parent)
@@ -20,18 +22,12 @@ class LaunchAdapter : ListAdapter<LaunchModel, LaunchViewHolder>(LaunchModel) {
 class LaunchViewHolder(binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root) {
     private val imageLaunch = binding.ivLogo
     private val nameLaunch = binding.tvName
-    private val numberLaunch = binding.tvNumber
-    private val dateLaunch = binding.tvDate
     private val statusLaunch = binding.tvStatus
 
-    fun bind(model: LaunchModel) {
-        with(itemView) {
-            imageLaunch.setImageResource(model.image)
-            nameLaunch.text = model.name
-            numberLaunch.text = model.number
-            dateLaunch.text = model.date
-            statusLaunch.text = model.status
-        }
+    fun bind(model: DocModel) {
+        Glide.with(itemView).load(model.images.large[0]).into(imageLaunch)
+        nameLaunch.text = model.name
+        statusLaunch.text = model.status
     }
 
     companion object {
