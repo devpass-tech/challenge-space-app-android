@@ -18,7 +18,7 @@
             android:value="${apiKey}"/>
 
         <activity
-            android:name=".LaunchpadDetailsScreenActivity"
+            android:name=".presentation.LaunchpadDetailsScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

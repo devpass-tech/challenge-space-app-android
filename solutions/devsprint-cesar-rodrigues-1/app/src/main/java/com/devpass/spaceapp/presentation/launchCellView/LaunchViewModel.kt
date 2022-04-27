@@ -18,16 +18,17 @@ import javax.inject.Inject
 class LaunchViewModel @Inject constructor(
     private val fetchLaunchesRepositoryImpl: FetchLaunchesRepositoryImpl
 ) : ViewModel() {
-    private val _state = MutableLiveData<States>()
-    val state: LiveData<States> = _state
+    private val _state = MutableLiveData<States.LaunchStates>()
+    val state: LiveData<States.LaunchStates> = _state
 
     fun executeFetchLaunches() {
         viewModelScope.launch {
-            fetchLaunchesRepositoryImpl.fetchNextLaunches()
+            fetchLaunchesRepositoryImpl.fetchLaunches()
                 .flowOn(Dispatchers.IO)
-                .onStart { _state.value = States.Loading }
-                .catch { _state.value = States.Failure(it.message) }
-                .collect { _state.value = States.Success(it) }
+                .onStart { _state.value = States.LaunchStates.Loading }
+                .catch { _state.value = States.LaunchStates.Failure(it.message) }
+                .collect { _state.value = States.LaunchStates.Success(it) }
         }
     }
 }
+

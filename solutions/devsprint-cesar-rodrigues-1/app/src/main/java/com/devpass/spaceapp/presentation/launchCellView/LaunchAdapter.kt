@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.devpass.spaceapp.data.model.DocModel
+import com.devpass.spaceapp.data.model.launch.DocModel
 import com.devpass.spaceapp.databinding.ListItemBinding
 
 class LaunchAdapter : ListAdapter<DocModel, LaunchViewHolder>(DocModel) {

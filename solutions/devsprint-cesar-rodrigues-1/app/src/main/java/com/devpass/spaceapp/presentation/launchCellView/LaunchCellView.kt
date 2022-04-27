@@ -31,20 +31,21 @@ class LaunchCellView : AppCompatActivity() {
         viewModel.executeFetchLaunches()
         viewModel.state.observe(this){state ->
             when(state){
-                States.Loading -> binding.pbLaunches.visibility = View.VISIBLE
+                States.LaunchStates.Loading -> binding.pbLaunches.visibility = View.VISIBLE
 
-                is States.Failure -> {
+                is States.LaunchStates.Failure -> {
                     binding.pbLaunches.visibility = View.GONE
                     Toast.makeText(this, R.string.label_msg_error, Toast.LENGTH_SHORT).show()
                 }
 
-                is States.Success -> {
+                is States.LaunchStates.Success -> {
                     binding.pbLaunches.visibility = View.GONE
                     adapter.submitList(state.launches.docs)
                 }
             }
         }
     }
+
 
     private fun setupRecycleView() {
         adapter = LaunchAdapter()

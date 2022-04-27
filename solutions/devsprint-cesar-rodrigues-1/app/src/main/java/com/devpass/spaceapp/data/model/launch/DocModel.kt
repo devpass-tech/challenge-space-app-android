@@ -1,4 +1,4 @@
-package com.devpass.spaceapp.data.model
+package com.devpass.spaceapp.data.model.launch
 
 
 import androidx.recyclerview.widget.DiffUtil
