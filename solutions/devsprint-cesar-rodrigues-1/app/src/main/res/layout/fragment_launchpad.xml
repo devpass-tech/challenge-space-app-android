@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewLaunchpad"
+        android:layout_width="@dimen/width_card"
+        android:layout_height="@dimen/height_card_launchpad"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_top_card_launchpad"
+        app:cardCornerRadius="@dimen/corner_card"
+        app:cardElevation="@dimen/elevation_card">
+
+        <TextView
+            android:id="@+id/tvTittleCardLaunchpad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/margin_start_tittle_launchpad"
+            android:layout_marginTop="@dimen/margin_top_tittle_launchpad"
+            android:text="@string/tittle_card_launchpad"
+            android:textSize="@dimen/size_tittle_launchpad_card" />
+
+        <TextView
+            android:id="@+id/tvTypeLaunchpad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/margin_start_type"
+            android:layout_marginTop="@dimen/margin_top_type"
+            android:text="@string/label_type_card"
+            android:textSize="@dimen/size_type" />
+
+        <TextView
+            android:id="@+id/tvStateLaunchpad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/margin_start_state"
+            android:layout_marginTop="@dimen/margin_top_state"
+            android:text="@string/text_state"
+            android:textSize="@dimen/size_state" />
+
+        <TextView
+            android:id="@+id/tvViewMoreLaunchpad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="@dimen/margin_start_view_more"
+            android:layout_marginBottom="@dimen/margin_bottom_view_more"
+            android:text="@string/view_more"
+            android:textColor="@color/color_background_toolbar"
+            android:textSize="@dimen/size_view_more"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

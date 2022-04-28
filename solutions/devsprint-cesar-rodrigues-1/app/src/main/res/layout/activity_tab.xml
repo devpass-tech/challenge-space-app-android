@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".presentation.TabActivity">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -71,66 +72,26 @@
         app:layout_constraintTop_toBottomOf="@id/tvDate" />
 
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_tabLayout"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvStatus">
 
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tab_details" />
+            android:layout_marginTop="@dimen/margin_tabLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvStatus">
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tab_rocket" />
+        </com.google.android.material.tabs.TabLayout>
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tab_launchpad" />
-
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="@dimen/width_card"
-        android:layout_height="@dimen/height_card"
-        android:layout_marginTop="@dimen/margin_top_card"
-        app:cardCornerRadius="@dimen/corner_card"
-        app:cardElevation="@dimen/elevation_card"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tabLayout">
-
-        <TextView
-            android:id="@+id/tvTextCard"
-            style="@style/TextCardStyle"
-            android:layout_width="@dimen/width_text_card"
-            android:layout_height="@dimen/height_text_card"
-            android:layout_marginStart="@dimen/start_text_card"
-            android:layout_marginTop="@dimen/top_text_card"
-            android:layout_marginEnd="@dimen/end_text_card"
-            android:text="@string/text_cardView" />
-
-        <TextView
-            android:id="@+id/tvViewMore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|start"
-            android:layout_marginStart="@dimen/start_view_more"
-            android:layout_marginBottom="@dimen/bottom_view_more"
-            android:text="@string/view_more"
-            android:textColor="@color/color_background_toolbar"
-            android:textSize="@dimen/size_view_more"
-            android:textStyle="bold" />
-
-    </androidx.cardview.widget.CardView>
+    </androidx.viewpager.widget.ViewPager>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
