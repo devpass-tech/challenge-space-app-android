@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.ActivityLaunchCellViewBinding
-import com.devpass.spaceapp.presentation.States
+import com.devpass.spaceapp.presentation.LaunchStates
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -31,14 +31,14 @@ class LaunchCellView : AppCompatActivity() {
         viewModel.executeFetchLaunches()
         viewModel.state.observe(this){state ->
             when(state){
-                States.LaunchStates.Loading -> binding.pbLaunches.visibility = View.VISIBLE
+                LaunchStates.Loading -> binding.pbLaunches.visibility = View.VISIBLE
 
-                is States.LaunchStates.Failure -> {
+                is LaunchStates.Failure -> {
                     binding.pbLaunches.visibility = View.GONE
                     Toast.makeText(this, R.string.label_msg_error, Toast.LENGTH_SHORT).show()
                 }
 
-                is States.LaunchStates.Success -> {
+                is LaunchStates.Success -> {
                     binding.pbLaunches.visibility = View.GONE
                     adapter.submitList(state.launches.docs)
                 }
