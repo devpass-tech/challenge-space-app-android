@@ -7,11 +7,11 @@ data class NextLaunches(
     @SerializedName("auto_update")
     val autoUpdate: Boolean,
     @SerializedName("capsules")
-    val capsules: List<Any>,
+    val capsules: List<String>,
     @SerializedName("cores")
     val cores: List<Core>,
     @SerializedName("crew")
-    val crew: List<Any>,
+    val crew: List<String>,
     @SerializedName("date_local")
     val dateLocal: String,
     @SerializedName("date_precision")
@@ -21,9 +21,9 @@ data class NextLaunches(
     @SerializedName("date_utc")
     val dateUtc: String,
     @SerializedName("details")
-    val details: Any,
+    val details: String,
     @SerializedName("failures")
-    val failures: List<Any>,
+    val failures: List<String>,
     @SerializedName("fairings")
     val fairings: Fairings,
     @SerializedName("flight_number")
@@ -45,17 +45,17 @@ data class NextLaunches(
     @SerializedName("rocket")
     val rocket: String,
     @SerializedName("ships")
-    val ships: List<Any>,
+    val ships: List<String>,
     @SerializedName("static_fire_date_unix")
-    val staticFireDateUnix: Any,
+    val staticFireDateUnix: String,
     @SerializedName("static_fire_date_utc")
-    val staticFireDateUtc: Any,
+    val staticFireDateUtc: String,
     @SerializedName("success")
-    val success: Any,
+    val success: String,
     @SerializedName("tbd")
     val tbd: Boolean,
     @SerializedName("upcoming")
     val upcoming: Boolean,
     @SerializedName("window")
-    val window: Any
+    val window: String
 )

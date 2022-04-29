@@ -5,21 +5,21 @@ import com.google.gson.annotations.SerializedName
 
 data class Core(
     @SerializedName("core")
-    val core: Any,
+    val core: String,
     @SerializedName("flight")
-    val flight: Any,
+    val flight: String,
     @SerializedName("gridfins")
-    val gridfins: Any,
+    val gridfins: String,
     @SerializedName("landing_attempt")
-    val landingAttempt: Any,
+    val landingAttempt: String,
     @SerializedName("landing_success")
-    val landingSuccess: Any,
+    val landingSuccess: String,
     @SerializedName("landing_type")
-    val landingType: Any,
+    val landingType: String,
     @SerializedName("landpad")
-    val landpad: Any,
+    val landpad: String,
     @SerializedName("legs")
-    val legs: Any,
+    val legs: String,
     @SerializedName("reused")
-    val reused: Any
+    val reused: String
 )

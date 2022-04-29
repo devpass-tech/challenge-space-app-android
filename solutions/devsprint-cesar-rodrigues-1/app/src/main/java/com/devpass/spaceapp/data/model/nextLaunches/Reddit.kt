@@ -7,9 +7,9 @@ data class Reddit(
     @SerializedName("campaign")
     val campaign: String,
     @SerializedName("launch")
-    val launch: Any,
+    val launch: String,
     @SerializedName("media")
-    val media: Any,
+    val media: String,
     @SerializedName("recovery")
     val recovery: String
 )

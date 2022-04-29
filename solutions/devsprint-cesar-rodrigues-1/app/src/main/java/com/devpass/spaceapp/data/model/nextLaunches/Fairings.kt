@@ -5,11 +5,11 @@ import com.google.gson.annotations.SerializedName
 
 data class Fairings(
     @SerializedName("recovered")
-    val recovered: Any,
+    val recovered: String,
     @SerializedName("recovery_attempt")
-    val recoveryAttempt: Any,
+    val recoveryAttempt: String,
     @SerializedName("reused")
-    val reused: Any,
+    val reused: String,
     @SerializedName("ships")
-    val ships: List<Any>
+    val ships: List<String>
 )

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class Flickr(
     @SerializedName("original")
-    val original: List<Any>,
+    val original: List<String>,
     @SerializedName("small")
-    val small: List<Any>
+    val small: List<String>
 )
