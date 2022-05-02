@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.devpass.spaceapp.presentation.States
+import com.devpass.spaceapp.presentation.LaunchStates
 import com.devpass.spaceapp.repository.FetchLaunchesRepositoryImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -18,16 +18,17 @@ import javax.inject.Inject
 class LaunchViewModel @Inject constructor(
     private val fetchLaunchesRepositoryImpl: FetchLaunchesRepositoryImpl
 ) : ViewModel() {
-    private val _state = MutableLiveData<States>()
-    val state: LiveData<States> = _state
+    private val _state = MutableLiveData<LaunchStates>()
+    val state: LiveData<LaunchStates> = _state
 
     fun executeFetchLaunches() {
         viewModelScope.launch {
-            fetchLaunchesRepositoryImpl.fetchNextLaunches()
+            fetchLaunchesRepositoryImpl.fetchLaunches()
                 .flowOn(Dispatchers.IO)
-                .onStart { _state.value = States.Loading }
-                .catch { _state.value = States.Failure(it.message) }
-                .collect { _state.value = States.Success(it) }
+                .onStart { _state.value = LaunchStates.Loading }
+                .catch { _state.value = LaunchStates.Failure(it.message) }
+                .collect { _state.value = LaunchStates.Success(it) }
         }
     }
 }
+

@@ -22,7 +22,7 @@
         map:layout_constraintEnd_toEndOf="parent"
         map:layout_constraintStart_toStartOf="parent"
         map:layout_constraintTop_toBottomOf="@id/include_toolbar"
-        tools:context=".LaunchpadDetailsScreenActivity" />
+        tools:context=".presentation.LaunchpadDetailsScreenActivity" />
 
     <TextView
         android:id="@+id/tv_launchpad"
