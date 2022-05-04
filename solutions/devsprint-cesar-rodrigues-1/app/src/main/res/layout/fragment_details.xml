@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="@dimen/width_card"
+        android:layout_height="@dimen/height_card"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_top_card"
+        app:cardCornerRadius="@dimen/corner_card"
+        app:cardElevation="@dimen/elevation_card">
+
+        <TextView
+            android:id="@+id/tvTextCard"
+            style="@style/TextCardStyle"
+            android:layout_width="@dimen/width_text_card"
+            android:layout_height="@dimen/height_text_card"
+            android:layout_marginStart="@dimen/start_text_card"
+            android:layout_marginTop="@dimen/top_text_card"
+            android:layout_marginEnd="@dimen/end_text_card"
+            android:text="@string/text_cardView" />
+
+        <TextView
+            android:id="@+id/tvViewMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="@dimen/start_view_more"
+            android:layout_marginBottom="@dimen/bottom_view_more"
+            android:text="@string/view_more"
+            android:textColor="@color/color_background_toolbar"
+            android:textSize="@dimen/size_view_more"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

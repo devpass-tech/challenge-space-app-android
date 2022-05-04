@@ -42,4 +42,18 @@
     <dimen name="text_margin_bottom_card_rocket">18dp</dimen>
     <dimen name="width_image_card_rocket">344dp</dimen>
     <dimen name="image_height_card_rocket">151dp</dimen>
+    <dimen name="height_card_launchpad">144dp</dimen>
+    <dimen name="margin_top_card_launchpad">24dp</dimen>
+    <dimen name="margin_top_type">54dp</dimen>
+    <dimen name="margin_start_type">20dp</dimen>
+    <dimen name="size_type">12sp</dimen>
+    <dimen name="size_state">12sp</dimen>
+    <dimen name="margin_top_state">79dp</dimen>
+    <dimen name="margin_start_state">20dp</dimen>
+    <dimen name="margin_start_view_more">20sp</dimen>
+    <dimen name="margin_bottom_view_more">12dp</dimen>
+    <dimen name="margin_start_tittle_launchpad">20dp</dimen>
+    <dimen name="margin_top_tittle_launchpad">22dp</dimen>
+    <dimen name="size_tittle_launchpad_card">20sp</dimen>
+
 </resources>
