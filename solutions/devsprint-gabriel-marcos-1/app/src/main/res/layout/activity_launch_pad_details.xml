@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary_blue_02"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textAllCaps="true"
+        android:textColor="@color/color_primary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/map"
+        tools:text="VAFB SLC 4E" />
+
+    <TextView
+        android:id="@+id/locality"
+        style="@style/Theme.SpaceApp.TextNormal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        tools:text="Vandenberg Air Force Base" />
+
+    <TextView
+        android:id="@+id/region"
+        style="@style/Theme.SpaceApp.TextNormal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/locality"
+        tools:text="California" />
+
+    <TextView
+        android:id="@+id/launch_attempts"
+        style="@style/Theme.SpaceApp.TextNormal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/launch_successes"
+        tools:text="Launch Attempts: 15" />
+
+    <TextView
+        android:id="@+id/launch_successes"
+        style="@style/Theme.SpaceApp.TextNormal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/region"
+        tools:text="Launch Successes: 15" />
+</androidx.constraintlayout.widget.ConstraintLayout>
