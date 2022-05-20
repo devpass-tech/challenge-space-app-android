@@ -8,5 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="label_color_primary">#212121</color>
+    <color name="color_primary_blue_01">#0372D8</color>
+    <color name="color_primary_blue_02">#0085FF</color>
+    <color name="color_primary">#212121</color>
+    <color name="color_secondary">#757575</color>
 </resources>
