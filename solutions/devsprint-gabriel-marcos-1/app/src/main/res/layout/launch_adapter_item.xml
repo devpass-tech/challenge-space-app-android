@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/launch_badge"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_width="@dimen/badge_size"
+        android:layout_height="@dimen/badge_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
