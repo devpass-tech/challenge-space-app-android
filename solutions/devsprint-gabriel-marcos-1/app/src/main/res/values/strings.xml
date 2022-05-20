@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SpaceApp</string>
+    <string name="next_launches">Next Launches</string>
 </resources>
