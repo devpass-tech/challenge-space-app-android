@@ -11,6 +11,11 @@
         android:theme="@style/Theme.SpaceApp">
 
         <activity
+            android:name=".presentation.RocketDetailsActivity"
+            android:parentActivityName=".presentation.NextLaunchesActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".presentation.LaunchpadDetailsActivity"
             android:parentActivityName=".presentation.NextLaunchesActivity"
             android:screenOrientation="portrait" />
