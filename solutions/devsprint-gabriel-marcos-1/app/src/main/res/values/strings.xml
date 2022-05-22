@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">SpaceApp</string>
+    <string name="next_launches_title">Space App</string>
     <string name="next_launches">Next Launches</string>
     <string name="tab_title_one">Details</string>
     <string name="tab_title_two">Rocket</string>

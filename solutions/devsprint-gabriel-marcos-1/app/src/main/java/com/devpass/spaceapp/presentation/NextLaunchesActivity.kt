@@ -12,6 +12,6 @@ class NextLaunchesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNextLaunchesBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
     }
-
 }
