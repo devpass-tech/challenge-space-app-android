@@ -13,5 +13,8 @@ class NextLaunchesActivity : AppCompatActivity() {
         binding = ActivityNextLaunchesBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
+
+        val adapter = LaunchAdapterItem(listOf())
+        binding.listNextLaunches.adapter = adapter
     }
 }
