@@ -22,12 +22,12 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
-        tools:text="CRS-20"
-        android:textColor="@color/label_color_primary"
+        android:textColor="@color/color_primary"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/launch_badge"
-        app:layout_constraintTop_toTopOf="@+id/launch_badge" />
+        app:layout_constraintTop_toTopOf="@+id/launch_badge"
+        tools:text="CRS-20" />
 
     <TextView
         android:id="@+id/launch_date"
@@ -35,11 +35,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="TextView"
-        tools:text="July 02, 2020"
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/launch_name"
-        app:layout_constraintTop_toBottomOf="@+id/launch_name" />
+        app:layout_constraintTop_toBottomOf="@+id/launch_name"
+        tools:text="July 02, 2020" />
 
     <TextView
         android:id="@+id/launch_status"
@@ -47,19 +47,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="TextView"
-        tools:text="Success"
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/launch_name"
-        app:layout_constraintTop_toBottomOf="@+id/launch_date" />
+        app:layout_constraintTop_toBottomOf="@+id/launch_date"
+        tools:text="Success" />
 
     <TextView
         android:id="@+id/launch_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:text="#91"
-        android:textColor="@color/label_color_primary"
+        android:textColor="@color/color_primary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/launch_name" />
+        app:layout_constraintTop_toTopOf="@+id/launch_name"
+        tools:text="#91" />
 </androidx.constraintlayout.widget.ConstraintLayout>
