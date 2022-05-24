@@ -24,4 +24,9 @@ class LaunchTabActivity : AppCompatActivity() {
             tab.text = getString(adapter.tabTitles[position])
         }.attach()
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 }
