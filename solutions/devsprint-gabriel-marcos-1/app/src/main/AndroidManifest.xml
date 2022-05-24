@@ -33,6 +33,10 @@
         <activity
             android:name=".presentation.LaunchTabActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".presentation.LaunchDetailsActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
