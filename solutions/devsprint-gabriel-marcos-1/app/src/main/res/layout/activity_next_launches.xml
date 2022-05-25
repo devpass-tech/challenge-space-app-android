@@ -7,17 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".presentation.NextLaunchesActivity">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/color_primary_blue_02"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:titleTextColor="@color/white"
-        app:title="@string/next_launches_title"/>
-
     <TextView
         android:id="@+id/next_launches"
         android:layout_width="wrap_content"
@@ -28,7 +17,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:fontFamily="@font/roboto"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/list_next_launches"
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

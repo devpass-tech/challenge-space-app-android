@@ -2,8 +2,6 @@ package com.devpass.spaceapp.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.ActivityLaunchPadDetailsBinding
 
 class LaunchpadDetailsActivity : AppCompatActivity() {
@@ -15,10 +13,6 @@ class LaunchpadDetailsActivity : AppCompatActivity() {
         binding = ActivityLaunchPadDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
-
-        val drawable = ContextCompat.getDrawable(this, R.drawable.ic_arrow_back)
-        supportActionBar?.setHomeAsUpIndicator(drawable)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
@@ -27,7 +21,15 @@ class LaunchpadDetailsActivity : AppCompatActivity() {
         setup()
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
     private fun setup() {
+
+        title = "VAFB SLC 4E"
+
         binding.apply {
             name.text = "VAFB SLC 4E"
             locality.text = "Vandenberg Air Force Base"
@@ -36,5 +38,4 @@ class LaunchpadDetailsActivity : AppCompatActivity() {
             launchSuccesses.text = "Launch Successes: 15"
         }
     }
-
 }
