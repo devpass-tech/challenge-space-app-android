@@ -20,10 +20,7 @@ class LaunchpadDetailsActivity : AppCompatActivity() {
         val drawable = ContextCompat.getDrawable(this, R.drawable.ic_arrow_back)
         supportActionBar?.setHomeAsUpIndicator(drawable)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
 
-    override fun onStart() {
-        super.onStart()
         setup()
     }
 
