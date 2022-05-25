@@ -19,9 +19,11 @@ class LaunchpadFragment : Fragment(R.layout.fragment_launchpad) {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentLaunchpadBinding.inflate(inflater, container, false)
-
         return binding.root
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         setup()
     }
 
