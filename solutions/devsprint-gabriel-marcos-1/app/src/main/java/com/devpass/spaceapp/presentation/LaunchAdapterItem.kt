@@ -35,7 +35,7 @@ class LaunchAdapterItem(private val nextLaunches: List<NextLaunchesModel>) : Rec
                 .with(itemView)
                 .load(nextLaunch.badge)
                 .centerCrop()
-                .into(itemBinding.launchBadge);
+                .into(itemBinding.launchBadge)
         }
     }
 }
