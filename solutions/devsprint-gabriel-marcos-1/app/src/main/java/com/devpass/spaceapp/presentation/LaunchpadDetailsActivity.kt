@@ -14,10 +14,7 @@ class LaunchpadDetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
 
-    override fun onStart() {
-        super.onStart()
         setup()
     }
 
