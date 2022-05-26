@@ -1,12 +1,22 @@
 package com.devpass.spaceapp.data.api
 
 import com.devpass.spaceapp.data.model.RocketModel
+import com.devpass.spaceapp.data.model.NextLaunchesModel
+import com.devpass.spaceapp.data.model.QueryRequestParams
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.Call
+import retrofit2.http.Body
+import retrofit2.http.POST
 
 interface SpaceXAPIClient {
+
+    //val params = QueryRequestParams(options = OptionsRequest(20))
+
+    @POST("v5/launches/query")
+    fun fetchNextLaunches(@Body params: QueryRequestParams): Call<List<NextLaunchesModel>>
 
     @GET("v4/rockets/{id}")
     suspend fun getRocketDetails(@Path("id") id: String): RocketModel
