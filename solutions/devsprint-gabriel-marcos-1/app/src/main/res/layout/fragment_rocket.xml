@@ -4,7 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.RocketFragment">
+    tools:context=".presentation.RocketFragment"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/error"
+        layout="@layout/error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view_rocket"
@@ -55,6 +63,5 @@
                 android:textSize="12sp"
                 tools:text="With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737 jetliner loaded, ability to lift into orbit over 54 metric tons, ability to lift into orbit over 54 metric tons, ability to lift into orbit over 54 metric tons" />
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
 </LinearLayout>

@@ -11,13 +11,17 @@ class SpaceAppViewModel(
     private val repository: SpaceAppRepository
 ) : ViewModel() {
 
-    val result = MutableLiveData<RocketModel>()
+    val resultRocketDetails = MutableLiveData<RocketModel?>()
 
     fun getRocketDetails(id: String) {
         viewModelScope.launch {
-            repository.getRocketDetails(id).onSuccess {
-                result.value = it
-            }
+            repository.getRocketDetails(id)
+                .onSuccess {
+                    resultRocketDetails.value = it
+                }
+                .onFailure {
+                    resultRocketDetails.value = null
+                }
         }
     }
 }
