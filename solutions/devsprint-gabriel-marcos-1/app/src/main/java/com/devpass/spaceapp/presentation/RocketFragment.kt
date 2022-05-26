@@ -7,11 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.FragmentRocketBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RocketFragment : Fragment() {
 
     private lateinit var binding: FragmentRocketBinding
+    private val viewModel: SpaceAppViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,9 +26,9 @@ class RocketFragment : Fragment() {
         binding = FragmentRocketBinding.inflate(inflater, container, false)
 
         configureClickable()
-        setup()
+        dataSetup()
 
-        return  binding.root
+        return binding.root
     }
 
     private fun configureClickable() {
@@ -35,17 +38,25 @@ class RocketFragment : Fragment() {
         }
     }
 
-    private fun setup() {
+    private fun dataSetup() {
+        // TODO : passar o id por parametro
+        viewModel.getRocketDetails("5e9d0d95eda69974db09d1ed")
+        viewModel.resultRocketDetails.observe(viewLifecycleOwner) {
+            if (it != null) {
+                binding.rocketName.text = it.name
+                binding.rocketDescription.text = it.description
+                setRocketImage(it.image.first())
+            } else {
+                binding.cardViewRocket.visibility = View.GONE
+                binding.error.errorMessage.text = getString(R.string.rocket_details_fail)
+                binding.error.root.visibility = View.VISIBLE
+            }
+        }
+    }
 
+    private fun setRocketImage(imageUrl: String) {
         binding.apply {
-            Glide
-                .with(this@RocketFragment)
-                .load("https://farm5.staticflickr.com/4455/26280153979_b8016a829f_o.jpg")
-                .centerCrop()
-                .into(rocketImage)
-            rocketName.text = "Falcon Heavy"
-            rocketDescription.text =
-                "With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737 jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost."
+            Glide.with(this@RocketFragment).load(imageUrl).into(rocketImage)
         }
     }
 }
