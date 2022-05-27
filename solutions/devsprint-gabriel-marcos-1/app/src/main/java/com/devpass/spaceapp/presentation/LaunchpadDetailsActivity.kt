@@ -2,11 +2,14 @@ package com.devpass.spaceapp.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.devpass.spaceapp.R
+import com.devpass.spaceapp.data.model.LaunchPadModel
 import com.devpass.spaceapp.databinding.ActivityLaunchPadDetailsBinding
 
 class LaunchpadDetailsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLaunchPadDetailsBinding
+    private lateinit var launchPad: LaunchPadModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,7 +18,14 @@ class LaunchpadDetailsActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        setup()
+        getIntentExtra()
+        dataSetup()
+    }
+
+    private fun getIntentExtra() {
+        intent?.let {
+            launchPad = it.getSerializableExtra("launchpad") as LaunchPadModel
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -23,16 +33,16 @@ class LaunchpadDetailsActivity : AppCompatActivity() {
         return true
     }
 
-    private fun setup() {
+    private fun dataSetup() {
 
-        title = "VAFB SLC 4E"
+        title = launchPad.name
 
         binding.apply {
-            name.text = "VAFB SLC 4E"
-            locality.text = "Vandenberg Air Force Base"
-            region.text = "California"
-            launchAttempts.text = "Launch Attempts: 15"
-            launchSuccesses.text = "Launch Successes: 15"
+            name.text = launchPad.name
+            locality.text = launchPad.locality
+            region.text = launchPad.region
+            launchAttempts.text = "${getString(R.string.launch_attempts)} ${launchPad.launchAttempts}"
+            launchSuccesses.text = "${getString(R.string.launch_success)} ${launchPad.launchSuccesses}"
         }
     }
 }

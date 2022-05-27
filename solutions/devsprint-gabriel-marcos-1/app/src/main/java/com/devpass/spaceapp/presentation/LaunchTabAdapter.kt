@@ -9,7 +9,7 @@ class LaunchTabAdapter(fa: FragmentActivity) :
     FragmentStateAdapter(fa) {
 
     val tabTitles = listOf(R.string.tab_title_one, R.string.tab_title_two, R.string.tab_title_three)
-    private val fragments = listOf(DetailsFragment(), RocketFragment(), LaunchpadFragment())
+    private val fragments = listOf(DetailsFragment(), RocketFragment(), LaunchpadFragment("5e9e4502f509092b78566f87"))
 
     override fun getItemCount(): Int {
         return tabTitles.size
