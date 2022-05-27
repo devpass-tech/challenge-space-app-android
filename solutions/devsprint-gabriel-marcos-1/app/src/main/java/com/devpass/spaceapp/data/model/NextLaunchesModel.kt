@@ -1,11 +1,12 @@
 package com.devpass.spaceapp.data.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class NextLaunchesModel(
     @SerializedName("docs")
     val docs: List<NextLaunchModel>
-)
+) : Serializable
 
 data class NextLaunchModel(
     @SerializedName("links")
@@ -18,14 +19,14 @@ data class NextLaunchModel(
     val status: Boolean = false,
     @SerializedName("flight_number")
     val flightNumber: Int = 0
-)
+) : Serializable
 
 data class Links(
     @SerializedName("patch")
     val patch: Patch
-)
+) : Serializable
 
 data class Patch(
     @SerializedName("small")
     val small: String
-)
+) : Serializable
