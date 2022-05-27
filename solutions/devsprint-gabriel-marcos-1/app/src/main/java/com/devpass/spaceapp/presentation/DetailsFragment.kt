@@ -10,7 +10,9 @@ import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.FragmentDetailsBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class DetailsFragment : Fragment() {
+class DetailsFragment(
+    private val details: String
+) : Fragment() {
 
     private lateinit var binding: FragmentDetailsBinding
     private val viewModel: SpaceAppViewModel by viewModel()
@@ -32,19 +34,13 @@ class DetailsFragment : Fragment() {
     private fun configureClickable() {
         binding.textViewMore.setOnClickListener {
             val intent = Intent(context, LaunchDetailsActivity::class.java)
+            intent.putExtra(LAUNCH_DETAILS_KEY, details)
             startActivity(intent)
         }
     }
 
     private fun setup() {
-        viewModel.getRocketDetails("5e9d0d95eda69974db09d1ed")
-        viewModel.resultRocketDetails.observe(viewLifecycleOwner) {
-            if (it != null) {
-                binding.textDetails.text = it.description
-            } else {
-                binding.textDetails.text = getString(R.string.rocket_details_fail)
-            }
-        }
+        binding.textDetails.text = details
     }
 
 }

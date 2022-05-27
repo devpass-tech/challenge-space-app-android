@@ -12,14 +12,14 @@ private const val FAILURE_LAUNCH = "Failure"
 
 class LaunchAdapterItem(
     private val nextLaunch: List<NextLaunchModel>,
-    private val onItemClicked: (NextLaunchModel) -> Unit
+    private val onItemClicked: (nextLaunch: NextLaunchModel) -> Unit
 ) :
     RecyclerView.Adapter<LaunchAdapterItem.LauncherItemHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LauncherItemHolder {
         val itemBinding =
             LaunchAdapterItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return LauncherItemHolder(itemBinding)
+        return LauncherItemHolder(itemBinding, onItemClicked)
     }
 
     override fun onBindViewHolder(holder: LauncherItemHolder, position: Int) {
@@ -29,7 +29,8 @@ class LaunchAdapterItem(
 
     override fun getItemCount(): Int = nextLaunch.size
 
-    class LauncherItemHolder(private val itemBinding: LaunchAdapterItemBinding) :
+    class LauncherItemHolder(private val itemBinding: LaunchAdapterItemBinding,
+                             private val onItemClicked: (nextLaunch: NextLaunchModel) -> Unit) :
         RecyclerView.ViewHolder(itemBinding.root) {
         fun bind(nextLaunch: NextLaunchModel, onItemClicked: (NextLaunchModel) -> Unit) {
             itemBinding.launchName.text = nextLaunch.nameRocket
@@ -44,8 +45,8 @@ class LaunchAdapterItem(
                 .centerCrop()
                 .into(itemBinding.launchBadge)
 
-            itemView.setOnClickListener {
-                onItemClicked(nextLaunch)
+            itemBinding.launchContent.setOnClickListener {
+                this.onItemClicked(nextLaunch)
             }
         }
     }

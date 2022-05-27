@@ -33,9 +33,9 @@ class NextLaunchesActivity : AppCompatActivity() {
 
     private fun setup(list: NextLaunchesModel) {
         adapter = LaunchAdapterItem(list.docs) { nextLaunch ->
-            val i = Intent(this, LaunchTabActivity::class.java)
-            intent.putExtra(NEXT_LAUNCH_MODEL, nextLaunch)
-            startActivity(i)
+            val intentLaunchTab = Intent(this, LaunchTabActivity::class.java)
+            intentLaunchTab.putExtra(NEXT_LAUNCH_MODEL, nextLaunch)
+            startActivity(intentLaunchTab)
         }
         binding.listNextLaunches.adapter = adapter
     }
