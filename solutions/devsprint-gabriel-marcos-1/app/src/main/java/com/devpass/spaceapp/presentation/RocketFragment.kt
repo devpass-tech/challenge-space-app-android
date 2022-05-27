@@ -12,6 +12,8 @@ import com.devpass.spaceapp.data.model.RocketModel
 import com.devpass.spaceapp.databinding.FragmentRocketBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+const val ROCKET_DETAILS_BUNDLE = "rocketDetails"
+
 class RocketFragment : Fragment() {
 
     private lateinit var binding: FragmentRocketBinding
@@ -37,7 +39,7 @@ class RocketFragment : Fragment() {
         binding.cardViewRocket.setOnClickListener {
             rocketModel?.let {
                 val intent = Intent(context, RocketDetailsActivity::class.java)
-                intent.putExtra("rocketDetails", it)
+                intent.putExtra(ROCKET_DETAILS_BUNDLE, it)
                 startActivity(intent)
             }
         }

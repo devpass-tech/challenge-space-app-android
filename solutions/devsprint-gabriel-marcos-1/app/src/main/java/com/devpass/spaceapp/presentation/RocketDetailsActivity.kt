@@ -16,7 +16,7 @@ class RocketDetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        intent.extras?.get("rocketDetails").let {
+        intent.extras?.get(ROCKET_DETAILS_BUNDLE).let {
             if (it is RocketModel) {
                 setup(it)
             }
