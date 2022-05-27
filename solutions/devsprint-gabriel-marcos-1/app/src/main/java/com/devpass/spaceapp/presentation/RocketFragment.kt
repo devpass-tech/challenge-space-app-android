@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.devpass.spaceapp.R
+import com.devpass.spaceapp.data.model.RocketModel
 import com.devpass.spaceapp.databinding.FragmentRocketBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -15,6 +16,7 @@ class RocketFragment : Fragment() {
 
     private lateinit var binding: FragmentRocketBinding
     private val viewModel: SpaceAppViewModel by viewModel()
+    private var rocketModel: RocketModel? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,8 +35,11 @@ class RocketFragment : Fragment() {
 
     private fun configureClickable() {
         binding.cardViewRocket.setOnClickListener {
-            val intent = Intent(context, RocketDetailsActivity::class.java)
-            startActivity(intent)
+            rocketModel?.let {
+                val intent = Intent(context, RocketDetailsActivity::class.java)
+                intent.putExtra("rocketDetails", it)
+                startActivity(intent)
+            }
         }
     }
 
@@ -42,6 +47,7 @@ class RocketFragment : Fragment() {
         // TODO : passar o id por parametro
         viewModel.getRocketDetails("5e9d0d95eda69974db09d1ed")
         viewModel.resultRocketDetails.observe(viewLifecycleOwner) {
+            rocketModel = it
             if (it != null) {
                 binding.rocketName.text = it.name
                 binding.rocketDescription.text = it.description
