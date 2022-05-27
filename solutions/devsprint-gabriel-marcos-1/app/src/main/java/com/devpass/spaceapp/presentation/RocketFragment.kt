@@ -14,7 +14,9 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 const val ROCKET_DETAILS_BUNDLE = "rocketDetails"
 
-class RocketFragment : Fragment() {
+class RocketFragment (
+    private val rocketId: String
+        ) : Fragment() {
 
     private lateinit var binding: FragmentRocketBinding
     private val viewModel: SpaceAppViewModel by viewModel()
@@ -46,8 +48,7 @@ class RocketFragment : Fragment() {
     }
 
     private fun dataSetup() {
-        // TODO : passar o id por parametro
-        viewModel.getRocketDetails("5e9d0d95eda69974db09d1ed")
+        viewModel.getRocketDetails(rocketId)
         viewModel.resultRocketDetails.observe(viewLifecycleOwner) {
             rocketModel = it
             if (it != null) {

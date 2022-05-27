@@ -18,7 +18,13 @@ data class NextLaunchModel(
     @SerializedName("success")
     val status: Boolean = false,
     @SerializedName("flight_number")
-    val flightNumber: Int = 0
+    val flightNumber: Int = 0,
+    @SerializedName("details")
+    val details: String = "",
+    @SerializedName("rocket")
+    val rocket: String = "",
+    @SerializedName("launchpad")
+    val launchPad: String = ""
 ) : Serializable
 
 data class Links(

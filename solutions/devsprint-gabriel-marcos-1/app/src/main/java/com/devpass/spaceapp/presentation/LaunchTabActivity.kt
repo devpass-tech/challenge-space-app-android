@@ -26,7 +26,7 @@ class LaunchTabActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        val adapter = LaunchTabAdapter(this)
+        val adapter = LaunchTabAdapter(this, nextLaunch?.details.orEmpty(), nextLaunch?.launchPad.orEmpty(), nextLaunch?.rocket.orEmpty())
         binding.viewPager.adapter = adapter
 
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
