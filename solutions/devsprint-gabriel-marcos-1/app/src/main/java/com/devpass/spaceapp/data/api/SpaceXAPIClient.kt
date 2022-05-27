@@ -1,5 +1,6 @@
 package com.devpass.spaceapp.data.api
 
+import com.devpass.spaceapp.data.model.LaunchPadModel
 import com.devpass.spaceapp.data.model.NextLaunchesModel
 import com.devpass.spaceapp.data.model.QueryRequestParams
 import com.devpass.spaceapp.data.model.RocketModel
@@ -17,6 +18,9 @@ interface SpaceXAPIClient {
 
     @GET("v4/rockets/{id}")
     suspend fun getRocketDetails(@Path("id") id: String): RocketModel
+
+    @GET("v4/launchpads/{id}")
+    suspend fun getLaunchpadDetails(@Path("id") id: String): LaunchPadModel
 
     companion object {
         private const val BASE_URL = "https://api.spacexdata.com/"

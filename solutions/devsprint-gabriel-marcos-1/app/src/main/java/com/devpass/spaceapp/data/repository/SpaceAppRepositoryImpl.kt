@@ -1,6 +1,7 @@
 package com.devpass.spaceapp.data.repository
 
 import com.devpass.spaceapp.data.api.SpaceXAPIClient
+import com.devpass.spaceapp.data.model.LaunchPadModel
 import com.devpass.spaceapp.data.model.NextLaunchesModel
 import com.devpass.spaceapp.data.model.OptionsRequest
 import com.devpass.spaceapp.data.model.QueryRequestParams
@@ -19,10 +20,20 @@ class SpaceAppRepositoryImpl(
         }
     }
 
+    override suspend fun getLaunchpadDetails(id: String): Result<LaunchPadModel> {
+        return try {
+            val result = service.getLaunchpadDetails(id)
+            Result.success(result)
+        } catch (error: Exception) {
+            Result.failure(error)
+        }
+    }
+            
     override suspend fun fetchNextLaunches(number_rockets: Int): Result<NextLaunchesModel> {
         return try {
             val params = QueryRequestParams(options = OptionsRequest(number_rockets))
             val result = service.fetchNextLaunches(params)
+
             Result.success(result)
         } catch (error: Exception) {
             Result.failure(error)

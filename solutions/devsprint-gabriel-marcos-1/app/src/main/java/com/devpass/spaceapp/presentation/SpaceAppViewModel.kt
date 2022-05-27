@@ -3,6 +3,7 @@ package com.devpass.spaceapp.presentation
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.devpass.spaceapp.data.model.LaunchPadModel
 import com.devpass.spaceapp.data.model.NextLaunchesModel
 import com.devpass.spaceapp.data.model.RocketModel
 import com.devpass.spaceapp.data.repository.SpaceAppRepository
@@ -15,6 +16,7 @@ class SpaceAppViewModel(
     val resultNextLaunches = MutableLiveData<NextLaunchesModel>()
     val resultNextLaunchError = MutableLiveData<String>()
     val resultRocketDetails = MutableLiveData<RocketModel?>()
+    val resultLaunchpadDetails = MutableLiveData<LaunchPadModel?>()
 
     fun fetchNextLaunches() {
         viewModelScope.launch {
@@ -36,6 +38,18 @@ class SpaceAppViewModel(
                 }
                 .onFailure {
                     resultRocketDetails.value = null
+                }
+        }
+    }
+
+    fun getLaunchpadDetails(id: String) {
+        viewModelScope.launch {
+            repository.getLaunchpadDetails(id)
+                .onSuccess {
+                    resultLaunchpadDetails.value = it
+                }
+                .onFailure {
+                    resultLaunchpadDetails.value = null
                 }
         }
     }
