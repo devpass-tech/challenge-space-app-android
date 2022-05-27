@@ -1,8 +1,9 @@
 package com.devpass.spaceapp.data.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
-data class RocketModel(
+data class RocketModel (
     @SerializedName("id")
     val id: String,
     @SerializedName("name")
@@ -11,4 +12,4 @@ data class RocketModel(
     val description: String,
     @SerializedName("flickr_images")
     val image: List<String>
-)
+) : Serializable
