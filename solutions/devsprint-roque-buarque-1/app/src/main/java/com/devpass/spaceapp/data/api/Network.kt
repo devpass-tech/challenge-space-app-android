@@ -4,10 +4,11 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 
 object Network {
 
-    fun createSpaceXService(): Retrofit {
+    private fun retrofitInstance(): Retrofit {
 
         val interceptor = HttpLoggingInterceptor().apply {
             this.level = HttpLoggingInterceptor.Level.BODY
@@ -22,5 +23,9 @@ object Network {
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
+    }
+
+    fun createSpaceXService () : SpaceXAPIService {
+        return retrofitInstance().create()
     }
 }
