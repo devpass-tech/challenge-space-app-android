@@ -1,0 +1,14 @@
+
+
+class NextLauchRepsoitory private constructor(val services: SpaceXAPIService){
+
+
+    companion object{
+        fun newInstance() : NextLauchRepsoitory{
+
+            return newInstance()
+
+
+        }
+    }
+}
