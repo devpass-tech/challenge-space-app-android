@@ -1,8 +1,10 @@
 package com.devpass.spaceapp.data.network
 
+import com.devpass.spaceapp.BuildConfig
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -16,7 +18,21 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideHttpClient() = OkHttpClient()
+    fun provideLoggingInterceptor(): HttpLoggingInterceptor {
+        val httpLoggingInterceptor = HttpLoggingInterceptor()
+        httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+        return httpLoggingInterceptor
+    }
+
+    @Provides
+    @Singleton
+    fun provideHttpClient(interceptor: HttpLoggingInterceptor): OkHttpClient {
+        val okHttpBuilder = OkHttpClient.Builder()
+        if (BuildConfig.DEBUG){
+            okHttpBuilder.addInterceptor(interceptor)
+        }
+        return okHttpBuilder.build()
+    }
 
     @Provides
     @Singleton
