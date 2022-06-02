@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SpaceApp</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="state">State</string>
+    <string name="launch_attempts">Launch Attempts:</string>
+    <string name="launch_successes">Launch Successes:</string>
+    <string name="title">Title</string>
 </resources>
