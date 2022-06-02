@@ -1,5 +1,5 @@
 package com.devpass.spaceapp.data.model
 
-class NextLaunchesModel {
-
-}
+data class NextLaunchesModel(
+    val id: Int,
+)
