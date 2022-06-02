@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.data.api.SpaceXAPIService
-import com.devpass.spaceapp.data.model.NextLaunchesModel
 import com.devpass.spaceapp.data.repository.NextLaunchRepository
 import retrofit2.Call
 import retrofit2.Callback
