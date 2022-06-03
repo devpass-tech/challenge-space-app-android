@@ -7,14 +7,13 @@ import com.devpass.spaceapp.databinding.ActivityLaunchMapDetailBinding
 import com.google.android.gms.maps.SupportMapFragment
 
 class LaunchMapDetailActivity : AppCompatActivity() {
-    lateinit var launchMapDetailsBinding: ActivityLaunchMapDetailBinding
+    private val launchMapDetailsActivityBinding by viewBinding(ActivityLaunchMapDetailBinding::inflate)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        launchMapDetailsBinding = ActivityLaunchMapDetailBinding.inflate(layoutInflater)
-        setContentView(launchMapDetailsBinding.root)
+        setContentView(launchMapDetailsActivityBinding.root)
 
         val mapFragment =
-            supportFragmentManager.findFragmentById(launchMapDetailsBinding.fragmentMap.id) as SupportMapFragment
+            supportFragmentManager.findFragmentById(launchMapDetailsActivityBinding.fragmentMap.id) as SupportMapFragment
 
         mapFragment.getMapAsync{ googleMaps ->
 

@@ -13,7 +13,9 @@
         android:theme="@style/Theme.SpaceApp"
         android:name=".application.SpaceApp">
         <activity
-            android:name=".presentation.LaunchMapDetailActivity"
+            android:name=".presentation.LaunchMapDetailActivity">
+        </activity>
+        <activity
             android:name=".presentation.RocketDetailsActivity">
         </activity>
         <activity

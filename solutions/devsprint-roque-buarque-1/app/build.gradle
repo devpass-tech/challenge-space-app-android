@@ -74,4 +74,12 @@ dependencies {
 
     //Google Maps
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
+
+    //Lifecycle (ViewModel and LiveData).
+    implementation "androidx.lifecycle:lifecycle-runtime:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
+
+    //Lifecycle for ViewBinding Delegate
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.4.1"
 }
