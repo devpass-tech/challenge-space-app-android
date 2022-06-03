@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SpaceApp</string>
+    <string name="description">Badge do foguete utilizado no lançamento</string>
 </resources>
