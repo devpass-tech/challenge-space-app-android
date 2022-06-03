@@ -13,13 +13,13 @@
         android:theme="@style/Theme.SpaceApp"
         android:name=".application.SpaceApp">
         <activity
-            android:name=".presentation.LaunchMapDetailActivity">
+            android:name=".presentation.NextLaunchesActivity">
         </activity>
         <activity
             android:name=".presentation.RocketDetailsActivity">
         </activity>
         <activity
-            android:name=".presentation.NextLaunchesActivity"
+            android:name=".presentation.LaunchMapDetailActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
