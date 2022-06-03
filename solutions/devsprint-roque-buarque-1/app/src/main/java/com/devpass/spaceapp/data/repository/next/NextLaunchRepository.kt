@@ -1,4 +1,4 @@
-package com.devpass.spaceapp.data.repository
+package com.devpass.spaceapp.data.repository.next
 
 import com.devpass.spaceapp.data.api.Network
 import com.devpass.spaceapp.data.api.SpaceXAPIService

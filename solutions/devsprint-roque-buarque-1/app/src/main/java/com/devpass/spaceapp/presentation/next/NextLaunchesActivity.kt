@@ -1,16 +1,9 @@
-package com.devpass.spaceapp.presentation
+package com.devpass.spaceapp.presentation.next
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.devpass.spaceapp.R
-import com.devpass.spaceapp.data.api.SpaceXAPIService
-import com.devpass.spaceapp.data.model.NextLaunchesModel
-import com.devpass.spaceapp.data.repository.NextLaunchRepository
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import com.devpass.spaceapp.data.repository.next.NextLaunchRepository
 
 class NextLaunchesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
