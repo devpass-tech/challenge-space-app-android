@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.RocketDetailsActivity">
+
+    <ImageView
+        android:id="@+id/imgRocket"
+        android:layout_width="0dp"
+        android:layout_height="235dp"
+        android:contentDescription="@string/rocket_detail_img_content_description"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/img_rocket_detail_placeholder" />
+
+    <TextView
+        android:id="@+id/tvRocketName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textview_title_margin"
+        android:textColor="@color/textview_title"
+        android:textSize="@dimen/textview_title_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgRocket"
+        tools:text="@string/rocket_name_placeholder" />
+
+    <TextView
+        android:id="@+id/tvRocketDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/textview_regular_margin_start"
+        android:layout_marginTop="@dimen/textview_regular_margin_top"
+        android:layout_marginEnd="@dimen/textview_regular_margin_end"
+        android:textColor="@color/textview_regular"
+        android:textSize="@dimen/textview_regular_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRocketName"
+        tools:text="@string/rocket_description_placeholder" />
+</androidx.constraintlayout.widget.ConstraintLayout>

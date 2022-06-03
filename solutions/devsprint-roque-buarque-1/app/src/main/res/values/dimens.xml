@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="maps_layout_height">250dp</dimen>
+    <dimen name="textview_title_margin">16dp</dimen>
+    <dimen name="textview_title_size">20sp</dimen>
+
+    <dimen name="textview_regular_margin_start">16dp</dimen>
+    <dimen name="textview_regular_margin_end">16dp</dimen>
+    <dimen name="textview_regular_margin_top">8dp</dimen>
+    <dimen name="textview_regular_size">14sp</dimen>
 </resources>
