@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SpaceApp"
         android:name=".application.SpaceApp">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${GOOGLE_MAPS_API_KEY}" />
         <activity
             android:name=".presentation.NextLaunchesActivity">
         </activity>
