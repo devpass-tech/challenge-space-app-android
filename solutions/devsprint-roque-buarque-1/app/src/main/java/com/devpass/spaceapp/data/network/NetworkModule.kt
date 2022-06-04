@@ -52,10 +52,4 @@ class NetworkModule {
     fun provideSpaceXAPIClient(retrofit: Retrofit): SpaceXAPIService {
         return retrofit.create(SpaceXAPIService::class.java)
     }
-
-    @Singleton
-    @Provides
-    fun provideLaunchRepository(spaceXAPIService: SpaceXAPIService): LaunchRepository {
-        return LaunchRepositoryImpl(spaceXAPIService)
-    }
 }

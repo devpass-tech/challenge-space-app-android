@@ -7,7 +7,7 @@ class LaunchRepositoryImpl @Inject constructor(
     private val service: SpaceXAPIService
 ): LaunchRepository {
 
-    override suspend fun getData() {
-        TODO("Not yet implemented")
+    override suspend fun getData(): List<String> {
+        return listOf("test","test")
     }
 }
