@@ -5,7 +5,7 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
-@Parcelize
+@Serializable
 data class NextLauchesItem(
 
     @SerializedName("name")
@@ -19,4 +19,4 @@ data class NextLauchesItem(
     @SerializedName("success")
     val success: Boolean
 
-):Parcelable
+)
