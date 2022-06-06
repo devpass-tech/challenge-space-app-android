@@ -8,7 +8,6 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar_model"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         map:layout_constraintEnd_toEndOf="parent"
