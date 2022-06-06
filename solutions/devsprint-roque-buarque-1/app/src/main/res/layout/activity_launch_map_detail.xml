@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.LaunchMapDetailActivity">
+
+    <include
+        android:id="@+id/include_toolbar"
+        layout="@layout/toolbar" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_map"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/maps_layout_height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include_toolbar" />
+
+    <TextView
+        android:id="@+id/text_view_launch_map_detail_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/name"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_map" />
+
+    <TextView
+        android:id="@+id/text_view_launch_map_detail_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/address"
+        app:layout_constraintStart_toStartOf="@+id/text_view_launch_map_detail_name"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_launch_map_detail_name" />
+
+    <TextView
+        android:id="@+id/text_view_launch_map_detail_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/state"
+        app:layout_constraintStart_toStartOf="@+id/text_view_launch_map_detail_address"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_launch_map_detail_address" />
+
+    <TextView
+        android:id="@+id/text_view_launch_map_detail_launch_attempts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/launch_attempts"
+        app:layout_constraintStart_toStartOf="@+id/text_view_launch_map_detail_state"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_launch_map_detail_state" />
+
+    <TextView
+        android:id="@+id/text_view_launch_map_detail_launch_successes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/launch_successes"
+        app:layout_constraintStart_toStartOf="@+id/text_view_launch_map_detail_launch_attempts"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_launch_map_detail_launch_attempts" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
