@@ -1,9 +1,9 @@
-package com.devpass.spaceapp.presentation
+package com.devpass.spaceapp.presentation.launchdetails
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.ActivityLaunchMapDetailBinding
+import com.devpass.spaceapp.presentation.utils.viewBinding
 import com.google.android.gms.maps.SupportMapFragment
 
 class LaunchMapDetailActivity : AppCompatActivity() {
