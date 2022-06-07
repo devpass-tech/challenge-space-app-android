@@ -1,6 +1,8 @@
 package com.devpass.spaceapp.data.repository.launch
 
+import com.devpass.spaceapp.data.model.NextLaunches
+
 interface LaunchRepository {
 
-    suspend fun getData(): List<String>
+    suspend fun getNextLaunches(): Result<NextLaunches>
 }

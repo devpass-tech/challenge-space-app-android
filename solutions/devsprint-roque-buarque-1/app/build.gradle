@@ -39,6 +39,7 @@ android {
     viewBinding {
         enabled = true
     }
+    namespace 'com.devpass.spaceapp'
 }
 
 dependencies {

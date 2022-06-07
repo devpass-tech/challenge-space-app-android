@@ -21,6 +21,7 @@ class LaunchActivity : AppCompatActivity() {
         (applicationContext as SpaceApp).appComponent.inject(this)
         super.onCreate(savedInstanceState)
         prepareObservers()
+        viewModel.onEvent(LaunchActivityViewModel.LaunchEvents.Fetch)
     }
 
     private fun prepareObservers() {
@@ -33,7 +34,6 @@ class LaunchActivity : AppCompatActivity() {
                     is LaunchActivityViewModel.LaunchState.Success -> TODO()
                 }
             }
-            viewModel.onEvent(LaunchActivityViewModel.LaunchEvents.Fetch)
         }
     }
 }
