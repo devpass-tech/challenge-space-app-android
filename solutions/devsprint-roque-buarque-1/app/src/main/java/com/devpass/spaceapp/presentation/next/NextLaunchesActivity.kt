@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.devpass.spaceapp.data.repository.next.NextLaunchRepository
 import com.devpass.spaceapp.databinding.ActivityMainBinding
-import com.devpass.spaceapp.presentation.viewBinding
+import com.devpass.spaceapp.presentation.utils.viewBinding
 
 class NextLaunchesActivity : AppCompatActivity() {
     private val nextLaunchesActivityBinding by viewBinding(ActivityMainBinding::inflate)
