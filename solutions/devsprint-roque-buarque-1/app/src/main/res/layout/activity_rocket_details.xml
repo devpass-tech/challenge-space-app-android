@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".presentation.RocketDetailsActivity">
 
+    <include
+        android:id="@+id/include_toolbar"
+        layout="@layout/toolbar" />
+
     <ImageView
         android:id="@+id/imgRocket"
         android:layout_width="0dp"
@@ -14,7 +18,7 @@
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include_toolbar"
         tools:src="@drawable/img_rocket_detail_placeholder" />
 
     <TextView

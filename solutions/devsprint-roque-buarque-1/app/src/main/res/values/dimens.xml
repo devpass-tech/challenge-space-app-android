@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="maps_layout_height">250dp</dimen>
     <dimen name="textview_title_margin">16dp</dimen>
     <dimen name="textview_title_size">20sp</dimen>
 
@@ -7,4 +8,11 @@
     <dimen name="textview_regular_margin_end">16dp</dimen>
     <dimen name="textview_regular_margin_top">8dp</dimen>
     <dimen name="textview_regular_size">14sp</dimen>
+    <dimen name="text_view_medium_size">16sp</dimen>
+    <dimen name="text_view_medium_margin_top">10dp</dimen>
+
+    <dimen name="imageView_icon_details_header_height_and_width">120dp</dimen>
+    <dimen name="textView_small_margin_top">5dp</dimen>
+    <dimen name="fragment_details_header_layout_padding">20dp</dimen>
+
 </resources>
