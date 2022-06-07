@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.devpass.spaceapp.R
-import com.devpass.spaceapp.data.NextLaunchModel
+import com.devpass.spaceapp.data.model.NextLaunchModel
 
 class LaunchAdapter(private val launchList: List<NextLaunchModel>): RecyclerView.Adapter<LaunchViewHolder>() {
 
