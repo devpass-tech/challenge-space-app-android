@@ -1,10 +1,9 @@
-package com.devpass.spaceapp.presentation
+package com.devpass.spaceapp.presentation.rocket
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.ActivityRocketDetailsBinding
+import com.devpass.spaceapp.presentation.utils.viewBinding
 
 class RocketDetailsActivity : AppCompatActivity() {
     private val rocketDetailsActivityBinding by viewBinding(ActivityRocketDetailsBinding::inflate)

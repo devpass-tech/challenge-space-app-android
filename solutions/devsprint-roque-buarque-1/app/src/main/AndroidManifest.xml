@@ -16,13 +16,13 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="${GOOGLE_MAPS_API_KEY}" />
         <activity
-            android:name=".presentation.NextLaunchesActivity">
+            android:name=".presentation.next.NextLaunchesActivity">
         </activity>
         <activity
-            android:name=".presentation.RocketDetailsActivity">
+            android:name=".presentation.rocket.RocketDetailsActivity">
         </activity>
         <activity
-            android:name=".presentation.LaunchMapDetailActivity"
+            android:name=".presentation.launchdetails.LaunchMapDetailActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

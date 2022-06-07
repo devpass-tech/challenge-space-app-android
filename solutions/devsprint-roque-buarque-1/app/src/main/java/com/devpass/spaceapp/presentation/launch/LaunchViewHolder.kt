@@ -1,4 +1,4 @@
-package com.devpass.spaceapp.presentation
+package com.devpass.spaceapp.presentation.launch
 
 import android.view.View
 import android.widget.ImageView
@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.devpass.spaceapp.R
-import com.devpass.spaceapp.data.NextLaunchModel
+import com.devpass.spaceapp.data.model.NextLaunchModel
 
 class LaunchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     private val itemBadgeLaunch:ImageView = itemView.findViewById(R.id.imageViewBadge)

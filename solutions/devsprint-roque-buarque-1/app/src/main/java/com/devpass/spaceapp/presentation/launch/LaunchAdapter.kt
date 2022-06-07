@@ -1,4 +1,4 @@
-package com.devpass.spaceapp.presentation
+package com.devpass.spaceapp.presentation.launch
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

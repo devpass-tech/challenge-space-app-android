@@ -1,4 +1,4 @@
-package com.devpass.spaceapp.data
+package com.devpass.spaceapp.data.model
 
 data class NextLaunchModel(
     val name: String,
