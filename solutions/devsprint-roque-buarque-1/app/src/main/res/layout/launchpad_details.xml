@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:map="http://schemas.android.com/tools"
-    tools:context=".presentation.LaunchpadDetailsActivity">
+    tools:context=".presentation.launchdetails.LaunchMapDetailActivity">
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
         android:layout_width="0dp"
-        android:layout_height="?attr/actionBarSize"
-        map:layout_constraintEnd_toEndOf="parent"
-        map:layout_constraintStart_toStartOf="parent"
-        map:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="?attr/actionBarSize" />
 
     <ImageView
         android:id="@+id/img_map"
@@ -76,7 +73,6 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
         android:text="Launch Attempts: 15"
-        android:textColor="@color/text_color"
         android:textSize="12sp"
         android:textFontWeight="400"
         android:paddingVertical="5dp"

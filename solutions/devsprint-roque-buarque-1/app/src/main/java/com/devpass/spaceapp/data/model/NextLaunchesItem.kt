@@ -1,12 +1,8 @@
 package com.devpass.spaceapp.data.model
 
-
 import com.google.gson.annotations.SerializedName
-import kotlinx.serialization.Serializable
 
-
-@Serializable
-data class NextLauchesItem(
+data class NextLaunchesItem(
 
     @SerializedName("name")
     val name: String,
@@ -18,5 +14,4 @@ data class NextLauchesItem(
     val links: Links,
     @SerializedName("success")
     val success: Boolean
-
 )
