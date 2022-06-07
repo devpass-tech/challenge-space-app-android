@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".presentation.DetailsHeaderFragment"
+    android:orientation="vertical"
+    android:padding="@dimen/fragment_details_header_layout_padding"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/image_view_icon_details_header"
+        android:layout_width="@dimen/imageView_icon_details_header_height_and_width"
+        android:layout_height="@dimen/imageView_icon_details_header_height_and_width"
+        tools:src="@tools:sample/avatars"
+        android:contentDescription="@string/details_header_image_of_icon_description" />
+
+    <TextView
+        android:id="@+id/text_view_name_details_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_view_medium_margin_top"
+        android:text="@string/details_header_name_placeholder"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_view_medium_size" />
+
+    <TextView
+        android:id="@+id/text_view_date_details_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/textView_small_margin_top"
+        android:text="@string/details_header_date_placeholder"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/text_view_status_details_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/textView_small_margin_top"
+        android:text="@string/details_header_status_placeholder"
+        android:textColor="@color/black" />
+</LinearLayout>
