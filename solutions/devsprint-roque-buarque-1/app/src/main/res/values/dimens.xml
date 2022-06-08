@@ -15,4 +15,14 @@
     <dimen name="textView_small_margin_top">5dp</dimen>
     <dimen name="fragment_details_header_layout_padding">20dp</dimen>
 
+    <dimen name="cv_fragmentLaunchDetails_cardElevation">12dp</dimen>
+    <dimen name="cv_fragmentLaunchDetails_layout_margin">8dp</dimen>
+
+    <dimen name="tv_fragmentLaunchDetails_padding">16dp</dimen>
+    <dimen name="tv_fragmentLaunchDetails_textSize">16sp</dimen>
+    <dimen name="tv_fragmentLaunchDetails_lineHeight">32sp</dimen>
+
+    <dimen name="tv_button_vm_padding">16dp</dimen>
+    <dimen name="tv_button_vm_textSize">16sp</dimen>
+
 </resources>

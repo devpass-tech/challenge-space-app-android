@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_fragmentLaunchDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/cv_fragmentLaunchDetails_layout_margin"
+        app:cardElevation="@dimen/cv_fragmentLaunchDetails_cardElevation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_fragmentLaunchDetails"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:lineHeight="@dimen/tv_fragmentLaunchDetails_lineHeight"
+                android:maxLines="3"
+                android:padding="@dimen/tv_fragmentLaunchDetails_padding"
+                android:text="@string/fragment_launch_details_textDetails"
+                android:textSize="@dimen/tv_fragmentLaunchDetails_textSize"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/button_vm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/tv_button_vm_padding"
+                android:text="@string/fragment_launch_details_textVm"
+                android:textColor="@color/text_button_vm"
+                android:textSize="@dimen/tv_button_vm_textSize"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/tv_fragmentLaunchDetails"
+                app:layout_constraintTop_toBottomOf="@id/tv_fragmentLaunchDetails" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
