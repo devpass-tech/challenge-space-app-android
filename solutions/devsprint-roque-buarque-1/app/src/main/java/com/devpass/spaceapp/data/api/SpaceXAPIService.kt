@@ -1,8 +1,14 @@
 package com.devpass.spaceapp.data.api
 
+import com.devpass.spaceapp.data.model.NextLaunchModel
+import retrofit2.http.GET
+
 interface SpaceXAPIService {
 
-    @Post("query")
-    suspend fun fetchNextLaunches() : NextLauches
+    @GET("next")
+    suspend fun fetchNextLaunch() : NextLaunchModel
+
+/*    @Post("query")
+    suspend fun fetchNextLaunches() : NextLauches*/
 
 }

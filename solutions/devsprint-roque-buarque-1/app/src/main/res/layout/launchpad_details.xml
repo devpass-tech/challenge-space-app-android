@@ -4,11 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:map="http://schemas.android.com/tools"
-    tools:context=".presentation.LaunchpadDetailsActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.launchdetails.LaunchMapDetailActivity">
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar_model"
+        layout="@layout/toolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         map:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +77,6 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
         android:text="Launch Attempts: 15"
-        android:textColor="@color/text_color"
         android:textSize="12sp"
         android:textFontWeight="400"
         android:paddingVertical="5dp"
