@@ -1,20 +1,16 @@
 package com.devpass.spaceapp.presentation.launch
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.devpass.spaceapp.data.model.NextLauchesItem
 import com.devpass.spaceapp.data.repository.launch.LaunchRepository
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class LaunchActivityViewModel @Inject constructor(
     private val launchRepository: LaunchRepository
 ) : ViewModel() {
-
-    suspend fun onEvent(event: LaunchEvents) {
-        this.event.emit(event)
-    }
 
     private val event = MutableSharedFlow<LaunchEvents>()
     val state: Flow<LaunchState> = event
@@ -23,14 +19,27 @@ class LaunchActivityViewModel @Inject constructor(
                 LaunchEvents.Fetch -> getDataFromRepository()
             }
         }
-        .onEach { LaunchState.Loading }
+        .onStart { emit(LaunchState.Loading) }
+        .catch { LaunchState.Error("Something went wrong") }
+
+    fun onEvent(event: LaunchEvents) {
+        viewModelScope.launch {
+            this@LaunchActivityViewModel.event.emit(event)
+        }
+    }
 
     private suspend fun getDataFromRepository(): LaunchState {
-        val list = launchRepository.getData()
-        return if (list.isEmpty()) {
-            LaunchState.Empty
+        val result = launchRepository.getNextLaunches()
+
+        return if(result.isSuccess) {
+            val list = result.getOrThrow().launches
+            if(list.isEmpty()) {
+                LaunchState.Empty
+            } else {
+                LaunchState.Success(list)
+            }
         } else {
-            LaunchState.Success(list)
+            LaunchState.Error("Something went wrong")
         }
     }
 
@@ -40,7 +49,7 @@ class LaunchActivityViewModel @Inject constructor(
 
     sealed class LaunchState {
         object Loading : LaunchState()
-        data class Success(val list: List<String>) : LaunchState()
+        data class Success(val list: List<NextLauchesItem>) : LaunchState()
         object Empty : LaunchState()
         data class Error(val error: String) : LaunchState()
     }
