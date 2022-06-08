@@ -11,4 +11,6 @@
     <color name="app_blue">#0085FF</color>
     <color name="textview_title">#212121</color>
     <color name="textview_regular">#757575</color>
+
+    <color name="text_button_vm">#4CA7EF</color>
 </resources>
