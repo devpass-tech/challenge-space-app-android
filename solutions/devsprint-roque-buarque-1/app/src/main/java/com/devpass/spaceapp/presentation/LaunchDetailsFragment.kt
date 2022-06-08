@@ -7,10 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.devpass.spaceapp.databinding.FragmentLaunchDetailsBinding
+import com.devpass.spaceapp.presentation.launchdetails.LaunchDetailsActivity
 
 class LaunchDetailsFragment : Fragment() {
-    private var _binding: FragmentLaunchDetailsBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var _binding: FragmentLaunchDetailsBinding
+    private val binding get() = _binding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,7 +25,7 @@ class LaunchDetailsFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-        _binding = null
+        _binding
     }
 
     private fun configVmClick() {
