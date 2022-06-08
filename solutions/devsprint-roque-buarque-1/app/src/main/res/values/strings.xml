@@ -16,4 +16,7 @@
     <string name="details_header_name_placeholder">CRS-20</string>
     <string name="details_header_date_placeholder">July 03, 2020</string>
     <string name="details_header_status_placeholder">Success</string>
+
+    <string name="fragment_launch_details_textDetails">SpaceX\'s 20th and final Crew Resupply Mission under the original NASA CRS contract, this mission brings essential supplies to the...</string>
+    <string name="fragment_launch_details_textVm">VIEW MORE</string>
 </resources>
