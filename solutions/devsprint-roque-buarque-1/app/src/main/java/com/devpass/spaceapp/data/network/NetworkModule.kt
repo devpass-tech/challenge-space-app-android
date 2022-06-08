@@ -2,8 +2,6 @@ package com.devpass.spaceapp.data.network
 
 import com.devpass.spaceapp.BuildConfig
 import com.devpass.spaceapp.data.api.SpaceXAPIService
-import com.devpass.spaceapp.data.repository.launch.LaunchRepository
-import com.devpass.spaceapp.data.repository.launch.LaunchRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
