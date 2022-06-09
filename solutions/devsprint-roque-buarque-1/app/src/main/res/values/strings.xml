@@ -19,4 +19,5 @@
 
     <string name="fragment_launch_details_textDetails">SpaceX\'s 20th and final Crew Resupply Mission under the original NASA CRS contract, this mission brings essential supplies to the...</string>
     <string name="fragment_launch_details_textVm">VIEW MORE</string>
+    <string name="next_launches">Next Launches</string>
 </resources>

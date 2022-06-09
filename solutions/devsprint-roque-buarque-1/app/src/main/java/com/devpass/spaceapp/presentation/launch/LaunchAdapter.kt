@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.devpass.spaceapp.R
-import com.devpass.spaceapp.data.model.NextLaunchModel
+import com.devpass.spaceapp.data.model.NextLauchesItem
 
-class LaunchAdapter(private val launchList: List<NextLaunchModel>): RecyclerView.Adapter<LaunchViewHolder>() {
+class LaunchAdapter(private val launchList: List<NextLauchesItem>): RecyclerView.Adapter<LaunchViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LaunchViewHolder {
         val view = LayoutInflater.from(parent.context)

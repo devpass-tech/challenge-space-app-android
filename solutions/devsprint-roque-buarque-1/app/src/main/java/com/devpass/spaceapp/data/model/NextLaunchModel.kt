@@ -8,7 +8,7 @@ data class NextLaunchModel(
     var links: Links
 )
 
-data class Links(
+data class Links2(
    val patch: Small
 )
 
