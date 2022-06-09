@@ -6,6 +6,6 @@ import com.google.gson.annotations.SerializedName
 data class NextLaunches (
 
     @SerializedName("docs")
-    val launches: List<NextLauchesItem>
+    val launches: List<NextLaunchesItem>
 
     )
