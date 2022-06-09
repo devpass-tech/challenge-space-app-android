@@ -2,7 +2,7 @@ package com.devpass.spaceapp.presentation.launch
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.devpass.spaceapp.data.model.NextLauchesItem
+import com.devpass.spaceapp.data.model.NextLaunchesItem
 import com.devpass.spaceapp.data.repository.launch.LaunchRepository
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -49,7 +49,7 @@ class LaunchActivityViewModel @Inject constructor(
 
     sealed class LaunchState {
         object Loading : LaunchState()
-        data class Success(val list: List<NextLauchesItem>) : LaunchState()
+        data class Success(val list: List<NextLaunchesItem>) : LaunchState()
         object Empty : LaunchState()
         data class Error(val error: String) : LaunchState()
     }

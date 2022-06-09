@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.devpass.spaceapp.R
-import com.devpass.spaceapp.data.model.NextLauchesItem
+import com.devpass.spaceapp.data.model.NextLaunchesItem
 import com.devpass.spaceapp.data.model.NextLaunchModel
 
 class LaunchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -16,7 +16,7 @@ class LaunchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     private val itemSuccessLaunch:TextView = itemView.findViewById(R.id.textViewSuccess)
     private val itemNumberLaunch:TextView = itemView.findViewById(R.id.textViewNumber)
 
-    fun bind(item: NextLauchesItem){
+    fun bind(item: NextLaunchesItem){
         Glide
             .with(itemView)
             .load(item.links.patch.small)

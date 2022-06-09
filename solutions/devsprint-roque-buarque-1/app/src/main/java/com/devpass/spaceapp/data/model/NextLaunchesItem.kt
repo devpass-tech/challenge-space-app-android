@@ -3,7 +3,7 @@ package com.devpass.spaceapp.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class NextLauchesItem(
+data class NextLaunchesItem(
     @SerializedName("name")
     val name: String,
     @SerializedName("date_local")
