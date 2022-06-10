@@ -1,6 +1,7 @@
 package com.devpass.spaceapp.presentation.launch
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.devpass.spaceapp.data.model.NextLaunchesItem
 import com.devpass.spaceapp.data.repository.launch.LaunchRepository
@@ -30,10 +31,9 @@ class LaunchActivityViewModel @Inject constructor(
 
     private suspend fun getDataFromRepository(): LaunchState {
         val result = launchRepository.getNextLaunches()
-
-        return if(result.isSuccess) {
+        return if (result.isSuccess) {
             val list = result.getOrThrow().launches
-            if(list.isEmpty()) {
+            if (list.isEmpty()) {
                 LaunchState.Empty
             } else {
                 LaunchState.Success(list)
@@ -53,4 +53,5 @@ class LaunchActivityViewModel @Inject constructor(
         object Empty : LaunchState()
         data class Error(val error: String) : LaunchState()
     }
+
 }

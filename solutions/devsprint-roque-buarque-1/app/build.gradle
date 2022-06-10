@@ -20,12 +20,12 @@ android {
 
     buildTypes {
         release {
-            buildConfigField "String", "BASE_URL", "\"https://api.spacexdata.com/v5/launches/\""
+            buildConfigField "String", "BASE_URL", "\"https://api.spacexdata.com/\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            buildConfigField "String", "BASE_URL", "\"https://api.spacexdata.com/v5/launches/\""
+            buildConfigField "String", "BASE_URL", "\"https://api.spacexdata.com/\""
         }
     }
     compileOptions {
@@ -81,7 +81,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.2'
 
     //Google Maps
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
@@ -98,4 +98,6 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
 
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.2'
+    testImplementation 'app.cash.turbine:turbine:0.8.0'
 }

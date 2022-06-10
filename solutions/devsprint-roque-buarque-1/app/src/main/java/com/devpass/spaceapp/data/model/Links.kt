@@ -1,4 +1,4 @@
 package com.devpass.spaceapp.data.model
 
-data class Links (val patch: Patch)
+data class Links (val patch: Patch = Patch("", "" ))
 

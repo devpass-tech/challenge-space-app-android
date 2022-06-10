@@ -13,16 +13,26 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class LaunchActivity : AppCompatActivity() {
+
     private val binding by viewBinding(ActivityNextLaunchesBinding::inflate)
+
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+
     private val viewModel: LaunchActivityViewModel by viewModels {
         viewModelFactory
+    }
+
+    override fun onStart() {
+        super.onStart()
+        prepareObservers()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         (applicationContext as SpaceApp).appComponent.inject(this)
         super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+
         prepareObservers()
         viewModel.onEvent(LaunchActivityViewModel.LaunchEvents.Fetch)
     }
