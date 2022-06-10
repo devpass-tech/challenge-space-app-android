@@ -9,14 +9,14 @@ import com.devpass.spaceapp.R
 import com.devpass.spaceapp.data.model.NextLaunchesItem
 import com.devpass.spaceapp.data.model.NextLaunchModel
 
-class LaunchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-    private val itemBadgeLaunch:ImageView = itemView.findViewById(R.id.imageViewBadge)
-    private val itemNameLaunch:TextView = itemView.findViewById(R.id.textViewName)
-    private val itemDateLaunch:TextView = itemView.findViewById(R.id.textViewDate)
-    private val itemSuccessLaunch:TextView = itemView.findViewById(R.id.textViewSuccess)
-    private val itemNumberLaunch:TextView = itemView.findViewById(R.id.textViewNumber)
+class LaunchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    private val itemBadgeLaunch: ImageView = itemView.findViewById(R.id.imageViewBadge)
+    private val itemNameLaunch: TextView = itemView.findViewById(R.id.textViewName)
+    private val itemDateLaunch: TextView = itemView.findViewById(R.id.textViewDate)
+    private val itemSuccessLaunch: TextView = itemView.findViewById(R.id.textViewSuccess)
+    private val itemNumberLaunch: TextView = itemView.findViewById(R.id.textViewNumber)
 
-    fun bind(item: NextLaunchesItem){
+    fun bind(item: NextLaunchesItem) {
         Glide
             .with(itemView)
             .load(item.links.patch.small)
