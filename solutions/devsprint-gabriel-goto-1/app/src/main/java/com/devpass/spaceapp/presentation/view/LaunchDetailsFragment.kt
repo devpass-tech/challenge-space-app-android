@@ -7,26 +7,27 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.devpass.spaceapp.R
-import kotlinx.android.synthetic.main.launch_details_fragment.*
+import com.devpass.spaceapp.databinding.LaunchDetailsFragmentBinding
 
-class LaunchDetailsFragment : Fragment() {
+class LaunchDetailsFragment : Fragment(R.layout.launch_details_fragment) {
+
+    private var bind: LaunchDetailsFragmentBinding? = null
+    private val binding get() = bind
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.launch_details_fragment, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        bind = LaunchDetailsFragmentBinding.inflate(inflater, container, false)
         setView()
+
+        return binding.root
     }
 
     private fun setView() {
-        description_text.text = getString(R.string.launch_details_dummy_text)
-        view_more_button.setOnClickListener {
+        binding.descriptionText.text = getString(R.string.launch_details_dummy_text)
+        binding.viewMoreButton.setOnClickListener {
             Toast.makeText(
                 requireContext(),
                 "Chamar LaunchDetailsActivity aqui",

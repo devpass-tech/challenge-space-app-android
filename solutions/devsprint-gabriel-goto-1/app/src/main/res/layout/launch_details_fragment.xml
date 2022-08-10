@@ -5,50 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/launch_details_card_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            app:cardElevation="6dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/launch_details_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardElevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/card_view_container"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_view_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:id="@+id/description_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lineSpacingExtra="8dp"
+                android:maxLines="3"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/launch_details_dummy_text" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/view_more_button"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp">
+                android:text="@string/launch_details_view_more_button_text"
+                android:textColor="@android:color/holo_blue_dark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/description_text"
+                app:layout_constraintTop_toBottomOf="@+id/description_text">
 
-                <TextView
-                    android:id="@+id/description_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:lineSpacingExtra="8dp"
-                    android:maxLines="3"
-                    android:padding="10dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="@string/launch_details_dummy_text" />
+            </com.google.android.material.button.MaterialButton>
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/view_more_button"
-                    style="?attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/launch_details_view_more_button_text"
-                    android:textColor="@android:color/holo_blue_dark"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/description_text"
-                    app:layout_constraintTop_toBottomOf="@+id/description_text">
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                </com.google.android.material.button.MaterialButton>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 </layout>
