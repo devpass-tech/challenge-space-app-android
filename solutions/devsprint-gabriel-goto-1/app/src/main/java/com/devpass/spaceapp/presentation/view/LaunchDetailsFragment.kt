@@ -22,12 +22,12 @@ class LaunchDetailsFragment : Fragment(R.layout.launch_details_fragment) {
         bind = LaunchDetailsFragmentBinding.inflate(inflater, container, false)
         setView()
 
-        return binding.root
+        return binding?.root
     }
 
     private fun setView() {
-        binding.descriptionText.text = getString(R.string.launch_details_dummy_text)
-        binding.viewMoreButton.setOnClickListener {
+        binding?.descriptionText?.text = getString(R.string.launch_details_dummy_text)
+        binding?.viewMoreButton?.setOnClickListener {
             Toast.makeText(
                 requireContext(),
                 "Chamar LaunchDetailsActivity aqui",
