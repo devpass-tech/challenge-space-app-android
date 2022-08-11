@@ -37,7 +37,7 @@ class LaunchDetailsFragment : Fragment(R.layout.launch_details_fragment) {
     }
 
     override fun onDestroyView() {
-        super.onDestroyView()
         _binding = null
+        super.onDestroyView()
     }
 }
