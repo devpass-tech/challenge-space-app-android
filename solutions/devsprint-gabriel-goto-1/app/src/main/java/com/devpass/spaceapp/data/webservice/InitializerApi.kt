@@ -1,6 +1,7 @@
 package com.devpass.spaceapp.data.webservice
 
 import com.devpass.spaceapp.BuildConfig
+import com.devpass.spaceapp.data.api.SpaceXAPIClient
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -19,6 +20,7 @@ object InitializerApi {
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-
         }
+
+    fun getSpaceAPI() = retrofit.create(SpaceXAPIClient::class.java)
 }
