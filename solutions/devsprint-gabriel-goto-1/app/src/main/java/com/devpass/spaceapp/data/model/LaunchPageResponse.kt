@@ -2,9 +2,9 @@ package com.devpass.spaceapp.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class LaunchPage (
+data class LaunchPageResponse (
     @SerializedName("docs")
-    val docs: List<Launches>,
+    val docs: List<LaunchesResponse>,
     @SerializedName("hasNextPage")
     val hasNextPage: Boolean,
     @SerializedName("hasPrevPage")
@@ -24,5 +24,5 @@ data class LaunchPage (
     @SerializedName("totalDocs")
     val totalDocs: Int,
     @SerializedName("totalPages")
-    val totalPages: Int
+    val totalPages: Int,
 )

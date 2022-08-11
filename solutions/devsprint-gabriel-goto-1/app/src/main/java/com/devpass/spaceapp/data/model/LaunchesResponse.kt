@@ -2,7 +2,7 @@ package com.devpass.spaceapp.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Launches(
+data class LaunchesResponse(
     @SerializedName("links")
     val links: Links,
     @SerializedName("name")
@@ -12,5 +12,5 @@ data class Launches(
     @SerializedName("success")
     val status: Boolean,
     @SerializedName("flight_number")
-    val flightNumber: Int
+    val flightNumber: Int,
 )

@@ -4,10 +4,10 @@ import com.google.gson.annotations.SerializedName
 
 data class Links(
     @SerializedName("patch")
-    val patch: Patch
+    val patch: Patch,
 )
 
 data class Patch(
     @SerializedName("small")
-    val small: List<String>
+    val small: List<String>,
 )
