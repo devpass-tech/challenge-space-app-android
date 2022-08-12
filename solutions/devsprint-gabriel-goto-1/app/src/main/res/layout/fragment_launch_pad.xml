@@ -54,15 +54,15 @@
             app:layout_constraintTop_toBottomOf="@+id/textView_base"
             tools:text="California" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_view_more"
+        <TextView
+            android:id="@+id/textView_view_more"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
             android:textColor="@color/blue_button"
-            android:background="@color/white"
+            android:textStyle="bold"
             android:text="@string/launch_pad_button"
             android:textAllCaps="true"
             app:layout_constraintBottom_toBottomOf="parent"

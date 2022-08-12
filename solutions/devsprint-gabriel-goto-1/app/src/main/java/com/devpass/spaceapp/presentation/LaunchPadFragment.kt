@@ -27,7 +27,7 @@ class LaunchPadFragment : Fragment() {
         binding.textViewRocketName.text = ""
         binding.textViewBase.text = ""
         binding.textViewCountry.text = ""
-        binding.buttonViewMore.setOnClickListener {
+        binding.textViewViewMore.setOnClickListener {
             //TODO - fazer a navegacao para a prox view
         }
     }
