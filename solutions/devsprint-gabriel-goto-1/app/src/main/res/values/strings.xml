@@ -5,4 +5,7 @@
     <!---Rocket Fragment Texts-->
     <string name="rocket_fragment_info">With the ability to lift into orbit over 54 metric tons (119,000 lb) — a mass equivalent to a 737 jetliner loaded…</string>
     <string name="rocket_fragment_image_view_content_description">Falcon Heavy</string>
+
+    <!---Launch Pad Fragments Texts-->
+    <string name="launch_pad_button">View more</string>
 </resources>
