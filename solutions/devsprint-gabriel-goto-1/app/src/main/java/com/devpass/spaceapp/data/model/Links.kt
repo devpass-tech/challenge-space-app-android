@@ -9,5 +9,7 @@ data class Links(
 
 data class Patch(
     @SerializedName("small")
-    val small: List<String>,
+    val small: String,
+    @SerializedName("large")
+    val large: String,
 )
