@@ -34,4 +34,9 @@ class LaunchPadFragment : Fragment() {
             //TODO - fazer a navegacao para a prox view
         }
     }
+
+    override fun onDestroy() {
+        bind = null
+        super.onDestroy()
+    }
 }
