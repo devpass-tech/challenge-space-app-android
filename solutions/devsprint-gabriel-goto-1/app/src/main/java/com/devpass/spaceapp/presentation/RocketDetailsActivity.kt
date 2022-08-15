@@ -18,13 +18,15 @@ class RocketDetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    fun setUpView() {
+    private fun setUpView() {
+        val title = intent.getStringExtra("EXTRA_TITLE")
+        val info = intent.getStringExtra("EXTRA_INFO")
         binding.imageViewRocketActivity
-        binding.textViewRocketActivityTitle.text = ""
-        binding.textViewRocketActivityInfo.text = ""
+        binding.textViewRocketActivityTitle.text = title
+        binding.textViewRocketActivityInfo.text = info
     }
 
-    fun setUpListeners() {
+    private fun setUpListeners() {
         binding.toolbarRocketActivity.setNavigationOnClickListener {
             onBackPressed()
         }
