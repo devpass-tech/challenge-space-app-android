@@ -15,4 +15,7 @@
     <string name="item_fail">Fail</string>
     <string name="item_flight_number">#%d</string>
     <string name="badge_content_description">The image shows mission badge</string>
+
+    <!---Launch Pad Fragments Texts-->
+    <string name="launch_pad_button">View more</string>
 </resources>
