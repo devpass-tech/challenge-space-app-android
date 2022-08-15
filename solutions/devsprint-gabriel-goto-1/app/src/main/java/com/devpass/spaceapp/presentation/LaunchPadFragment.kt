@@ -16,18 +16,21 @@ class LaunchPadFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         bind = FragmentLaunchPadBinding.inflate(inflater, container, false)
-        setUpView()
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setUpView()
     }
 
     private fun setUpView() {
         binding.textViewRocketName.text = ""
         binding.textViewBase.text = ""
         binding.textViewCountry.text = ""
-        binding.textViewViewMore.setOnClickListener {
+        binding.buttonViewMore.setOnClickListener {
             //TODO - fazer a navegacao para a prox view
         }
     }
