@@ -18,5 +18,5 @@ data class LaunchPadDetailsResponse(
     @SerializedName("launch_attempts")
     val launchAttempts: Int,
     @SerializedName("launch_successes")
-    val launchSuccesses: Int
+    val launchSuccesses: Int,
 )
