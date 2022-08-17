@@ -1,68 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:padding="16dp">
 
     <ImageView
         android:id="@+id/imageview_badge"
         android:layout_width="64dp"
         android:layout_height="64dp"
+        android:contentDescription="@string/badge_content_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars"
-        android:contentDescription="@string/badge_content_description" />
+        tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/textview_name"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginStart="16dp"
-        tools:text="CRS-20"
-        android:textStyle="bold"
+        android:layout_marginTop="8dp"
         android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="@id/imageview_badge"
-        app:layout_constraintStart_toEndOf="@id/imageview_badge"
-        app:layout_constraintEnd_toStartOf="@id/textview_number" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageview_badge"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="CRS-20" />
 
     <TextView
         android:id="@+id/textview_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="#91"
-        android:textAlignment="textEnd"
+        android:layout_marginEnd="16dp"
         android:textSize="14sp"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/textview_name"
-        app:layout_constraintTop_toTopOf="@id/imageview_badge" />
+        app:layout_constraintTop_toTopOf="@+id/textview_name"
+        tools:text="#91" />
 
     <TextView
         android:id="@+id/textview_date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        tools:text="@tools:sample/date/mmddyy"
+        android:layout_marginTop="8dp"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@id/imageview_badge"
-        app:layout_constraintTop_toBottomOf="@id/textview_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/textview_result" />
+        app:layout_constraintStart_toEndOf="@+id/imageview_badge"
+        app:layout_constraintTop_toBottomOf="@+id/textview_name"
+        tools:text="@tools:sample/date/mmddyy" />
 
     <TextView
         android:id="@+id/textview_result"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        tools:text="@string/item_success"
+        android:layout_marginTop="8dp"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@id/imageview_badge"
-        app:layout_constraintTop_toBottomOf="@id/textview_date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/imageview_badge"
+        app:layout_constraintTop_toBottomOf="@+id/textview_date"
+        tools:text="@string/item_success" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
