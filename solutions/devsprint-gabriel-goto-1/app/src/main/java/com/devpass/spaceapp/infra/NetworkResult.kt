@@ -9,7 +9,7 @@ sealed class NetworkResult<T>(
 
     class Error<ERROR>(message: String?) : NetworkResult<ERROR>(null, message)
 
-    class Loading : NetworkResult<Nothing>()
+    class Loading<LOADING> : NetworkResult<LOADING>()
 }
 
 suspend fun <T> isSuccess(block: suspend () -> T): NetworkResult<T> {

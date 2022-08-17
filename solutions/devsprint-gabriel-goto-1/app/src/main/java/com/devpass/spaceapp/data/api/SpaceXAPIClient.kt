@@ -10,7 +10,7 @@ import retrofit2.http.Path
 
 interface SpaceXAPIClient {
 
-    @POST("v5/launches/query")
+    @POST("launches/query")
     suspend fun fetchNextLaunches(@Body params: QueryParams): LaunchPageResponse
 
     @GET("v4/launchpads/{id}")
