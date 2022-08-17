@@ -14,7 +14,7 @@ class NextLaunchesAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LaunchCellItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemCellLaunchBinding.inflate(inflater)
+        val binding = ItemCellLaunchBinding.inflate(inflater, parent, false)
         return LaunchCellItemViewHolder(binding)
     }
 
