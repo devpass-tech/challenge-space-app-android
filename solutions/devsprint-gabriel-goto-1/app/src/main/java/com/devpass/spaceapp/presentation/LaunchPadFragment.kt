@@ -5,9 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.devpass.spaceapp.databinding.FragmentLaunchPadBinding
+import com.devpass.spaceapp.presentation.viewmodels.NextLaunchesViewModel
 
 class LaunchPadFragment : Fragment() {
+
+    private val viewModel by activityViewModels<NextLaunchesViewModel>()
 
     private var bind: FragmentLaunchPadBinding? = null
     private val binding get() = bind!!

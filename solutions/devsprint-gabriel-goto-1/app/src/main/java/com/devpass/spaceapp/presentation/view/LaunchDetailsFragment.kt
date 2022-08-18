@@ -6,10 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.LaunchDetailsFragmentBinding
+import com.devpass.spaceapp.presentation.viewmodels.NextLaunchesViewModel
 
 class LaunchDetailsFragment : Fragment(R.layout.launch_details_fragment) {
+
+    private val viewModel by activityViewModels<NextLaunchesViewModel>()
 
     private var _binding: LaunchDetailsFragmentBinding? = null
     private val binding get() = _binding!!
