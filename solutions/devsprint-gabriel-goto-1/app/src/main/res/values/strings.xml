@@ -23,5 +23,6 @@
     <!---Activity Texts-->
     <string name="snackbar_error">An error occurred while trying to get the list</string>
     <string name="retry">Retry</string>
+    <string name="tool_bar_next_launches_title">SpaceX App 🚀</string>
 
 </resources>
