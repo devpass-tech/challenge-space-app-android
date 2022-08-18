@@ -2,9 +2,8 @@ package com.devpass.spaceapp.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.ActivityLauchTabBinding
-import com.devpass.spaceapp.presentation.adapters.LauchTabAdapter
+import com.devpass.spaceapp.presentation.adapters.LaunchTabAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 class LaunchTabActivity : AppCompatActivity() {
@@ -25,7 +24,7 @@ class LaunchTabActivity : AppCompatActivity() {
         val viewPager = binding.viewPagerLaunchTab
         val tabLayout = binding.tabLayoutLaunchTab
 
-        val adapter = LauchTabAdapter(supportFragmentManager, lifecycle)
+        val adapter = LaunchTabAdapter(supportFragmentManager, lifecycle)
         viewPager.adapter = adapter
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
