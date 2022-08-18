@@ -62,6 +62,7 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.13.2'
 
     //Coroutines
+    implementation("androidx.fragment:fragment-ktx:1.5.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
