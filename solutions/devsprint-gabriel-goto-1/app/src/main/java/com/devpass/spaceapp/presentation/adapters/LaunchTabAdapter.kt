@@ -4,13 +4,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.devpass.spaceapp.presentation.LaunchPadFragment
-import com.devpass.spaceapp.presentation.RocketFragment
+import com.devpass.spaceapp.presentation.view.LaunchPadFragment
+import com.devpass.spaceapp.presentation.view.RocketFragment
 import com.devpass.spaceapp.presentation.view.LaunchDetailsFragment
 
 private const val NUM_TABS = 3
 
-class LauchTabAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
+class LaunchTabAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
 
     override fun getItemCount(): Int {

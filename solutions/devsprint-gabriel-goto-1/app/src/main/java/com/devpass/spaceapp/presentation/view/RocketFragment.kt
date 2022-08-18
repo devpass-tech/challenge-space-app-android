@@ -1,4 +1,4 @@
-package com.devpass.spaceapp.presentation
+package com.devpass.spaceapp.presentation.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

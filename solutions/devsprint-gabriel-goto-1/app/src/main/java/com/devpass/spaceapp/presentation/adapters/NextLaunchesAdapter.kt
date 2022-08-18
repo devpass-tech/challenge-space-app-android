@@ -1,4 +1,4 @@
-package com.devpass.spaceapp.presentation
+package com.devpass.spaceapp.presentation.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
