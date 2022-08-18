@@ -3,12 +3,11 @@ package com.devpass.spaceapp.presentation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devpass.spaceapp.R
-import com.devpass.spaceapp.data.model.LaunchesResponse
 import com.devpass.spaceapp.databinding.ActivityMainBinding
 import com.devpass.spaceapp.infra.NetworkResult
+import com.devpass.spaceapp.presentation.viewmodels.NextLaunchesViewModel
 import com.google.android.material.snackbar.Snackbar
 
 class NextLaunchesActivity : AppCompatActivity() {

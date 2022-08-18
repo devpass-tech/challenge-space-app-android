@@ -1,4 +1,4 @@
-package com.devpass.spaceapp.presentation
+package com.devpass.spaceapp.presentation.viewmodels
 
 import androidx.lifecycle.*
 import com.devpass.spaceapp.data.model.LaunchPageResponse
