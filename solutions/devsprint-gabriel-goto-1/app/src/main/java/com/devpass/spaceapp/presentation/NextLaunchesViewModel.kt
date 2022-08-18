@@ -13,11 +13,13 @@ class NextLaunchesViewModel : ViewModel() {
 
     private val api by lazy { InitializerApi.getSpaceAPI() }
 
-    private val _apiResult = MutableLiveData<NetworkResult<LaunchPageResponse>>()
-    val apiResult: MutableLiveData<NetworkResult<LaunchPageResponse>> = _apiResult
+    private val _apiResult = MutableLiveData<NetworkResult<LaunchPageResponse>>(NetworkResult.Loading())
+    val apiResult: LiveData<NetworkResult<LaunchPageResponse>>
+        get() = _apiResult
 
     fun getNextLaunches() {
         viewModelScope.launch {
+            _apiResult.value = NetworkResult.Loading()
             val state: NetworkResult<LaunchPageResponse> = isSuccess {
                 api.fetchNextLaunches(QueryParams(OptionsRequest(20)))
             }

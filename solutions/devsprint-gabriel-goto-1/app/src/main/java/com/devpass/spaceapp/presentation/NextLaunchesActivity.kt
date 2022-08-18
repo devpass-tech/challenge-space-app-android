@@ -47,7 +47,7 @@ class NextLaunchesActivity : AppCompatActivity() {
 
                 is NetworkResult.Error -> {
                     binding.loading.visibility = View.GONE
-                    snackBarError
+                    snackBarError.show()
                 }
             }
         }
