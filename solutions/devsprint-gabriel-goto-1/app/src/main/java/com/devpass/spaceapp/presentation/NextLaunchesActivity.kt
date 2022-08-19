@@ -1,19 +1,18 @@
 package com.devpass.spaceapp.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.lifecycle.viewModelScope
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devpass.spaceapp.R
-import com.devpass.spaceapp.data.model.LaunchesResponse
 import com.devpass.spaceapp.databinding.ActivityMainBinding
 import com.devpass.spaceapp.infra.NetworkResult
 import com.google.android.material.snackbar.Snackbar
 
 class NextLaunchesActivity : AppCompatActivity() {
 
-    private val viewModel = NextLaunchesViewModel()
+    private val viewModel by viewModels<NextLaunchesViewModel>()
     private lateinit var adapter: NextLaunchesAdapter
 
     private val binding: ActivityMainBinding by lazy {
@@ -49,7 +48,6 @@ class NextLaunchesActivity : AppCompatActivity() {
                 is NetworkResult.Error -> {
                     binding.loading.visibility = View.GONE
                     snackBarError
-
                 }
             }
         }
