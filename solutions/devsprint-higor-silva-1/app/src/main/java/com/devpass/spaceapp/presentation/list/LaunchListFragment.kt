@@ -5,7 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.FragmentLaunchListBinding
+import com.devpass.spaceapp.models.NextLaunchesModel
+import com.devpass.spaceapp.presentation.adapter.NextLaunchesAdapter
 
 class LaunchListFragment : Fragment() {
 
@@ -23,5 +27,25 @@ class LaunchListFragment : Fragment() {
         )
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initRecyclerView()
+    }
+
+    fun initRecyclerView() {
+        binding.rvLaunchList.adapter = NextLaunchesAdapter(
+            List(20) {
+                NextLaunchesModel(
+                    image = R.drawable.ic_launcher_background,
+                    title = "CRS 20 $it",
+                    subtitle = "July 03, 2020",
+                    status = "Success",
+                    position = "92"
+                )
+            }
+        )
+        binding.rvLaunchList.layoutManager = LinearLayoutManager(requireContext())
     }
 }
