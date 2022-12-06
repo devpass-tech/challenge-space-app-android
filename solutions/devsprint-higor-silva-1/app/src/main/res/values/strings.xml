@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SpaceApp</string>
+
+    <string-array name="tab_titles">
+        <item>Details</item>
+        <item>Rocket</item>
+        <item>Launchpad</item>
+    </string-array>
 </resources>
