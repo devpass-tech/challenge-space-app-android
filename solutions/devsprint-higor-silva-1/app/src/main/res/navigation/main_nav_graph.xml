@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/launchFragment">
+    app:startDestination="@id/cardDetailsFragment">
 
     <fragment
         android:id="@+id/launchListFragment"
@@ -15,5 +15,10 @@
         android:id="@+id/launchFragment"
         android:name="com.devpass.spaceapp.presentation.launch.LaunchFragment"
         tools:layout="@layout/fragment_launch"/>
+
+    <fragment
+        android:id="@+id/cardDetailsFragment"
+        android:name="com.devpass.spaceapp.presentation.launch.CardDetailsFragment"
+        tools:layout="@layout/fragment_card_details"/>
 
 </navigation>

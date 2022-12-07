@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray_tab">#E0E0E0</color>
+    <color name="blue_view_more">#0085FF</color>
 </resources>

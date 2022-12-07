@@ -26,6 +26,7 @@ class DetailsFragment : Fragment() {
     }
 
     companion object {
+        const val TAG_DETAIS = "tagDetails"
         private const val EXTRA_DETAILS = "details"
 
         fun newInstance(detais: String) = DetailsFragment().apply {
