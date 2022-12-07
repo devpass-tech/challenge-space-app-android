@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintBottom_toTopOf="@id/txtTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:src="@drawable/img_dummy" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@id/txtDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img"
+        tools:text="CRS-20" />
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/txtStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        tools:text="July 03, 2020" />
+
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@{rocket.status}"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/tabLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtDate"
+        tools:text="Success" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:elevation="20dp"
+        app:layout_constraintBottom_toTopOf="@id/viewPager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtStatus"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/black"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextColor="@color/gray_tab"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
