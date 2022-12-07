@@ -37,7 +37,8 @@ class LaunchFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentLaunchBinding.inflate(layoutInflater)
+        //binding = FragmentLaunchBinding.inflate(layoutInflater)
+        binding = FragmentLaunchBinding.inflate(inflater, container, false)
 
         imgFolder = binding.img
         txtTitle = binding.txtTitle
