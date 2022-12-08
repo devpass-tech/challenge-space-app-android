@@ -1,24 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/launchListFragment">
+    app:startDestination="@id/launchFragment">
 
     <fragment
         android:id="@+id/launchListFragment"
         android:name="com.devpass.spaceapp.presentation.list.LaunchListFragment"
-        tools:layout="@layout/fragment_launch_list">
-    </fragment>
+        tools:layout="@layout/fragment_launch_list" />
 
     <fragment
         android:id="@+id/launchFragment"
         android:name="com.devpass.spaceapp.presentation.launch.LaunchFragment"
-        tools:layout="@layout/fragment_launch"/>
+        tools:layout="@layout/fragment_launch">
+        <action
+            android:id="@+id/action_cardDetails_to_details"
+            app:destination="@id/detailsFragment">
+            <argument
+                android:name="content"
+                app:argType="string" />
+        </action>
+    </fragment>
 
     <fragment
         android:id="@+id/cardDetailsFragment"
         android:name="com.devpass.spaceapp.presentation.launch.CardDetailsFragment"
-        tools:layout="@layout/fragment_card_details"/>
+        tools:layout="@layout/fragment_card_details" />
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.devpass.spaceapp.presentation.launch.DetailsFragment"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="content"
+            app:argType="string" />
+    </fragment>
 
 </navigation>
