@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SpaceApp</string>
+    <string name="app_name">Space App \uD83D\uDE80</string>
 
     <string-array name="tab_titles">
         <item>Details</item>
