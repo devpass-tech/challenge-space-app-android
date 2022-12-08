@@ -1,6 +1,7 @@
 package com.devpass.spaceapp.presentation.launch
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +11,11 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.FragmentLaunchBinding
+import com.devpass.spaceapp.models.NextLaunchesModel
 import com.devpass.spaceapp.models.Rocket
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import org.parceler.Parcels
 
 class LaunchFragment : Fragment(){
 
@@ -39,6 +42,10 @@ class LaunchFragment : Fragment(){
     ): View? {
         //binding = FragmentLaunchBinding.inflate(layoutInflater)
         binding = FragmentLaunchBinding.inflate(inflater, container, false)
+
+        val launch = Parcels.unwrap<NextLaunchesModel>(arguments?.getParcelable(EXTRA_LAUNCH))
+
+        Log.d("HSV", launch.toString())
 
         imgFolder = binding.img
         txtTitle = binding.txtTitle
@@ -71,5 +78,16 @@ class LaunchFragment : Fragment(){
         TabLayoutMediator(tabLayout, viewPager){tab, pos->
             tab.text = tabAdapter.getTabTitle(pos)
         }.attach()
+    }
+
+    companion object{
+        private const val EXTRA_LAUNCH = "extraLaunch"
+        const val TAG_LAUNCH = "tagLaunch"
+
+        fun newInstance(launch: NextLaunchesModel) = LaunchFragment().apply {
+            arguments = Bundle().apply {
+                putParcelable(EXTRA_LAUNCH, Parcels.wrap(launch))
+            }
+        }
     }
 }
