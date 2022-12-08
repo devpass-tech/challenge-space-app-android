@@ -6,11 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.devpass.spaceapp.databinding.FragmentDetailsBinding
 
 class DetailsFragment : Fragment() {
 
     private lateinit var txtDetails: TextView
+
+    val args: DetailsFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,19 +23,8 @@ class DetailsFragment : Fragment() {
         val binding = FragmentDetailsBinding.inflate(inflater, container, false)
 
         txtDetails = binding.txtDetails
-        txtDetails.text = arguments?.getString(EXTRA_DETAILS)
+        txtDetails.text = args.textContent
 
         return binding.root
-    }
-
-    companion object {
-        const val TAG_DETAIS = "tagDetails"
-        private const val EXTRA_DETAILS = "details"
-
-        fun newInstance(detais: String) = DetailsFragment().apply {
-            arguments = Bundle().apply {
-                putString(EXTRA_DETAILS, detais)
-            }
-        }
     }
 }
