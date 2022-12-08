@@ -14,27 +14,28 @@
         android:id="@+id/launchFragment"
         android:name="com.devpass.spaceapp.presentation.launch.LaunchFragment"
         tools:layout="@layout/fragment_launch">
-        <action
-            android:id="@+id/action_cardDetails_to_details"
-            app:destination="@id/detailsFragment">
-            <argument
-                android:name="content"
-                app:argType="string" />
-        </action>
+
     </fragment>
 
     <fragment
         android:id="@+id/cardDetailsFragment"
         android:name="com.devpass.spaceapp.presentation.launch.CardDetailsFragment"
-        tools:layout="@layout/fragment_card_details" />
+        tools:layout="@layout/fragment_card_details">
+
+        <action
+            android:id="@+id/action_cardDetailsFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"/>
+
+    </fragment>
 
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.devpass.spaceapp.presentation.launch.DetailsFragment"
         tools:layout="@layout/fragment_details">
+
         <argument
-            android:name="content"
-            app:argType="string" />
+            android:name="textContent"
+            app:argType="string"/>
     </fragment>
 
 </navigation>
