@@ -47,7 +47,8 @@ class LaunchListFragment : Fragment() {
                     status = "Success",
                     position = "92"
                 )
-            }
+            },
+            this::onClickListItem
         )
         binding.rvLaunchList.layoutManager = LinearLayoutManager(requireContext())
     }
