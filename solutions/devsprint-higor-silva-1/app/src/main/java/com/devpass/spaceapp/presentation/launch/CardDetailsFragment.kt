@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_OPEN
+import androidx.navigation.fragment.findNavController
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.FragmentCardDetailsBinding
 
@@ -17,6 +18,8 @@ class CardDetailsFragment : Fragment() {
     private lateinit var txtCardDetails: TextView
     private lateinit var btnViewMore: Button
 
+    private var textDetails = ""
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,10 +27,12 @@ class CardDetailsFragment : Fragment() {
     ): View? {
         val binding = FragmentCardDetailsBinding.inflate(inflater, container, false)
 
+        textDetails = resources.getString(R.string.txt_details_mock)
+
         txtCardDetails = binding.txtCardDetails
         btnViewMore = binding.btnViewMore
 
-        txtCardDetails.text = resources.getString(R.string.txt_details_mock)
+        txtCardDetails.text = textDetails
 
         return binding.root
     }
@@ -35,14 +40,9 @@ class CardDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val fragment = DetailsFragment.newInstance(txtCardDetails.text.toString())
-
         btnViewMore.setOnClickListener {
-            requireActivity().supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.nav_host_fragment, fragment, DetailsFragment.TAG_DETAIS)
-                .setTransition(TRANSIT_FRAGMENT_OPEN)
-                .commit()
+            val action = LaunchFragmentDirections.actionLaunchFragmentToDetailsFragment(textDetails)
+            findNavController().navigate(action)
         }
     }
 }

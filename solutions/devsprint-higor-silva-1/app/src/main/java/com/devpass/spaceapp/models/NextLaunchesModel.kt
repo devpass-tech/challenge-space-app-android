@@ -14,4 +14,3 @@ data class NextLaunchesModel(
     @ParcelConstructor constructor(): this(0, "", "", "", "")
 }
 
-
