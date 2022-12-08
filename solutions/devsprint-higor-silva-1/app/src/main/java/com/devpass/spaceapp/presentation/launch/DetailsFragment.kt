@@ -13,7 +13,7 @@ class DetailsFragment : Fragment() {
 
     private lateinit var txtDetails: TextView
 
-    val args: DetailsFragmentArgs by navArgs()
+    private val args: DetailsFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,

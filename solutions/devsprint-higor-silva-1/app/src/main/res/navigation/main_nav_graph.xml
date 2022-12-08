@@ -15,16 +15,16 @@
         android:name="com.devpass.spaceapp.presentation.launch.LaunchFragment"
         tools:layout="@layout/fragment_launch">
 
+        <action
+            android:id="@+id/action_launchFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"/>
+
     </fragment>
 
     <fragment
         android:id="@+id/cardDetailsFragment"
         android:name="com.devpass.spaceapp.presentation.launch.CardDetailsFragment"
         tools:layout="@layout/fragment_card_details">
-
-        <action
-            android:id="@+id/action_cardDetailsFragment_to_detailsFragment"
-            app:destination="@id/detailsFragment"/>
 
     </fragment>
 

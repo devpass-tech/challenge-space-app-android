@@ -41,7 +41,7 @@ class CardDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btnViewMore.setOnClickListener {
-            val action = CardDetailsFragmentDirections.actionCardDetailsFragmentToDetailsFragment(textDetails)
+            val action = LaunchFragmentDirections.actionLaunchFragmentToDetailsFragment(textDetails)
             findNavController().navigate(action)
         }
     }
