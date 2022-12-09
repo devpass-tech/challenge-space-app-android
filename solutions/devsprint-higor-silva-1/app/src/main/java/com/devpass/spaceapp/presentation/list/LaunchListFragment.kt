@@ -7,12 +7,14 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_OPEN
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.FragmentLaunchListBinding
 import com.devpass.spaceapp.models.NextLaunchesModel
 import com.devpass.spaceapp.presentation.adapter.NextLaunchesAdapter
 import com.devpass.spaceapp.presentation.launch.LaunchFragment
+import com.devpass.spaceapp.presentation.launch.LaunchFragmentDirections
 
 class LaunchListFragment : Fragment() {
 
@@ -53,13 +55,8 @@ class LaunchListFragment : Fragment() {
         binding.rvLaunchList.layoutManager = LinearLayoutManager(requireContext())
     }
 
-    fun onClickListItem(nextLaunchClicked: NextLaunchesModel){
-        val fragment = LaunchFragment.newInstance(nextLaunchClicked)
-
-        requireActivity().supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.nav_host_fragment, fragment, LaunchFragment.TAG_LAUNCH)
-            .setTransition(TRANSIT_FRAGMENT_OPEN)
-            .commit()
+    private fun onClickListItem(nextLaunchClicked: NextLaunchesModel){
+        val action = LaunchListFragmentDirections.actionLaunchListFragmentToLaunchFragment(nextLaunchClicked)
+        findNavController().navigate(action)
     }
 }

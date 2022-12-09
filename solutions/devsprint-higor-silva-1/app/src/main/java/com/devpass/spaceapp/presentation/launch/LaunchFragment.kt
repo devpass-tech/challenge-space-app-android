@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.FragmentLaunchBinding
@@ -20,6 +21,8 @@ import org.parceler.Parcels
 class LaunchFragment : Fragment(){
 
     private lateinit var binding: FragmentLaunchBinding
+
+    private val args: LaunchFragmentArgs by navArgs()
 
     private lateinit var imgFolder: ImageView
     private lateinit var txtTitle: TextView
@@ -43,7 +46,7 @@ class LaunchFragment : Fragment(){
         //binding = FragmentLaunchBinding.inflate(layoutInflater)
         binding = FragmentLaunchBinding.inflate(inflater, container, false)
 
-        val launch = Parcels.unwrap<NextLaunchesModel>(arguments?.getParcelable(EXTRA_LAUNCH))
+        val launch = args.nextLaunches
 
         Log.d("HSV", launch.toString())
 
@@ -78,16 +81,5 @@ class LaunchFragment : Fragment(){
         TabLayoutMediator(tabLayout, viewPager){tab, pos->
             tab.text = tabAdapter.getTabTitle(pos)
         }.attach()
-    }
-
-    companion object{
-        private const val EXTRA_LAUNCH = "extraLaunch"
-        const val TAG_LAUNCH = "tagLaunch"
-
-        fun newInstance(launch: NextLaunchesModel) = LaunchFragment().apply {
-            arguments = Bundle().apply {
-                putParcelable(EXTRA_LAUNCH, Parcels.wrap(launch))
-            }
-        }
     }
 }
