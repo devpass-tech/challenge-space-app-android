@@ -19,7 +19,7 @@ class DetailsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentDetailsBinding.inflate(inflater, container, false)
 
         txtDetails = binding.txtDetails

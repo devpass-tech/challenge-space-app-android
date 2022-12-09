@@ -42,13 +42,10 @@ class LaunchFragment : Fragment(){
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        //binding = FragmentLaunchBinding.inflate(layoutInflater)
+    ): View {
         binding = FragmentLaunchBinding.inflate(inflater, container, false)
 
         val launch = args.nextLaunches
-
-        Log.d("HSV", launch.toString())
 
         imgFolder = binding.img
         txtTitle = binding.txtTitle

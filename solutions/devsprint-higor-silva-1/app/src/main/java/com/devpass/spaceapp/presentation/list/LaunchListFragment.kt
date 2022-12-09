@@ -21,6 +21,7 @@ class LaunchListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         binding = FragmentLaunchListBinding.inflate(
             inflater,
             container,
