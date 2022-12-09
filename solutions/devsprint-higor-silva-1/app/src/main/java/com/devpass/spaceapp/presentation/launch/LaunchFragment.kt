@@ -45,6 +45,8 @@ class LaunchFragment : Fragment(){
     ): View {
         binding = FragmentLaunchBinding.inflate(inflater, container, false)
 
+        requireActivity().title = ""
+
         val launch = args.nextLaunches
 
         imgFolder = binding.img
