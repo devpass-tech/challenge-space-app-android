@@ -16,7 +16,7 @@ class TabsPagerAdapter(
     override fun getItemCount() = 3
 
     override fun createFragment(position: Int) = when (position) {
-        0 -> Fragment()
+        0 -> CardDetailsFragment()
         1 -> Fragment()
         else -> Fragment()
     }
