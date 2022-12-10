@@ -21,6 +21,8 @@ class LaunchListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        requireActivity().title = resources.getString(R.string.app_name)
+
         binding = FragmentLaunchListBinding.inflate(
             inflater,
             container,
