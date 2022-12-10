@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.FragmentLaunchBinding
-import com.devpass.spaceapp.models.Rocket
+import com.devpass.spaceapp.models.Rocket2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -25,7 +25,7 @@ class LaunchFragment : Fragment(){
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager2
 
-    private val rocket = Rocket(
+    private val rocket = Rocket2(
         folder = R.drawable.img_dummy,
         title = "CRS-20",
         date = "July 03, 2020",

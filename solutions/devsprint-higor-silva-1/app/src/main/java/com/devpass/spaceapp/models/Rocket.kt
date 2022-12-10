@@ -1,9 +1,12 @@
 package com.devpass.spaceapp.models
 
+import com.google.gson.annotations.SerializedName
+
 data class Rocket(
-    val folder: Int = 0,
-    val title: String = "",
-    val date: String = "",
-    val status: String = "",
-    val details: String = "",
+    @SerializedName("description")
+    val description: String = "",
+    @SerializedName("rocket_name")
+    val name: String = "",
+    @SerializedName("flickr_images")
+    val images: List<String> = listOf()
 )
