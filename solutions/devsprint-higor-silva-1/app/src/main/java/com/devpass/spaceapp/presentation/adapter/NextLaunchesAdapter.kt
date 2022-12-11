@@ -3,29 +3,42 @@ package com.devpass.spaceapp.presentation.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.ItemLaunchListBinding
-import com.devpass.spaceapp.models.NextLaunchesModel
+import com.devpass.spaceapp.models.Launch
+import com.devpass.spaceapp.models.formatDate
+import java.text.SimpleDateFormat
 
-class NextLaunchesAdapter(private val launchList: List<NextLaunchesModel>) :
+class NextLaunchesAdapter(private val launchList: List<Launch>) :
     RecyclerView.Adapter<NextLaunchesAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemLaunchListBinding.bind(itemView)
         private val circleCropTransformation = CircleCropTransformation()
 
-        fun bind(nextLaunchesModel: NextLaunchesModel) {
-            binding.ivLaunchList.load(nextLaunchesModel.image) {
-                transformations(circleCropTransformation)
+        fun bind(nextLaunchesModel: Launch) {
+            val image = nextLaunchesModel.image.banner
+
+            image?.let {
+                binding.ivLaunchList.load(image) {
+                    transformations(circleCropTransformation)
+                    size(250, 250)
+                }
+            } ?: binding.ivLaunchList.load("https://dummyimage.com/400x400/000/fff") {
+                size(
+                    250,
+                    250
+                )
             }
+
             binding.tvTitleLaunchList.text = nextLaunchesModel.title
-            binding.tvSubtitleLaunchList.text = nextLaunchesModel.subtitle
-            binding.tvStatusLaunchList.text = nextLaunchesModel.status
-            binding.tvPositionLaunchList.text = nextLaunchesModel.position
+            binding.tvSubtitleLaunchList.text = nextLaunchesModel.formatDate()
+            binding.tvStatusLaunchList.text =
+                nextLaunchesModel.status?.let { if (it) "Success" else "Fail" }
+            binding.tvPositionLaunchList.text = nextLaunchesModel.number.toString()
         }
     }
 
