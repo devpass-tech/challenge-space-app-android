@@ -11,6 +11,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.FragmentLaunchBinding
 import com.devpass.spaceapp.models.Rocket2
+import com.devpass.spaceapp.presentation.adapter.TabsPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 

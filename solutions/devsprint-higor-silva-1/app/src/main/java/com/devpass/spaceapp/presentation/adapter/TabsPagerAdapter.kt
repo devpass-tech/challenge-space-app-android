@@ -1,10 +1,11 @@
-package com.devpass.spaceapp.presentation.launch
+package com.devpass.spaceapp.presentation.adapter
 
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.devpass.spaceapp.R
+import com.devpass.spaceapp.presentation.launch.CardDetailsFragment
 
 class TabsPagerAdapter(
     context: Context,
