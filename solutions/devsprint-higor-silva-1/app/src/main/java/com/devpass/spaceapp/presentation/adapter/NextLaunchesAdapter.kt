@@ -37,7 +37,7 @@ class NextLaunchesAdapter(private val launchList: List<Launch>) :
             binding.tvTitleLaunchList.text = nextLaunchesModel.title
             binding.tvSubtitleLaunchList.text = nextLaunchesModel.formatDate()
             binding.tvStatusLaunchList.text =
-                nextLaunchesModel.status?.let { if (it) "Success" else "Fail" }
+                nextLaunchesModel.status?.let { if (it) "Success" else "Fail" } ?: "Inconclusive"
             binding.tvPositionLaunchList.text = nextLaunchesModel.number.toString()
         }
     }

@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.FragmentLaunchListBinding
 import com.devpass.spaceapp.models.Launch
 import com.devpass.spaceapp.presentation.adapter.NextLaunchesAdapter
@@ -110,21 +111,25 @@ class LaunchListFragment : Fragment() {
     private fun caseNoHaveInternet() {
         progressBar.visibility = View.GONE
         txtMessage.visibility = View.VISIBLE
-        txtMessage.text = "Não está conectado a internet"
+        txtMessage.text = resources.getString(R.string.txt_no_connection)
         btnReconnect.visibility = View.VISIBLE
 
         btnReconnect.setOnClickListener {
             if (tryConnect()) {
                 btnReconnect.visibility = View.GONE
             } else {
-                Toast.makeText(requireContext(), "Ainda sem conexão", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    resources.getString(R.string.txt_remains_unconnected),
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
 
     private fun showProgress(show: Boolean) {
         if (show) {
-            txtMessage.text = "Carregando ultimos Lançamentos"
+            txtMessage.text = resources.getString(R.string.txt_loading_launches)
         }
 
         txtMessage.visibility = if (show) View.VISIBLE else View.GONE
