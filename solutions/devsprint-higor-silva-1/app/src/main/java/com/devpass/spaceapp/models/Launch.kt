@@ -1,6 +1,7 @@
 package com.devpass.spaceapp.models
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 import java.text.SimpleDateFormat
 
 data class Launch(
@@ -18,7 +19,7 @@ data class Launch(
     val rocketLaunch: RocketLaunch,
     @SerializedName("details")
     val details: String? = "",
-)
+): Serializable
 
 fun Launch.formatDate(): String{
     //Informa o formato da data que está vindo da api

@@ -12,10 +12,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.FragmentLaunchListBinding
 import com.devpass.spaceapp.models.Launch
+import com.devpass.spaceapp.models.NextLaunchesModel
 import com.devpass.spaceapp.presentation.adapter.NextLaunchesAdapter
 import com.devpass.spaceapp.repository.NetworkChecker
 import com.devpass.spaceapp.repository.Repository
@@ -42,6 +44,7 @@ class LaunchListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         binding = FragmentLaunchListBinding.inflate(
             inflater,
             container,
@@ -78,7 +81,7 @@ class LaunchListFragment : Fragment() {
     }
 
     fun initRecyclerView() {
-        binding.rvLaunchList.adapter = NextLaunchesAdapter(launchList)
+        binding.rvLaunchList.adapter = NextLaunchesAdapter(launchList, this::onClickListItem)
         binding.rvLaunchList.layoutManager = LinearLayoutManager(requireContext())
     }
 
@@ -134,5 +137,15 @@ class LaunchListFragment : Fragment() {
 
         txtMessage.visibility = if (show) View.VISIBLE else View.GONE
         progressBar.visibility = if (show) View.VISIBLE else View.GONE
+        binding.rvLaunchList.adapter = NextLaunchesAdapter(
+            launchList,
+            this::onClickListItem
+        )
+        binding.rvLaunchList.layoutManager = LinearLayoutManager(requireContext())
+    }
+
+    private fun onClickListItem(nextLaunchClicked: Launch){
+        val action = LaunchListFragmentDirections.actionLaunchListFragmentToLaunchFragment(nextLaunchClicked)
+        findNavController().navigate(action)
     }
 }

@@ -12,7 +12,7 @@ import com.devpass.spaceapp.models.Launch
 import com.devpass.spaceapp.models.formatDate
 import java.text.SimpleDateFormat
 
-class NextLaunchesAdapter(private val launchList: List<Launch>) :
+class NextLaunchesAdapter(private val launchList: List<Launch>, private val onClickListItem: (Launch) -> Unit) :
     RecyclerView.Adapter<NextLaunchesAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -51,8 +51,14 @@ class NextLaunchesAdapter(private val launchList: List<Launch>) :
             )
         )
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) =
+    override fun onBindViewHolder(holder: ViewHolder, position: Int){
         holder.bind(launchList[position])
+
+        holder.itemView.setOnClickListener {
+            onClickListItem(launchList[position])
+        }
+    }
+
 
     override fun getItemCount(): Int = launchList.size
 }
