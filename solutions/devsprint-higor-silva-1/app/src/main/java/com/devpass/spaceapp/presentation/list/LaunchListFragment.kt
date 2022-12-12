@@ -137,11 +137,6 @@ class LaunchListFragment : Fragment() {
 
         txtMessage.visibility = if (show) View.VISIBLE else View.GONE
         progressBar.visibility = if (show) View.VISIBLE else View.GONE
-        binding.rvLaunchList.adapter = NextLaunchesAdapter(
-            launchList,
-            this::onClickListItem
-        )
-        binding.rvLaunchList.layoutManager = LinearLayoutManager(requireContext())
     }
 
     private fun onClickListItem(nextLaunchClicked: Launch){
