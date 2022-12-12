@@ -54,6 +54,16 @@
             app:layout_constraintTop_toBottomOf="@id/progressBar"
             tools:text="Loading" />
 
+        <Button
+            android:id="@+id/btnReconnect"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtMessage"
+            android:text="Reconectar"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

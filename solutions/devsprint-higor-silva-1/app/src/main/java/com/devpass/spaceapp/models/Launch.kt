@@ -28,7 +28,7 @@ fun Launch.formatDate(): String{
 
     //Informa o formato da data que queremos
     val formated = SimpleDateFormat("MMMM dd, yyyy")
-    //Formata a data como um straing
+    //Formata a data como um string
     return formated.format(dateLong)
 }
 

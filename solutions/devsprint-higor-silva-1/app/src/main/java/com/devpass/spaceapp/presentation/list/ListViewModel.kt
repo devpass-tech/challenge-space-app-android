@@ -15,14 +15,10 @@ class ListViewModel(private val repository: Repository) : ViewModel() {
     val launchList = MutableLiveData<List<Launch>>()
     val isLoading = MutableLiveData<Boolean>()
 
-    init {
-        getLaunchs()
-    }
-
      fun getLaunchs() {
         isLoading.value = true
 
-        viewModelScope.launch(Dispatchers.Main.immediate) {
+        viewModelScope.launch {
             val response = repository.getLaunchs()
 
             if (response.isSuccessful) {
