@@ -5,12 +5,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.devpass.spaceapp.models.Launch
 import com.devpass.spaceapp.repository.Repository
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import okhttp3.internal.wait
 
-class ListViewModel(private val repository: Repository) : ViewModel() {
+class LaunchListViewModel(private val repository: Repository) : ViewModel() {
+
     val errorMessage = MutableLiveData<String>()
     val launchList = MutableLiveData<List<Launch>>()
     val isLoading = MutableLiveData<Boolean>()
@@ -19,7 +17,7 @@ class ListViewModel(private val repository: Repository) : ViewModel() {
         isLoading.value = true
 
         viewModelScope.launch {
-            val response = repository.getLaunchs()
+            val response = repository.getLaunches()
 
             if (response.isSuccessful) {
                 launchList.postValue(response.body())
