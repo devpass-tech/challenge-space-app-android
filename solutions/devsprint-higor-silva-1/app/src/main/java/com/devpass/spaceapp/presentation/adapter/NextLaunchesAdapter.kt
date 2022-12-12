@@ -11,7 +11,7 @@ import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.ItemLaunchListBinding
 import com.devpass.spaceapp.models.NextLaunchesModel
 
-class NextLaunchesAdapter(private val launchList: List<NextLaunchesModel>) :
+class NextLaunchesAdapter(private val launchList: List<NextLaunchesModel>, private val onClickListItem: (NextLaunchesModel) -> Unit) :
     RecyclerView.Adapter<NextLaunchesAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -38,8 +38,14 @@ class NextLaunchesAdapter(private val launchList: List<NextLaunchesModel>) :
             )
         )
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) =
+    override fun onBindViewHolder(holder: ViewHolder, position: Int){
         holder.bind(launchList[position])
+
+        holder.itemView.setOnClickListener {
+            onClickListItem(launchList[position])
+        }
+    }
+
 
     override fun getItemCount(): Int = launchList.size
 }

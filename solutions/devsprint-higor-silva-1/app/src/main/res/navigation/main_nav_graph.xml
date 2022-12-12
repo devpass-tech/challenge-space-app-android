@@ -3,12 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/launchFragment">
+    app:startDestination="@id/launchListFragment">
 
     <fragment
         android:id="@+id/launchListFragment"
         android:name="com.devpass.spaceapp.presentation.list.LaunchListFragment"
-        tools:layout="@layout/fragment_launch_list" />
+        tools:layout="@layout/fragment_launch_list">
+
+        <action
+            android:id="@+id/action_launchListFragment_to_launchFragment"
+            app:destination="@id/launchFragment"
+            app:enterAnim="@anim/to_left"/>
+
+    </fragment>
 
     <fragment
         android:id="@+id/launchFragment"
@@ -18,6 +25,10 @@
         <action
             android:id="@+id/action_launchFragment_to_detailsFragment"
             app:destination="@id/detailsFragment"/>
+
+        <argument
+            android:name="nextLaunches"
+            app:argType="com.devpass.spaceapp.models.NextLaunchesModel"/>
 
     </fragment>
 

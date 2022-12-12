@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.FragmentLaunchListBinding
@@ -21,6 +21,7 @@ class LaunchListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         binding = FragmentLaunchListBinding.inflate(
             inflater,
             container,
@@ -45,8 +46,14 @@ class LaunchListFragment : Fragment() {
                     status = "Success",
                     position = "92"
                 )
-            }
+            },
+            this::onClickListItem
         )
         binding.rvLaunchList.layoutManager = LinearLayoutManager(requireContext())
+    }
+
+    private fun onClickListItem(nextLaunchClicked: NextLaunchesModel){
+        val action = LaunchListFragmentDirections.actionLaunchListFragmentToLaunchFragment(nextLaunchClicked)
+        findNavController().navigate(action)
     }
 }
