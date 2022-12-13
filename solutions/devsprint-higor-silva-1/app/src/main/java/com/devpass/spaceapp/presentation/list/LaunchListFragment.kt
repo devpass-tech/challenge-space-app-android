@@ -12,6 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devpass.spaceapp.R
@@ -19,15 +20,12 @@ import com.devpass.spaceapp.databinding.FragmentLaunchListBinding
 import com.devpass.spaceapp.models.Launch
 import com.devpass.spaceapp.presentation.adapter.NextLaunchesAdapter
 import com.devpass.spaceapp.repository.NetworkChecker
-import com.devpass.spaceapp.repository.Repository
-import com.devpass.spaceapp.repository.RetrofitClient
-import com.devpass.spaceapp.repository.SpacexApi
+import dagger.hilt.android.AndroidEntryPoint
 
-class LaunchListFragment : Fragment() {
+@AndroidEntryPoint
+class LaunchListFragment: Fragment() {
 
-    private lateinit var viewModel: LaunchListViewModel
-    private lateinit var repository: Repository
-    private lateinit var api: SpacexApi
+    private val viewModel: LaunchListViewModel by viewModels()
 
     private var launchList = arrayListOf<Launch>()
 
@@ -37,14 +35,6 @@ class LaunchListFragment : Fragment() {
     private lateinit var btnReconnect: Button
 
     private lateinit var networkChecker: NetworkChecker
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        api = RetrofitClient.client
-        repository = Repository(api)
-        viewModel = LaunchListViewModel(repository)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -74,17 +64,16 @@ class LaunchListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.isLoading.observe(requireActivity()) {
+        viewModel.isLoading.observe(viewLifecycleOwner) {
             showProgress(it)
         }
 
-        viewModel.launchList.observe(requireActivity()) { viewModelLaunchList ->
+        viewModel.launchList.observe(viewLifecycleOwner) { viewModelLaunchList ->
             launchList.addAll(viewModelLaunchList)
-            Log.d("HSV", launchList.joinToString("\n"))
             loadLaunchList()
         }
 
-        viewModel.errorMessage.observe(requireActivity()) {
+        viewModel.errorMessage.observe(viewLifecycleOwner) {
             txtMessage.visibility = View.VISIBLE
             txtMessage.text = it
         }

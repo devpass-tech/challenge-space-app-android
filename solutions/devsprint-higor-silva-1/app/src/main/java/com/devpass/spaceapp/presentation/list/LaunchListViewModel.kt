@@ -5,9 +5,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.devpass.spaceapp.models.Launch
 import com.devpass.spaceapp.repository.Repository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class LaunchListViewModel(private val repository: Repository) : ViewModel() {
+@HiltViewModel
+class LaunchListViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
 
     val errorMessage = MutableLiveData<String>()
     val launchList = MutableLiveData<List<Launch>>()

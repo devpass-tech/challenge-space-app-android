@@ -17,7 +17,9 @@ import com.devpass.spaceapp.models.getStatus
 import com.devpass.spaceapp.presentation.adapter.TabsPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LaunchFragment : Fragment() {
 
     private lateinit var binding: FragmentLaunchBinding

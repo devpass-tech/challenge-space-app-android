@@ -1,6 +1,8 @@
 package com.devpass.spaceapp.repository
 
-class Repository(private val service: SpacexApi) {
+import javax.inject.Inject
+
+class Repository @Inject constructor(private val service: SpacexApi) {
 
     suspend fun getLaunches() = service.getLaunches()
 }
