@@ -104,6 +104,12 @@ class LaunchListFragment : Fragment() {
             viewModel.getLaunchs()
         } else {
             caseNoHaveInternet()
+
+            Toast.makeText(
+                requireContext(),
+                resources.getString(R.string.txt_remains_unconnected),
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
     private fun caseNoHaveInternet() {
@@ -116,11 +122,6 @@ class LaunchListFragment : Fragment() {
             btnReconnect.visibility = View.GONE
             tryConnect()
 
-            Toast.makeText(
-                requireContext(),
-                resources.getString(R.string.txt_remains_unconnected),
-                Toast.LENGTH_SHORT
-            ).show()
         }
     }
 

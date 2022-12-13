@@ -9,8 +9,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
+import coil.load
 import com.devpass.spaceapp.databinding.FragmentLaunchBinding
 import com.devpass.spaceapp.models.formatDate
+import com.devpass.spaceapp.models.getImgLink
+import com.devpass.spaceapp.models.getStatus
 import com.devpass.spaceapp.presentation.adapter.TabsPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -51,10 +54,10 @@ class LaunchFragment : Fragment() {
     private fun setLaunchProperties() {
         val launch = args.selectedLaunch
 
-        //imgFolder.setImageResource(launch.image.banner)
+        imgFolder.load(launch.getImgLink())
         txtTitle.text = launch.title
         txtDate.text = launch.formatDate()
-        txtStatus.text = launch.details
+        txtStatus.text = launch.getStatus(requireContext())
     }
 
     private fun fillTabLayout() {

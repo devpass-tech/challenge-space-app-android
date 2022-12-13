@@ -2,7 +2,6 @@ package com.devpass.spaceapp.models
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
-import java.text.SimpleDateFormat
 
 data class Launch(
     @SerializedName("links")
@@ -19,20 +18,7 @@ data class Launch(
     val rocketLaunch: RocketLaunch,
     @SerializedName("details")
     val details: String? = "",
-): Serializable
-
-// Utils.kt
-fun Launch.formatDate(): String{
-    //Informa o formato da data que está vindo da api
-    val formatterApi = SimpleDateFormat("yyyy-MM-dd")
-    //Transforma em um long
-    val dateLong = formatterApi.parse(date.substringBefore("T"))?.time
-
-    //Informa o formato da data que queremos
-    val formated = SimpleDateFormat("MMMM dd, yyyy")
-    //Formata a data como um string
-    return formated.format(dateLong)
-}
+) : Serializable
 
 data class RocketLaunch(
     @SerializedName("rocket_id")
