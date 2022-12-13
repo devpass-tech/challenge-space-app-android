@@ -40,6 +40,8 @@ class LaunchFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        requireActivity().title = ""
+
         binding = FragmentLaunchBinding.inflate(inflater, container, false)
 
         imgFolder = binding.img
