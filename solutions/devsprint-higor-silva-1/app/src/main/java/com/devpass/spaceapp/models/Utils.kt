@@ -16,12 +16,11 @@ fun Launch.formatDate(): String {
     return formated.format(dateLong)
 }
 
-fun Launch.getImgLink(): String {
-    return image.banner ?: "https://dummyimage.com/400x400/000/fff"
-}
+fun Launch.getImgLink() =
+    image.banner ?: "https://dummyimage.com/400x400/000/fff"
 
-fun Launch.getStatus(context: Context): String {
-    return status?.let {
-        if (it) context.getString(R.string.success) else context.getString(R.string.fail)
+fun Launch.getStatus(context: Context) =
+    status?.let {
+        if (it) context.getString(R.string.success)
+        else context.getString(R.string.fail)
     } ?: context.getString(R.string.uknown)
-}

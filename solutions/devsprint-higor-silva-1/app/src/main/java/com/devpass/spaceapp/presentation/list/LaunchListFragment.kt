@@ -1,8 +1,6 @@
 package com.devpass.spaceapp.presentation.list
 
-import android.net.ConnectivityManager
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +8,6 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -21,9 +18,13 @@ import com.devpass.spaceapp.models.Launch
 import com.devpass.spaceapp.presentation.adapter.NextLaunchesAdapter
 import com.devpass.spaceapp.repository.NetworkChecker
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
-class LaunchListFragment: Fragment() {
+class LaunchListFragment : Fragment() {
+
+    @Inject
+    lateinit var networkChecker: NetworkChecker
 
     private val viewModel: LaunchListViewModel by viewModels()
 
@@ -34,8 +35,6 @@ class LaunchListFragment: Fragment() {
     private lateinit var txtMessage: TextView
     private lateinit var btnReconnect: Button
 
-    private lateinit var networkChecker: NetworkChecker
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -45,13 +44,6 @@ class LaunchListFragment: Fragment() {
             inflater,
             container,
             false
-        )
-
-        networkChecker = NetworkChecker(
-            getSystemService(
-                requireContext(),
-                ConnectivityManager::class.java
-            )
         )
 
         progressBar = binding.progressBar

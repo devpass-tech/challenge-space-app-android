@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
 import coil.load
 import com.devpass.spaceapp.databinding.FragmentLaunchBinding
+import com.devpass.spaceapp.models.Launch
 import com.devpass.spaceapp.models.formatDate
 import com.devpass.spaceapp.models.getImgLink
 import com.devpass.spaceapp.models.getStatus
@@ -47,14 +49,15 @@ class LaunchFragment : Fragment() {
         tabLayout = binding.tabLayout
         viewPager = binding.viewPager
 
-        setLaunchProperties()
-        fillTabLayout()
+        val launch = args.selectedLaunch
+
+        setLaunchProperties(launch)
+        fillTabLayout(launch)
 
         return binding.root
     }
 
-    private fun setLaunchProperties() {
-        val launch = args.selectedLaunch
+    private fun setLaunchProperties(launch: Launch) {
 
         imgFolder.load(launch.getImgLink())
         txtTitle.text = launch.title
@@ -62,8 +65,8 @@ class LaunchFragment : Fragment() {
         txtStatus.text = launch.getStatus(requireContext())
     }
 
-    private fun fillTabLayout() {
-        val tabAdapter = TabsPagerAdapter(requireContext(), requireActivity())
+    private fun fillTabLayout(launch: Launch) {
+        val tabAdapter = TabsPagerAdapter(requireContext(), requireActivity(), launch)
 
         viewPager.apply {
             adapter = tabAdapter

@@ -26,11 +26,13 @@ class NextLaunchesAdapter(
 
         fun bind(selectedLaunch: Launch) {
 
-            binding.ivLaunchList.load(selectedLaunch.getImgLink()) { size(250, 250) }
-            binding.tvTitleLaunchList.text = selectedLaunch.title
-            binding.tvSubtitleLaunchList.text = selectedLaunch.formatDate()
-            binding.tvStatusLaunchList.text = selectedLaunch.getStatus(context)
-            binding.tvPositionLaunchList.text = selectedLaunch.number.toString()
+            binding.apply {
+                ivLaunchList.load(selectedLaunch.getImgLink()) { size(250, 250) }
+                tvTitleLaunchList.text = selectedLaunch.title
+                tvSubtitleLaunchList.text = selectedLaunch.formatDate()
+                tvStatusLaunchList.text = selectedLaunch.getStatus(context)
+                tvPositionLaunchList.text = context.resources.getString(R.string.txt_number_launch).format(selectedLaunch.number)
+            }
         }
     }
 
