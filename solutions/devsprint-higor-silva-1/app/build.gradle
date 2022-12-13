@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -43,7 +44,9 @@ android {
 
 dependencies {
 
-
+    //Hilt
+    implementation 'com.google.dagger:hilt-android:2.44'
+    kapt 'com.google.dagger:hilt-android-compiler:2.44'
 
     //Retrofit2
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

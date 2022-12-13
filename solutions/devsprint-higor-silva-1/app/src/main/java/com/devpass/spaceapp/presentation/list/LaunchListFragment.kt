@@ -44,21 +44,6 @@ class LaunchListFragment : Fragment() {
         api = RetrofitClient.client
         repository = Repository(api)
         viewModel = LaunchListViewModel(repository)
-
-        viewModel.isLoading.observe(this) {
-            showProgress(it)
-        }
-
-        viewModel.launchList.observe(this) { viewModelLaunchList ->
-            launchList.addAll(viewModelLaunchList)
-            Log.d("HSV", launchList.joinToString("\n"))
-            loadLaunchList()
-        }
-
-        viewModel.errorMessage.observe(this) {
-            txtMessage.visibility = View.VISIBLE
-            txtMessage.text = it
-        }
     }
 
     override fun onCreateView(
@@ -84,6 +69,25 @@ class LaunchListFragment : Fragment() {
         btnReconnect = binding.btnReconnect
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.isLoading.observe(requireActivity()) {
+            showProgress(it)
+        }
+
+        viewModel.launchList.observe(requireActivity()) { viewModelLaunchList ->
+            launchList.addAll(viewModelLaunchList)
+            Log.d("HSV", launchList.joinToString("\n"))
+            loadLaunchList()
+        }
+
+        viewModel.errorMessage.observe(requireActivity()) {
+            txtMessage.visibility = View.VISIBLE
+            txtMessage.text = it
+        }
     }
 
     override fun onResume() {
