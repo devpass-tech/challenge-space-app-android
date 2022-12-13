@@ -1,6 +1,7 @@
 package com.devpass.spaceapp.presentation.list
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -64,6 +65,7 @@ class LaunchListFragment : Fragment() {
 
         viewModel.launchList.observe(viewLifecycleOwner) { viewModelLaunchList ->
             launchList.addAll(viewModelLaunchList)
+            Log.d("HSV", launchList.joinToString("\n"))
             loadLaunchList()
         }
 

@@ -18,6 +18,8 @@ data class Launch(
     val rocketLaunch: RocketLaunch,
     @SerializedName("details")
     val details: String? = "",
+    @SerializedName("launch_site")
+    val launchpadId: LaunchpadId?
 ) : Serializable
 
 data class RocketLaunch(
@@ -28,4 +30,9 @@ data class RocketLaunch(
 data class Links(
     @SerializedName("mission_patch_small")
     val banner: String? = ""
+)
+
+data class LaunchpadId(
+    @SerializedName("site_id")
+    val id: String = ""
 )
