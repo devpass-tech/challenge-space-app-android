@@ -12,7 +12,8 @@ class TabsPagerAdapter(
     activity: FragmentActivity
 ) : FragmentStateAdapter(activity) {
 
-    private val tabTitles: Array<String> = context.resources.getStringArray(R.array.tab_titles)
+    private val tabTitles: Array<String> =
+        context.resources.getStringArray(R.array.tab_titles)
 
     override fun getItemCount() = 3
 

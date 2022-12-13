@@ -15,4 +15,7 @@
     <string name="txt_loading_launches">Loading last launches</string>
     <string name="txt_remains_unconnected">Remains unconnected</string>
     <string name="txt_btn_try_reconnect">Try reconnect</string>
+    <string name="success">Success</string>
+    <string name="fail">Fail</string>
+    <string name="uknown">Unknown</string>
 </resources>

@@ -21,6 +21,7 @@ data class Launch(
     val details: String? = "",
 ): Serializable
 
+// Utils.kt
 fun Launch.formatDate(): String{
     //Informa o formato da data que está vindo da api
     val formatterApi = SimpleDateFormat("yyyy-MM-dd")
