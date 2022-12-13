@@ -1,31 +1,38 @@
 package com.devpass.spaceapp.presentation.adapter
 
+import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import coil.transform.CircleCropTransformation
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.ItemLaunchListBinding
-import com.devpass.spaceapp.models.NextLaunchesModel
+import com.devpass.spaceapp.models.Launch
+import com.devpass.spaceapp.models.formatDate
+import com.devpass.spaceapp.models.getImgLink
+import com.devpass.spaceapp.models.getStatus
 
-class NextLaunchesAdapter(private val launchList: List<NextLaunchesModel>) :
+class NextLaunchesAdapter(
+    private val context: Context,
+    private val launchList: List<Launch>,
+    private val onClickListItem: (Launch) -> Unit
+) :
     RecyclerView.Adapter<NextLaunchesAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemLaunchListBinding.bind(itemView)
-        private val circleCropTransformation = CircleCropTransformation()
 
-        fun bind(nextLaunchesModel: NextLaunchesModel) {
-            binding.ivLaunchList.load(nextLaunchesModel.image) {
-                transformations(circleCropTransformation)
+        fun bind(selectedLaunch: Launch) {
+
+            binding.apply {
+                ivLaunchList.load(selectedLaunch.getImgLink()) { size(250, 250) }
+                tvTitleLaunchList.text = selectedLaunch.title
+                tvSubtitleLaunchList.text = selectedLaunch.formatDate()
+                tvStatusLaunchList.text = selectedLaunch.getStatus(context)
+                tvPositionLaunchList.text = context.resources.getString(R.string.txt_number_launch).format(selectedLaunch.number)
             }
-            binding.tvTitleLaunchList.text = nextLaunchesModel.title
-            binding.tvSubtitleLaunchList.text = nextLaunchesModel.subtitle
-            binding.tvStatusLaunchList.text = nextLaunchesModel.status
-            binding.tvPositionLaunchList.text = nextLaunchesModel.position
         }
     }
 
@@ -38,8 +45,12 @@ class NextLaunchesAdapter(private val launchList: List<NextLaunchesModel>) :
             )
         )
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) =
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(launchList[position])
+        holder.itemView.setOnClickListener {
+            onClickListItem(launchList[position])
+        }
+    }
 
     override fun getItemCount(): Int = launchList.size
 }

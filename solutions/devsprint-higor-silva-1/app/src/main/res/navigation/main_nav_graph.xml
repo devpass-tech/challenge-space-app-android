@@ -8,7 +8,14 @@
     <fragment
         android:id="@+id/launchListFragment"
         android:name="com.devpass.spaceapp.presentation.list.LaunchListFragment"
-        tools:layout="@layout/fragment_launch_list" />
+        tools:layout="@layout/fragment_launch_list">
+
+        <action
+            android:id="@+id/action_launchListFragment_to_launchFragment"
+            app:destination="@id/launchFragment"
+            app:enterAnim="@anim/to_left" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/launchFragment"
@@ -19,12 +26,20 @@
             android:id="@+id/action_launchFragment_to_detailsFragment"
             app:destination="@id/detailsFragment"/>
 
+        <argument
+            android:name="selectedLaunch"
+            app:argType="com.devpass.spaceapp.models.Launch"/>
+
     </fragment>
 
     <fragment
         android:id="@+id/cardDetailsFragment"
         android:name="com.devpass.spaceapp.presentation.launch.CardDetailsFragment"
         tools:layout="@layout/fragment_card_details">
+
+        <argument
+            android:name="selectedLaunch"
+            app:argType="com.devpass.spaceapp.models.Launch"/>
 
     </fragment>
 
