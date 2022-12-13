@@ -3,7 +3,9 @@ package com.devpass.spaceapp.presentation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.devpass.spaceapp.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

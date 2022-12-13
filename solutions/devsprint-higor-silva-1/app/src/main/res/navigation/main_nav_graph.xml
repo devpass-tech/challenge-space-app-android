@@ -27,8 +27,8 @@
             app:destination="@id/detailsFragment"/>
 
         <argument
-            android:name="nextLaunches"
-            app:argType="com.devpass.spaceapp.models.NextLaunchesModel"/>
+            android:name="selectedLaunch"
+            app:argType="com.devpass.spaceapp.models.Launch"/>
 
     </fragment>
 
@@ -36,6 +36,10 @@
         android:id="@+id/cardDetailsFragment"
         android:name="com.devpass.spaceapp.presentation.launch.CardDetailsFragment"
         tools:layout="@layout/fragment_card_details">
+
+        <argument
+            android:name="selectedLaunch"
+            app:argType="com.devpass.spaceapp.models.Launch"/>
 
     </fragment>
 

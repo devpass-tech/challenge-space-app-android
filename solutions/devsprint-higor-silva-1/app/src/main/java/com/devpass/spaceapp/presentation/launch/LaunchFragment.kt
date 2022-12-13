@@ -1,24 +1,28 @@
 package com.devpass.spaceapp.presentation.launch
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
-import com.devpass.spaceapp.R
+import coil.load
 import com.devpass.spaceapp.databinding.FragmentLaunchBinding
-import com.devpass.spaceapp.models.NextLaunchesModel
-import com.devpass.spaceapp.models.Rocket
+import com.devpass.spaceapp.models.Launch
+import com.devpass.spaceapp.models.formatDate
+import com.devpass.spaceapp.models.getImgLink
+import com.devpass.spaceapp.models.getStatus
+import com.devpass.spaceapp.presentation.adapter.TabsPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import org.parceler.Parcels
+import dagger.hilt.android.AndroidEntryPoint
 
-class LaunchFragment : Fragment(){
+@AndroidEntryPoint
+class LaunchFragment : Fragment() {
 
     private lateinit var binding: FragmentLaunchBinding
 
@@ -31,21 +35,12 @@ class LaunchFragment : Fragment(){
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager2
 
-    private val rocket = Rocket(
-        folder = R.drawable.img_dummy,
-        title = "CRS-20",
-        date = "July 03, 2020",
-        status = "Success"
-    )
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentLaunchBinding.inflate(inflater, container, false)
-
-        val launch = args.nextLaunches
 
         imgFolder = binding.img
         txtTitle = binding.txtTitle
@@ -54,28 +49,31 @@ class LaunchFragment : Fragment(){
         tabLayout = binding.tabLayout
         viewPager = binding.viewPager
 
-        fillFragmentLayout()
-        fillTabLayout()
+        val launch = args.selectedLaunch
+
+        setLaunchProperties(launch)
+        fillTabLayout(launch)
 
         return binding.root
     }
 
-    private fun fillFragmentLayout(){
-        imgFolder.setImageResource(rocket.folder)
-        txtTitle.text = rocket.title
-        txtDate.text = rocket.date
-        txtStatus.text = rocket.status
+    private fun setLaunchProperties(launch: Launch) {
+
+        imgFolder.load(launch.getImgLink())
+        txtTitle.text = launch.title
+        txtDate.text = launch.formatDate()
+        txtStatus.text = launch.getStatus(requireContext())
     }
 
-    private fun fillTabLayout(){
-        val tabAdapter = TabsPagerAdapter(requireContext(), requireActivity())
+    private fun fillTabLayout(launch: Launch) {
+        val tabAdapter = TabsPagerAdapter(requireContext(), requireActivity(), launch)
 
         viewPager.apply {
             adapter = tabAdapter
             currentItem = 0
         }
 
-        TabLayoutMediator(tabLayout, viewPager){tab, pos->
+        TabLayoutMediator(tabLayout, viewPager) { tab, pos ->
             tab.text = tabAdapter.getTabTitle(pos)
         }.attach()
     }
