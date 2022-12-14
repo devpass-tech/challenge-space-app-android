@@ -7,14 +7,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
 import coil.load
 import com.devpass.spaceapp.databinding.FragmentLaunchBinding
-import com.devpass.spaceapp.models.Launch
-import com.devpass.spaceapp.models.formatDate
-import com.devpass.spaceapp.models.getImgLink
-import com.devpass.spaceapp.models.getStatus
+import com.devpass.spaceapp.models.*
 import com.devpass.spaceapp.presentation.adapter.TabsPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -23,7 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class LaunchFragment : Fragment() {
 
-    private lateinit var binding: FragmentLaunchBinding
+    private val viewModel: LaunchViewModel by viewModels()
 
     private val args: LaunchFragmentArgs by navArgs()
 
@@ -33,6 +31,7 @@ class LaunchFragment : Fragment() {
     private lateinit var txtStatus: TextView
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager2
+    private lateinit var launch: Launch
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,7 +40,13 @@ class LaunchFragment : Fragment() {
     ): View {
         requireActivity().title = ""
 
-        binding = FragmentLaunchBinding.inflate(inflater, container, false)
+        val binding = FragmentLaunchBinding.inflate(inflater, container, false)
+
+        //val allClasses = AllClasses()
+        launch = args.selectedLaunch
+        //allClasses.launch = launch
+
+        viewModel.getRocket(launch.rocketLaunch.rocket_id)
 
         imgFolder = binding.img
         txtTitle = binding.txtTitle
@@ -50,12 +55,18 @@ class LaunchFragment : Fragment() {
         tabLayout = binding.tabLayout
         viewPager = binding.viewPager
 
-        val launch = args.selectedLaunch
-
         setLaunchProperties(launch)
-        fillTabLayout(launch)
+
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.selectedRocketDetails.observe(viewLifecycleOwner) {
+            fillTabLayout(launch.setRocket(it))
+        }
     }
 
     private fun setLaunchProperties(launch: Launch) {

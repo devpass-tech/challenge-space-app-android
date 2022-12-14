@@ -8,6 +8,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.models.Launch
 import com.devpass.spaceapp.presentation.launch.CardDetailsFragment
+import com.devpass.spaceapp.presentation.launch.CardRocketFragment
 
 class TabsPagerAdapter(
     context: Context,
@@ -26,7 +27,12 @@ class TabsPagerAdapter(
                 putSerializable("selectedLaunch", launch)
             }
         }
-        1 -> Fragment()
+
+        1 -> CardRocketFragment().apply {
+            arguments = Bundle().apply {
+                putSerializable("selectedRocket", launch.rocketDetails)
+            }
+        }
         else -> Fragment()
     }
 

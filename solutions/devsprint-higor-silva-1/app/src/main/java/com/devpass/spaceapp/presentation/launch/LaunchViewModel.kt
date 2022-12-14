@@ -1,39 +1,36 @@
-package com.devpass.spaceapp.presentation.list
+package com.devpass.spaceapp.presentation.launch
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.devpass.spaceapp.models.Launch
+import com.devpass.spaceapp.models.RocketDetails
 import com.devpass.spaceapp.repository.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class LaunchListViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
+class LaunchViewModel @Inject constructor(
+    private val repository: Repository
+) : ViewModel() {
 
     val errorMessage = MutableLiveData<String>()
-    val launchList = MutableLiveData<List<Launch>>()
-    val isLoading = MutableLiveData<Boolean>()
+    val selectedRocketDetails = MutableLiveData<RocketDetails>()
 
-     fun getLaunches() {
-        isLoading.value = true
-
+    fun getRocket(rocketId: String) {
         viewModelScope.launch {
-            val response = repository.getLaunches()
+
+            val response = repository.getRocketDetails(rocketId)
 
             if (response.isSuccessful) {
-                launchList.postValue(response.body())
-                isLoading.value = false
+                selectedRocketDetails.postValue(response.body())
             } else {
                 onError("Error: ${response.message()}")
             }
         }
     }
 
-    private fun onError(msgError: String) {
+    private fun onError(msgError: String){
         errorMessage.value = msgError
-        isLoading.value = false
     }
-
 }
