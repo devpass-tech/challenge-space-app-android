@@ -19,7 +19,7 @@ data class Launch(
     @SerializedName("details")
     val details: String? = "",
     @SerializedName("launch_site")
-    val launchpadId: LaunchpadId?,
+    val launchpadId: LaunchpadId,
     val rocketDetails: RocketDetails? = null,
     val launchpadDetails: LaunchpadDetails? = null
 ) : Serializable

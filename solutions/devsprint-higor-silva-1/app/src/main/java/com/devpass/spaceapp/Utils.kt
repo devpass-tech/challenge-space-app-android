@@ -1,7 +1,9 @@
-package com.devpass.spaceapp.models
+package com.devpass.spaceapp
 
 import android.content.Context
-import com.devpass.spaceapp.R
+import com.devpass.spaceapp.models.Launch
+import com.devpass.spaceapp.models.LaunchpadDetails
+import com.devpass.spaceapp.models.RocketDetails
 import java.text.SimpleDateFormat
 
 fun Launch.formatDate(): String {

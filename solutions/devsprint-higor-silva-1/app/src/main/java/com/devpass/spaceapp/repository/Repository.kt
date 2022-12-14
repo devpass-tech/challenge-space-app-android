@@ -8,4 +8,5 @@ class Repository @Inject constructor(private val service: SpacexApi) {
 
     suspend fun getLaunches() = service.getLaunches()
     suspend fun getRocketDetails(rocketId: String) = service.getRocketDetails(rocketId)
+    suspend fun getLaunchpadDetails(launchpadId: String) = service.getLaunchpadDetails(launchpadId)
 }

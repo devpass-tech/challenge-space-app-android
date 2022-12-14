@@ -1,6 +1,7 @@
 package com.devpass.spaceapp.presentation.launch
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,12 +12,16 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
 import coil.load
+import com.devpass.spaceapp.*
 import com.devpass.spaceapp.databinding.FragmentLaunchBinding
 import com.devpass.spaceapp.models.*
 import com.devpass.spaceapp.presentation.adapter.TabsPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.joinAll
 
 @AndroidEntryPoint
 class LaunchFragment : Fragment() {
@@ -42,11 +47,10 @@ class LaunchFragment : Fragment() {
 
         val binding = FragmentLaunchBinding.inflate(inflater, container, false)
 
-        //val allClasses = AllClasses()
         launch = args.selectedLaunch
-        //allClasses.launch = launch
 
         viewModel.getRocket(launch.rocketLaunch.rocket_id)
+        viewModel.getLaunchpad(launch.launchpadId.id)
 
         imgFolder = binding.img
         txtTitle = binding.txtTitle
@@ -57,7 +61,6 @@ class LaunchFragment : Fragment() {
 
         setLaunchProperties(launch)
 
-
         return binding.root
     }
 
@@ -65,7 +68,19 @@ class LaunchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.selectedRocketDetails.observe(viewLifecycleOwner) {
-            fillTabLayout(launch.setRocket(it))
+            launch = launch.setRocket(it)
+            viewModel.setIsFinishGetRocket(true)
+        }
+
+        viewModel.selectedLaunchpadDetails.observe(viewLifecycleOwner) {
+            launch = launch.setLaunchpad(it)
+            viewModel.setIsFinishGetLaunchpad(true)
+        }
+
+        viewModel.isFinish.observe(viewLifecycleOwner){
+            if(it){
+                fillTabLayout(launch)
+            }
         }
     }
 
@@ -78,6 +93,7 @@ class LaunchFragment : Fragment() {
     }
 
     private fun fillTabLayout(launch: Launch) {
+
         val tabAdapter = TabsPagerAdapter(requireContext(), requireActivity(), launch)
 
         viewPager.apply {
@@ -90,3 +106,7 @@ class LaunchFragment : Fragment() {
         }.attach()
     }
 }
+
+
+
+

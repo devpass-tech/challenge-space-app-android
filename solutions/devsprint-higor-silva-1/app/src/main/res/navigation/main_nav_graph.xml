@@ -30,6 +30,10 @@
             android:id="@+id/action_launchFragment_to_rocketFragment"
             app:destination="@id/rocketFragment"/>
 
+        <action
+            android:id="@+id/action_launchFragment_to_launchpadFragment"
+            app:destination="@id/launchpadFragment"/>
+
         <argument
             android:name="selectedLaunch"
             app:argType="com.devpass.spaceapp.models.Launch"/>
@@ -76,6 +80,28 @@
         <argument
             android:name="selectedRocket"
             app:argType="com.devpass.spaceapp.models.RocketDetails"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/cardLaunchpadFragment"
+        android:name="com.devpass.spaceapp.presentation.launch.launchpad.CardLaunchpadFragment"
+        tools:layout="@layout/fragment_card_launchpad">
+
+        <argument
+            android:name="selectedLaunchpad"
+            app:argType="com.devpass.spaceapp.models.LaunchpadDetails"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/launchpadFragment"
+        android:name="com.devpass.spaceapp.presentation.launch.launchpad.LaunchpadFragment"
+        tools:layout="@layout/fragment_launchpad">
+
+        <argument
+            android:name="selectedLaunchpad"
+            app:argType="com.devpass.spaceapp.models.LaunchpadDetails"/>
 
     </fragment>
 
