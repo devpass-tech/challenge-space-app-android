@@ -26,6 +26,10 @@
             android:id="@+id/action_launchFragment_to_detailsFragment"
             app:destination="@id/detailsFragment"/>
 
+        <action
+            android:id="@+id/action_launchFragment_to_rocketFragment"
+            app:destination="@id/rocketFragment"/>
+
         <argument
             android:name="selectedLaunch"
             app:argType="com.devpass.spaceapp.models.Launch"/>
@@ -57,6 +61,17 @@
         android:id="@+id/cardRocketFragment"
         android:name="com.devpass.spaceapp.presentation.launch.CardRocketFragment"
         tools:layout="@layout/fragment_card_rocket">
+
+        <argument
+            android:name="selectedRocket"
+            app:argType="com.devpass.spaceapp.models.Rocket"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/rocketFragment"
+        android:name="com.devpass.spaceapp.presentation.launch.RocketFragment"
+        tools:layout="@layout/fragment_rocket">
 
         <argument
             android:name="selectedRocket"

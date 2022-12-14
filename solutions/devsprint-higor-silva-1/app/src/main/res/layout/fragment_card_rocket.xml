@@ -26,10 +26,11 @@
 
             <TextView
                 android:id="@+id/txtCardTitleRocket"
+                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="18dp"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/txtCardDetailsRocket"
@@ -37,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="18dp"
                 android:ellipsize="end"
-                android:maxLines="5"
+                android:maxLines="3"
                 android:textSize="14sp" />
 
             <Button

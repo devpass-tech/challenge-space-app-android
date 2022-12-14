@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
 import com.devpass.spaceapp.databinding.FragmentCardRocketBinding
@@ -38,7 +39,8 @@ class CardRocketFragment : Fragment() {
         txtCardDetailsRocket.text = args.selectedRocket.description
 
         btnViewMore.setOnClickListener {
-
+            val action = LaunchFragmentDirections.actionLaunchFragmentToRocketFragment(args.selectedRocket)
+            findNavController().navigate(action)
         }
 
         return binding.root
