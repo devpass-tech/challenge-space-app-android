@@ -3,7 +3,7 @@ package com.devpass.spaceapp.models
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class Rocket(
+data class RocketDetails(
     @SerializedName("rocket_name")
     val rocketName: String = "",
     @SerializedName("description")

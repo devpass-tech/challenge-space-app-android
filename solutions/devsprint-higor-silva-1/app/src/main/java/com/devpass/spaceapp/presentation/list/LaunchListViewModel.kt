@@ -16,7 +16,7 @@ class LaunchListViewModel @Inject constructor(private val repository: Repository
     val launchList = MutableLiveData<List<Launch>>()
     val isLoading = MutableLiveData<Boolean>()
 
-     fun getLaunchs() {
+     fun getLaunches() {
         isLoading.value = true
 
         viewModelScope.launch {

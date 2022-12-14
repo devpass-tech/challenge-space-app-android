@@ -24,3 +24,9 @@ fun Launch.getStatus(context: Context) =
         if (it) context.getString(R.string.success)
         else context.getString(R.string.fail)
     } ?: context.getString(R.string.uknown)
+
+fun Launch.setRocket(rocketDetails: RocketDetails): Launch =
+    this.copy(rocketDetails = rocketDetails)
+
+fun Launch.setLaunchpad(launchpad: LaunchpadDetails): Launch =
+    this.copy(launchpadDetails = launchpad)

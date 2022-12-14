@@ -1,7 +1,6 @@
 package com.devpass.spaceapp.presentation.launch
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,10 +12,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
 import coil.load
 import com.devpass.spaceapp.databinding.FragmentLaunchBinding
-import com.devpass.spaceapp.models.Launch
-import com.devpass.spaceapp.models.formatDate
-import com.devpass.spaceapp.models.getImgLink
-import com.devpass.spaceapp.models.getStatus
+import com.devpass.spaceapp.models.*
 import com.devpass.spaceapp.presentation.adapter.TabsPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -35,6 +31,7 @@ class LaunchFragment : Fragment() {
     private lateinit var txtStatus: TextView
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager2
+    private lateinit var launch: Launch
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,9 +42,9 @@ class LaunchFragment : Fragment() {
 
         val binding = FragmentLaunchBinding.inflate(inflater, container, false)
 
-        val allClasses = AllClasses()
-        val launch = args.selectedLaunch
-        allClasses.launch = launch
+        //val allClasses = AllClasses()
+        launch = args.selectedLaunch
+        //allClasses.launch = launch
 
         viewModel.getRocket(launch.rocketLaunch.rocket_id)
 
@@ -58,14 +55,18 @@ class LaunchFragment : Fragment() {
         tabLayout = binding.tabLayout
         viewPager = binding.viewPager
 
-        viewModel.selectedRocket.observe(viewLifecycleOwner){
-            allClasses.rocket = it
-        }
-
         setLaunchProperties(launch)
-        fillTabLayout(allClasses)
+
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.selectedRocketDetails.observe(viewLifecycleOwner) {
+            fillTabLayout(launch.setRocket(it))
+        }
     }
 
     private fun setLaunchProperties(launch: Launch) {
@@ -76,8 +77,8 @@ class LaunchFragment : Fragment() {
         txtStatus.text = launch.getStatus(requireContext())
     }
 
-    private fun fillTabLayout(allClasses: AllClasses) {
-        val tabAdapter = TabsPagerAdapter(requireContext(), requireActivity(), allClasses)
+    private fun fillTabLayout(launch: Launch) {
+        val tabAdapter = TabsPagerAdapter(requireContext(), requireActivity(), launch)
 
         viewPager.apply {
             adapter = tabAdapter

@@ -3,7 +3,7 @@ package com.devpass.spaceapp.presentation.launch
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.devpass.spaceapp.models.Rocket
+import com.devpass.spaceapp.models.RocketDetails
 import com.devpass.spaceapp.repository.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -15,15 +15,15 @@ class LaunchViewModel @Inject constructor(
 ) : ViewModel() {
 
     val errorMessage = MutableLiveData<String>()
-    val selectedRocket = MutableLiveData<Rocket>()
+    val selectedRocketDetails = MutableLiveData<RocketDetails>()
 
     fun getRocket(rocketId: String) {
         viewModelScope.launch {
 
-            val response = repository.getRocket(rocketId)
+            val response = repository.getRocketDetails(rocketId)
 
-            if(response.isSuccessful){
-                selectedRocket.postValue(response.body())
+            if (response.isSuccessful) {
+                selectedRocketDetails.postValue(response.body())
             } else {
                 onError("Error: ${response.message()}")
             }
