@@ -1,4 +1,4 @@
-package com.devpass.spaceapp.presentation.launch
+package com.devpass.spaceapp.presentation.launch.rocket
 
 import android.os.Bundle
 import android.view.LayoutInflater

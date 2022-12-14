@@ -38,7 +38,7 @@
 
     <fragment
         android:id="@+id/cardDetailsFragment"
-        android:name="com.devpass.spaceapp.presentation.launch.CardDetailsFragment"
+        android:name="com.devpass.spaceapp.presentation.launch.details.CardDetailsFragment"
         tools:layout="@layout/fragment_card_details">
 
         <argument
@@ -49,7 +49,7 @@
 
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.devpass.spaceapp.presentation.launch.DetailsFragment"
+        android:name="com.devpass.spaceapp.presentation.launch.details.DetailsFragment"
         tools:layout="@layout/fragment_details">
 
         <argument
@@ -59,7 +59,7 @@
 
     <fragment
         android:id="@+id/cardRocketFragment"
-        android:name="com.devpass.spaceapp.presentation.launch.CardRocketFragment"
+        android:name="com.devpass.spaceapp.presentation.launch.rocket.CardRocketFragment"
         tools:layout="@layout/fragment_card_rocket">
 
         <argument
@@ -70,7 +70,7 @@
 
     <fragment
         android:id="@+id/rocketFragment"
-        android:name="com.devpass.spaceapp.presentation.launch.RocketFragment"
+        android:name="com.devpass.spaceapp.presentation.launch.rocket.RocketFragment"
         tools:layout="@layout/fragment_rocket">
 
         <argument

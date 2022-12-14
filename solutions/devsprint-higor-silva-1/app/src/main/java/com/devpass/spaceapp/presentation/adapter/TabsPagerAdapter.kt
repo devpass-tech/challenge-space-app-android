@@ -7,8 +7,8 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.presentation.launch.AllClasses
-import com.devpass.spaceapp.presentation.launch.CardDetailsFragment
-import com.devpass.spaceapp.presentation.launch.CardRocketFragment
+import com.devpass.spaceapp.presentation.launch.details.CardDetailsFragment
+import com.devpass.spaceapp.presentation.launch.rocket.CardRocketFragment
 
 class TabsPagerAdapter(
     context: Context,
