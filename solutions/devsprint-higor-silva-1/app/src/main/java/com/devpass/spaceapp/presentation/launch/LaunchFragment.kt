@@ -1,12 +1,14 @@
 package com.devpass.spaceapp.presentation.launch
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
 import coil.load
@@ -23,7 +25,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class LaunchFragment : Fragment() {
 
-    private lateinit var binding: FragmentLaunchBinding
+    private val viewModel: LaunchViewModel by viewModels()
 
     private val args: LaunchFragmentArgs by navArgs()
 
@@ -41,7 +43,13 @@ class LaunchFragment : Fragment() {
     ): View {
         requireActivity().title = ""
 
-        binding = FragmentLaunchBinding.inflate(inflater, container, false)
+        val binding = FragmentLaunchBinding.inflate(inflater, container, false)
+
+        val allClasses = AllClasses()
+        val launch = args.selectedLaunch
+        allClasses.launch = launch
+
+        viewModel.getRocket(launch.rocketLaunch.rocket_id)
 
         imgFolder = binding.img
         txtTitle = binding.txtTitle
@@ -50,10 +58,12 @@ class LaunchFragment : Fragment() {
         tabLayout = binding.tabLayout
         viewPager = binding.viewPager
 
-        val launch = args.selectedLaunch
+        viewModel.selectedRocket.observe(viewLifecycleOwner){
+            allClasses.rocket = it
+        }
 
         setLaunchProperties(launch)
-        fillTabLayout(launch)
+        fillTabLayout(allClasses)
 
         return binding.root
     }
@@ -66,8 +76,8 @@ class LaunchFragment : Fragment() {
         txtStatus.text = launch.getStatus(requireContext())
     }
 
-    private fun fillTabLayout(launch: Launch) {
-        val tabAdapter = TabsPagerAdapter(requireContext(), requireActivity(), launch)
+    private fun fillTabLayout(allClasses: AllClasses) {
+        val tabAdapter = TabsPagerAdapter(requireContext(), requireActivity(), allClasses)
 
         viewPager.apply {
             adapter = tabAdapter

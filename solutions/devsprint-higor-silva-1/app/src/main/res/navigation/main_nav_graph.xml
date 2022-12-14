@@ -53,4 +53,15 @@
             app:argType="string"/>
     </fragment>
 
+    <fragment
+        android:id="@+id/cardRocketFragment"
+        android:name="com.devpass.spaceapp.presentation.launch.CardRocketFragment"
+        tools:layout="@layout/fragment_card_rocket">
+
+        <argument
+            android:name="selectedRocket"
+            app:argType="com.devpass.spaceapp.models.Rocket"/>
+
+    </fragment>
+
 </navigation>

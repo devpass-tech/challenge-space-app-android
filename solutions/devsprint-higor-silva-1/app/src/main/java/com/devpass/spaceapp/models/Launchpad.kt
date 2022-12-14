@@ -1,6 +1,7 @@
 package com.devpass.spaceapp.models
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Launchpad(
     @SerializedName("name")
@@ -11,8 +12,7 @@ data class Launchpad(
     val attemptedLaunches: String = "",
     @SerializedName("successful_launches")
     val successfulLaunches: String = ""
-
-)
+): Serializable
 
 data class Location(
     @SerializedName("name")
