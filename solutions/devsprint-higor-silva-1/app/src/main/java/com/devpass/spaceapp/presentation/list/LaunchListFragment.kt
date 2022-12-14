@@ -90,7 +90,7 @@ class LaunchListFragment : Fragment() {
 
     private fun tryConnect() =
         if (networkChecker.hasInternet()) {
-            viewModel.getLaunchs()
+            viewModel.getLaunches()
         } else {
             caseNoHaveInternet()
 

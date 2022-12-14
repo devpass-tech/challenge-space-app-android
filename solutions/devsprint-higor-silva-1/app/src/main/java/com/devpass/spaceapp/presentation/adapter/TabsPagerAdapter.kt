@@ -6,14 +6,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.devpass.spaceapp.R
-import com.devpass.spaceapp.presentation.launch.AllClasses
-import com.devpass.spaceapp.presentation.launch.details.CardDetailsFragment
-import com.devpass.spaceapp.presentation.launch.rocket.CardRocketFragment
+import com.devpass.spaceapp.models.Launch
+import com.devpass.spaceapp.presentation.launch.CardDetailsFragment
+import com.devpass.spaceapp.presentation.launch.CardRocketFragment
 
 class TabsPagerAdapter(
     context: Context,
     activity: FragmentActivity,
-    private val allClasses: AllClasses
+    private val launch: Launch
 ) : FragmentStateAdapter(activity) {
 
     private val tabTitles: Array<String> =
@@ -24,13 +24,13 @@ class TabsPagerAdapter(
     override fun createFragment(position: Int) = when (position) {
         0 -> CardDetailsFragment().apply {
             arguments = Bundle().apply {
-                putSerializable("selectedLaunch", allClasses.launch)
+                putSerializable("selectedLaunch", launch)
             }
         }
 
         1 -> CardRocketFragment().apply {
             arguments = Bundle().apply {
-                putSerializable("selectedRocket", allClasses.rocket)
+                putSerializable("selectedRocket", launch.rocketDetails)
             }
         }
         else -> Fragment()

@@ -64,7 +64,7 @@
 
         <argument
             android:name="selectedRocket"
-            app:argType="com.devpass.spaceapp.models.Rocket"/>
+            app:argType="com.devpass.spaceapp.models.RocketDetails"/>
 
     </fragment>
 
@@ -75,7 +75,7 @@
 
         <argument
             android:name="selectedRocket"
-            app:argType="com.devpass.spaceapp.models.Rocket"/>
+            app:argType="com.devpass.spaceapp.models.RocketDetails"/>
 
     </fragment>
 
