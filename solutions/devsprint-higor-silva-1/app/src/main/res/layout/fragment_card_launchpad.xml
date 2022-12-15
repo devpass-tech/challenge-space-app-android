@@ -22,34 +22,36 @@
                 android:id="@+id/txtTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:layout_margin="15dp"/>
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="15dp"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/txtName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:layout_margin="15dp"/>
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="5dp"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/txtLocal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:layout_margin="15dp"/>
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="5dp"
+                android:textSize="12sp" />
 
             <Button
-                style="@style/Widget.AppCompat.Button.Borderless"
                 android:id="@+id/btnViewMore"
-                android:textSize="14sp"
-                android:padding="0dp"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:layout_marginHorizontal="13dp"
+                android:padding="0dp"
                 android:text="@string/txt_btn_view_more"
-                android:textColor="@color/blue_view_more" />
+                android:textColor="@color/blue_view_more"
+                android:textSize="14sp" />
 
         </LinearLayout>
 

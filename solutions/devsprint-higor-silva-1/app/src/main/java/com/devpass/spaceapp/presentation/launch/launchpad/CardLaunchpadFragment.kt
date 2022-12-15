@@ -34,7 +34,7 @@ class CardLaunchpadFragment: Fragment() {
         btnViewMore = binding.btnViewMore
 
         txtTitle.text = args.selectedLaunchpad.name
-        txtName.text = args.selectedLaunchpad.location.nameLocation
+        txtName.text = args.selectedLaunchpad.siteName
         txtLocal.text = args.selectedLaunchpad.location.nameLocation
 
         btnViewMore.setOnClickListener {

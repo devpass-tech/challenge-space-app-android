@@ -25,7 +25,8 @@
         android:id="@+id/txtName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="5dp"
         android:textSize="12sp"
         app:layout_constraintTop_toBottomOf="@id/txtTitle"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -34,7 +35,8 @@
         android:id="@+id/txtLocal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="5dp"
         android:textSize="12sp"
         app:layout_constraintTop_toBottomOf="@id/txtName"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -43,7 +45,8 @@
         android:id="@+id/txtAttempts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="5dp"
         android:textSize="12sp"
         app:layout_constraintTop_toBottomOf="@id/txtLocal"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -52,7 +55,8 @@
         android:id="@+id/txtSuccesses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="5dp"
         android:textSize="12sp"
         app:layout_constraintTop_toBottomOf="@id/txtAttempts"
         app:layout_constraintStart_toStartOf="parent"/>
