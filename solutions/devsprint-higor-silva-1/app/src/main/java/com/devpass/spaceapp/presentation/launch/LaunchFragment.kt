@@ -44,9 +44,7 @@ class LaunchFragment : Fragment() {
         val binding = FragmentLaunchBinding.inflate(inflater, container, false)
 
         launch = args.selectedLaunch
-
-        viewModel.getRocket(launch.rocketLaunch.rocket_id)
-        viewModel.getLaunchpad(launch.launchpadId.id)
+        viewModel.getLaunchDetails(launch)
 
         imgFolder = binding.img
         txtTitle = binding.txtTitle
@@ -63,25 +61,14 @@ class LaunchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.selectedRocketDetails.observe(viewLifecycleOwner) {
-            launch = launch.setRocket(it)
-            viewModel.setIsFinishGetRocket(true)
-        }
-
-        viewModel.selectedLaunchpadDetails.observe(viewLifecycleOwner) {
-            launch = launch.setLaunchpad(it)
-            viewModel.setIsFinishGetLaunchpad(true)
-        }
-
-        viewModel.isFinish.observe(viewLifecycleOwner) {
-            if (it) {
-                fillTabLayout(launch)
+        viewModel.isDetailsFinished.observe(viewLifecycleOwner) {
+            if (it.rocketDetails != null && it.launchpadDetails != null) {
+                fillTabLayout(it)
             }
         }
     }
 
     private fun setLaunchProperties(launch: Launch) {
-
         imgFolder.load(launch.getImgLink())
         txtTitle.text = launch.title
         txtDate.text = launch.formatDate()
@@ -89,7 +76,6 @@ class LaunchFragment : Fragment() {
     }
 
     private fun fillTabLayout(launch: Launch) {
-
         val tabAdapter = TabsPagerAdapter(requireContext(), requireActivity(), launch)
 
         viewPager.apply {
