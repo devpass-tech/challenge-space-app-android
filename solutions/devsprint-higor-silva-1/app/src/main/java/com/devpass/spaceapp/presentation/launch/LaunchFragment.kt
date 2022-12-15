@@ -1,7 +1,6 @@
 package com.devpass.spaceapp.presentation.launch
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,14 +13,11 @@ import androidx.viewpager2.widget.ViewPager2
 import coil.load
 import com.devpass.spaceapp.*
 import com.devpass.spaceapp.databinding.FragmentLaunchBinding
-import com.devpass.spaceapp.models.*
+import com.devpass.spaceapp.models.Launch
 import com.devpass.spaceapp.presentation.adapter.TabsPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.joinAll
 
 @AndroidEntryPoint
 class LaunchFragment : Fragment() {
@@ -77,8 +73,8 @@ class LaunchFragment : Fragment() {
             viewModel.setIsFinishGetLaunchpad(true)
         }
 
-        viewModel.isFinish.observe(viewLifecycleOwner){
-            if(it){
+        viewModel.isFinish.observe(viewLifecycleOwner) {
+            if (it) {
                 fillTabLayout(launch)
             }
         }

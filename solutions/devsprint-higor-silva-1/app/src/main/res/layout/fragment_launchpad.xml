@@ -8,18 +8,19 @@
         android:id="@+id/fragmentMap"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
+        android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/fragmentMap"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragmentMap" />
 
     <TextView
         android:id="@+id/txtName"
@@ -28,8 +29,8 @@
         android:layout_marginHorizontal="15dp"
         android:layout_marginVertical="5dp"
         android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@id/txtTitle"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
 
     <TextView
         android:id="@+id/txtLocal"
@@ -38,8 +39,8 @@
         android:layout_marginHorizontal="15dp"
         android:layout_marginVertical="5dp"
         android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@id/txtName"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtName" />
 
     <TextView
         android:id="@+id/txtAttempts"
@@ -48,8 +49,8 @@
         android:layout_marginHorizontal="15dp"
         android:layout_marginVertical="5dp"
         android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@id/txtLocal"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtLocal" />
 
     <TextView
         android:id="@+id/txtSuccesses"
@@ -58,7 +59,7 @@
         android:layout_marginHorizontal="15dp"
         android:layout_marginVertical="5dp"
         android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@id/txtAttempts"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtAttempts" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

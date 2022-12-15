@@ -6,9 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
+import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.FragmentLaunchpadBinding
 
-class LaunchpadFragment: Fragment() {
+class LaunchpadFragment : Fragment() {
+
+    private val args: LaunchpadFragmentArgs by navArgs()
 
     private lateinit var txtTitle: TextView
     private lateinit var txtName: TextView
@@ -28,6 +32,18 @@ class LaunchpadFragment: Fragment() {
         txtLocal = binding.txtLocal
         txtAttempts = binding.txtAttempts
         txtSuccesses = binding.txtSuccesses
+
+        txtTitle.text = args.selectedLaunchpad.name
+        txtName.text = args.selectedLaunchpad.siteName
+        txtLocal.text = args.selectedLaunchpad.location.nameLocation
+        txtAttempts.text = requireActivity().resources.getString(
+            R.string.txt_attempts,
+            args.selectedLaunchpad.attemptedLaunches
+        )
+        txtSuccesses.text = requireActivity().resources.getString(
+            R.string.txt_successes,
+            args.selectedLaunchpad.successfulLaunches
+        )
 
         return binding.root
     }

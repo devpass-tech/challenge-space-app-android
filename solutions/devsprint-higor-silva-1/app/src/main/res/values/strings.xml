@@ -9,8 +9,6 @@
 
     <string name="txt_btn_view_more">VIEW MORE</string>
 
-    <string name="txt_details_mock">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
-
     <string name="txt_no_connection">No connection with internet</string>
     <string name="txt_loading_launches">Loading last launches</string>
     <string name="txt_remains_unconnected">Remains unconnected</string>
@@ -21,4 +19,7 @@
 
     <string name="txt_number_launch">#%1s</string>
 
+    <string name="txt_attempts">Launch Attempts: %s</string>
+    <string name="txt_successes">Launch Successes: %s</string>
+    
 </resources>

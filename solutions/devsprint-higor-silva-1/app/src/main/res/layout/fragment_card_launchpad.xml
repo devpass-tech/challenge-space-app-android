@@ -22,6 +22,7 @@
                 android:id="@+id/txtTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginVertical="15dp"
                 android:textSize="20sp" />

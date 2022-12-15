@@ -12,7 +12,7 @@ import androidx.navigation.fragment.navArgs
 import com.devpass.spaceapp.databinding.FragmentCardLaunchpadBinding
 import com.devpass.spaceapp.presentation.launch.LaunchFragmentDirections
 
-class CardLaunchpadFragment: Fragment() {
+class CardLaunchpadFragment : Fragment() {
 
     private val args: CardLaunchpadFragmentArgs by navArgs()
 
@@ -38,7 +38,10 @@ class CardLaunchpadFragment: Fragment() {
         txtLocal.text = args.selectedLaunchpad.location.nameLocation
 
         btnViewMore.setOnClickListener {
-            val action = LaunchFragmentDirections.actionLaunchFragmentToLaunchpadFragment(args.selectedLaunchpad)
+            val action =
+                LaunchFragmentDirections
+                    .actionLaunchFragmentToLaunchpadFragment(args.selectedLaunchpad)
+
             findNavController().navigate(action)
         }
 
