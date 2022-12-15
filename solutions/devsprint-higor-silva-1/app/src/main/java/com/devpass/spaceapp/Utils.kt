@@ -1,7 +1,11 @@
-package com.devpass.spaceapp.models
+package com.devpass.spaceapp
 
 import android.content.Context
-import com.devpass.spaceapp.R
+import com.devpass.spaceapp.models.Launch
+import com.devpass.spaceapp.models.LaunchpadDetails
+import com.devpass.spaceapp.models.Location
+import com.devpass.spaceapp.models.RocketDetails
+import com.google.android.gms.maps.model.LatLng
 import java.text.SimpleDateFormat
 
 fun Launch.formatDate(): String {
@@ -24,6 +28,8 @@ fun Launch.getStatus(context: Context) =
         if (it) context.getString(R.string.success)
         else context.getString(R.string.fail)
     } ?: context.getString(R.string.uknown)
+
+fun Location.getLatLng() = LatLng(latitude, longitude)
 
 fun Launch.setRocket(rocketDetails: RocketDetails): Launch =
     this.copy(rocketDetails = rocketDetails)

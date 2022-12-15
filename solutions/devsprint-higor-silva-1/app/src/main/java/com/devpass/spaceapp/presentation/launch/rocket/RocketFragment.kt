@@ -1,4 +1,4 @@
-package com.devpass.spaceapp.presentation.launch
+package com.devpass.spaceapp.presentation.launch.rocket
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -25,6 +25,8 @@ class RocketFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentRocketBinding.inflate(inflater, container, false)
+
+        requireActivity().title = args.selectedRocket.rocketName
 
         imgRocket = binding.imgRocket
         txtTitleRocket = binding.txtTitleRocket

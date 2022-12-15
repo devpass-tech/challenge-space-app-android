@@ -11,8 +11,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
 import coil.load
+import com.devpass.spaceapp.*
 import com.devpass.spaceapp.databinding.FragmentLaunchBinding
-import com.devpass.spaceapp.models.*
+import com.devpass.spaceapp.models.Launch
 import com.devpass.spaceapp.presentation.adapter.TabsPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -42,11 +43,8 @@ class LaunchFragment : Fragment() {
 
         val binding = FragmentLaunchBinding.inflate(inflater, container, false)
 
-        //val allClasses = AllClasses()
         launch = args.selectedLaunch
-        //allClasses.launch = launch
-
-        viewModel.getRocket(launch.rocketLaunch.rocket_id)
+        viewModel.getLaunchDetails(launch)
 
         imgFolder = binding.img
         txtTitle = binding.txtTitle
@@ -57,20 +55,20 @@ class LaunchFragment : Fragment() {
 
         setLaunchProperties(launch)
 
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.selectedRocketDetails.observe(viewLifecycleOwner) {
-            fillTabLayout(launch.setRocket(it))
+        viewModel.isDetailsFinished.observe(viewLifecycleOwner) {
+            if (it.rocketDetails != null && it.launchpadDetails != null) {
+                fillTabLayout(it)
+            }
         }
     }
 
     private fun setLaunchProperties(launch: Launch) {
-
         imgFolder.load(launch.getImgLink())
         txtTitle.text = launch.title
         txtDate.text = launch.formatDate()
@@ -90,3 +88,7 @@ class LaunchFragment : Fragment() {
         }.attach()
     }
 }
+
+
+
+

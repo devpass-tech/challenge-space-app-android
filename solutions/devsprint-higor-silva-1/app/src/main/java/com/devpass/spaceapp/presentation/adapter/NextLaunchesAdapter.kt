@@ -10,9 +10,9 @@ import coil.load
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.ItemLaunchListBinding
 import com.devpass.spaceapp.models.Launch
-import com.devpass.spaceapp.models.formatDate
-import com.devpass.spaceapp.models.getImgLink
-import com.devpass.spaceapp.models.getStatus
+import com.devpass.spaceapp.formatDate
+import com.devpass.spaceapp.getImgLink
+import com.devpass.spaceapp.getStatus
 
 class NextLaunchesAdapter(
     private val context: Context,

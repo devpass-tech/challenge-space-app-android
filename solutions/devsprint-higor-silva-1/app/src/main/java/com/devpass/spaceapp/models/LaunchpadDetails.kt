@@ -11,5 +11,7 @@ data class LaunchpadDetails(
     @SerializedName("attempted_launches")
     val attemptedLaunches: String = "",
     @SerializedName("successful_launches")
-    val successfulLaunches: String = ""
+    val successfulLaunches: String = "",
+    @SerializedName("site_name_long")
+    val siteName: String = ""
 ) : Serializable

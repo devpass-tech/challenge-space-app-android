@@ -30,6 +30,10 @@
             android:id="@+id/action_launchFragment_to_rocketFragment"
             app:destination="@id/rocketFragment"/>
 
+        <action
+            android:id="@+id/action_launchFragment_to_launchpadFragment"
+            app:destination="@id/launchpadFragment"/>
+
         <argument
             android:name="selectedLaunch"
             app:argType="com.devpass.spaceapp.models.Launch"/>
@@ -38,7 +42,7 @@
 
     <fragment
         android:id="@+id/cardDetailsFragment"
-        android:name="com.devpass.spaceapp.presentation.launch.CardDetailsFragment"
+        android:name="com.devpass.spaceapp.presentation.launch.details.CardDetailsFragment"
         tools:layout="@layout/fragment_card_details">
 
         <argument
@@ -49,7 +53,7 @@
 
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.devpass.spaceapp.presentation.launch.DetailsFragment"
+        android:name="com.devpass.spaceapp.presentation.launch.details.DetailsFragment"
         tools:layout="@layout/fragment_details">
 
         <argument
@@ -59,7 +63,7 @@
 
     <fragment
         android:id="@+id/cardRocketFragment"
-        android:name="com.devpass.spaceapp.presentation.launch.CardRocketFragment"
+        android:name="com.devpass.spaceapp.presentation.launch.rocket.CardRocketFragment"
         tools:layout="@layout/fragment_card_rocket">
 
         <argument
@@ -70,12 +74,34 @@
 
     <fragment
         android:id="@+id/rocketFragment"
-        android:name="com.devpass.spaceapp.presentation.launch.RocketFragment"
+        android:name="com.devpass.spaceapp.presentation.launch.rocket.RocketFragment"
         tools:layout="@layout/fragment_rocket">
 
         <argument
             android:name="selectedRocket"
             app:argType="com.devpass.spaceapp.models.RocketDetails"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/cardLaunchpadFragment"
+        android:name="com.devpass.spaceapp.presentation.launch.launchpad.CardLaunchpadFragment"
+        tools:layout="@layout/fragment_card_launchpad">
+
+        <argument
+            android:name="selectedLaunchpad"
+            app:argType="com.devpass.spaceapp.models.LaunchpadDetails"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/launchpadFragment"
+        android:name="com.devpass.spaceapp.presentation.launch.launchpad.LaunchpadFragment"
+        tools:layout="@layout/fragment_launchpad">
+
+        <argument
+            android:name="selectedLaunchpad"
+            app:argType="com.devpass.spaceapp.models.LaunchpadDetails"/>
 
     </fragment>
 

@@ -1,4 +1,4 @@
-package com.devpass.spaceapp.presentation.launch
+package com.devpass.spaceapp.presentation.launch.details
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.databinding.FragmentCardDetailsBinding
+import com.devpass.spaceapp.presentation.launch.LaunchFragmentDirections
 
 class CardDetailsFragment : Fragment() {
 

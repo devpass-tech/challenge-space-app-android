@@ -65,7 +65,6 @@ class LaunchListFragment : Fragment() {
 
         viewModel.launchList.observe(viewLifecycleOwner) { viewModelLaunchList ->
             launchList.addAll(viewModelLaunchList)
-            Log.d("HSV", launchList.joinToString("\n"))
             loadLaunchList()
         }
 
@@ -90,7 +89,7 @@ class LaunchListFragment : Fragment() {
 
     private fun tryConnect() =
         if (networkChecker.hasInternet()) {
-            viewModel.getLaunches()
+            viewModel.getLaunches(40)
         } else {
             caseNoHaveInternet()
 

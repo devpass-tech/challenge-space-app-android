@@ -16,11 +16,11 @@ class LaunchListViewModel @Inject constructor(private val repository: Repository
     val launchList = MutableLiveData<List<Launch>>()
     val isLoading = MutableLiveData<Boolean>()
 
-     fun getLaunches() {
+     fun getLaunches(quantLaunches: Int) {
         isLoading.value = true
 
         viewModelScope.launch {
-            val response = repository.getLaunches()
+            val response = repository.getLaunches(quantLaunches)
 
             if (response.isSuccessful) {
                 launchList.postValue(response.body())

@@ -7,8 +7,9 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.models.Launch
-import com.devpass.spaceapp.presentation.launch.CardDetailsFragment
-import com.devpass.spaceapp.presentation.launch.CardRocketFragment
+import com.devpass.spaceapp.presentation.launch.details.CardDetailsFragment
+import com.devpass.spaceapp.presentation.launch.launchpad.CardLaunchpadFragment
+import com.devpass.spaceapp.presentation.launch.rocket.CardRocketFragment
 
 class TabsPagerAdapter(
     context: Context,
@@ -33,7 +34,12 @@ class TabsPagerAdapter(
                 putSerializable("selectedRocket", launch.rocketDetails)
             }
         }
-        else -> Fragment()
+
+        else -> CardLaunchpadFragment().apply {
+            arguments = Bundle().apply {
+                putSerializable("selectedLaunchpad", launch.launchpadDetails)
+            }
+        }
     }
 
     fun getTabTitle(position: Int) = tabTitles[position]
