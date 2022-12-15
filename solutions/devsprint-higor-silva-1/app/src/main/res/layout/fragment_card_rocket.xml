@@ -50,7 +50,7 @@
                 android:layout_marginHorizontal="13dp"
                 android:padding="0dp"
                 android:text="@string/txt_btn_view_more"
-                android:textColor="@color/blue_view_more"
+                android:textColor="@color/blue"
                 android:textSize="14sp" />
 
         </LinearLayout>

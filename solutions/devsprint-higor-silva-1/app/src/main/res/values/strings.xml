@@ -17,9 +17,10 @@
     <string name="fail">Fail</string>
     <string name="uknown">Unknown</string>
 
-    <string name="txt_number_launch">#%1s</string>
+    <string name="txt_number_launch">#%s</string>
 
     <string name="txt_attempts">Launch Attempts: %s</string>
     <string name="txt_successes">Launch Successes: %s</string>
-    
+    <string name="title_fragment_details">Details</string>
+
 </resources>

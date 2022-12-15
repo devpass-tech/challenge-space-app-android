@@ -26,6 +26,8 @@ class RocketFragment: Fragment() {
     ): View {
         val binding = FragmentRocketBinding.inflate(inflater, container, false)
 
+        requireActivity().title = args.selectedRocket.rocketName
+
         imgRocket = binding.imgRocket
         txtTitleRocket = binding.txtTitleRocket
         txtDetailsRocket = binding.txtDetailsRocket

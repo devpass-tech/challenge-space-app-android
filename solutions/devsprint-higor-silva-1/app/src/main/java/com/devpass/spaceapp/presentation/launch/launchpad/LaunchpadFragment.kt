@@ -1,6 +1,7 @@
 package com.devpass.spaceapp.presentation.launch.launchpad
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,6 +28,10 @@ class LaunchpadFragment : Fragment() {
     ): View {
         val binding = FragmentLaunchpadBinding.inflate(inflater, container, false)
 
+        val fragmentMap = childFragmentManager.findFragmentById(R.id.fragmentMap) as AppMapFragment
+
+        requireActivity().title = args.selectedLaunchpad.name
+
         txtTitle = binding.txtTitle
         txtName = binding.txtName
         txtLocal = binding.txtLocal
@@ -44,6 +49,10 @@ class LaunchpadFragment : Fragment() {
             R.string.txt_successes,
             args.selectedLaunchpad.successfulLaunches
         )
+
+        fragmentMap.getMapAsync {
+            fragmentMap.initMap(it, args.selectedLaunchpad.location)
+        }
 
         return binding.root
     }
