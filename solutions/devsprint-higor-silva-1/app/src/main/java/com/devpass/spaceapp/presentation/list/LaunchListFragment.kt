@@ -65,7 +65,6 @@ class LaunchListFragment : Fragment() {
 
         viewModel.launchList.observe(viewLifecycleOwner) { viewModelLaunchList ->
             launchList.addAll(viewModelLaunchList)
-            Log.d("HSV", launchList.joinToString("\n"))
             loadLaunchList()
         }
 
