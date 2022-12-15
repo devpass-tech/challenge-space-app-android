@@ -6,11 +6,12 @@ import com.devpass.spaceapp.models.RocketDetails
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface SpacexApi {
 
-    @GET("launches?order=desc&limit=20")
-    suspend fun getLaunches(): Response<List<Launch>>
+    @GET("launches?order=desc")
+    suspend fun getLaunches(@Query("limit") quantLaunches: Int): Response<List<Launch>>
 
     @GET("launchpads/{launchpadId}")
     suspend fun getLaunchpadDetails(@Path("launchpadId") launchpadId: String): Response<LaunchpadDetails>
