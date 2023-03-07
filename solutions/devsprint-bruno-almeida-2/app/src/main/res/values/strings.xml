@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SpaceApp</string>
+    <string name="titulo_app">Space App</string>
 </resources>
