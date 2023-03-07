@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ToolbarStyle" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="android:background">#0085FF</item>
+        <item name="android:titleTextColor">#FFFFFF</item>
+        <item name="logo">@drawable/space_logo</item>
+    </style>
+</resources>
