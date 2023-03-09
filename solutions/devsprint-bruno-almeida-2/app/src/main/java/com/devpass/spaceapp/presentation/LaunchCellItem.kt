@@ -9,6 +9,8 @@ class LaunchCellItem(
     private val binding: ActivityLaunchCellItemBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
+    val view = binding.root
+
     fun bind(item : NextLaunchesModel) {
         with(binding) {
             numberRocket.text = item.number.toString()

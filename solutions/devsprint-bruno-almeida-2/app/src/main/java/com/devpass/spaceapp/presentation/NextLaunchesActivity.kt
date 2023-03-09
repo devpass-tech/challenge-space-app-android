@@ -21,19 +21,10 @@ class NextLaunchesActivity : AppCompatActivity() {
         // Definir o layout manager da RecyclerView
         binding.nextlaunchrecyclerview.layoutManager = LinearLayoutManager(this)
 
-        adapter = NextLaunchesAdapter(getData(), object : NextLaunchesListener {
-            override fun onItemClick(position: Int, launch: NextLaunchesModel) {
-                val launchBundle = Bundle().apply {
-                    putInt("launchCost", launch.number)
-                    putString("launchImageUrl", launch.image)
-                    putString("launchName", launch.name)
-                }
-                val launchIntent = Intent(this@NextLaunchesActivity, LaunchDetailsActivity::class.java).apply {
-                    putExtras(launchBundle)
-                }
-                startActivity(launchIntent)
-            }
-        })
+        // Inicializar o adapter com os dados
+        adapter = NextLaunchesAdapter(getData())
+
+        //Faltou implementar o click
 
         // Atribuir o adapter à RecyclerView
         binding.nextlaunchrecyclerview.adapter = adapter

@@ -23,7 +23,7 @@
                 <ImageView
                     android:id="@+id/launch_image"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ic_launcher_background"
                     android:contentDescription="imagem da api" />
@@ -36,7 +36,7 @@
                     android:textColor="@color/black"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    android:text="@{title}" />
+                    android:text="titulo" />
 
             </LinearLayout>
 
