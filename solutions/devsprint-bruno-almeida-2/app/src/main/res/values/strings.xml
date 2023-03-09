@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SpaceApp</string>
     <string name="titulo_app">Space App</string>
+    <string name="launch_number_text">0</string>
 </resources>
