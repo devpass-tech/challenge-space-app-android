@@ -8,13 +8,14 @@ import com.devpass.spaceapp.databinding.ActivityLaunchCellItemBinding
 
 
 interface NextLaunchesListener {
-    fun onItemClick(position: Int, launch: NextLaunchesModel)
+    fun onItemSelected(position: Int)
 }
 
 class NextLaunchesAdapter(
     private val items: List<NextLaunchesModel>,
-    private var listener: NextLaunchesListener
-) : RecyclerView.Adapter<LaunchCellItem>() {//ViewHolder
+) : RecyclerView.Adapter<LaunchCellItem>() {
+
+    private var listener: NextLaunchesListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LaunchCellItem {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -23,17 +24,21 @@ class NextLaunchesAdapter(
     }
 
     override fun onBindViewHolder(holder: LaunchCellItem, position: Int) {
+        val item = items[position]
         holder.bind(items[position])
-        holder.itemView.setOnClickListener {
-            listener.onItemClick(position, items[position])
+        holder.view.setOnClickListener {
+            listener?.onItemSelected(position)
         }
     }
 
     override fun getItemCount(): Int = items.size
+
+    fun getItem(position: Int): NextLaunchesModel {
+        return items[position]
+    }
 
     fun setOnItemClickListener(listener: NextLaunchesListener) {
         this.listener = listener
     }
 
 }
-
