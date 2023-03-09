@@ -8,8 +8,6 @@ const val BASE_URL = "https://api.spacexdata.com/v5/"
 
 object RetrofitService {
 
-    val gson = GsonBuilder().setLenient().create()
-
     val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
