@@ -2,6 +2,7 @@ package com.devpass.spaceapp.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
 import com.bumptech.glide.Glide
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.data.model.NextLaunchesModel
@@ -34,5 +35,14 @@ class LaunchDetailsActivity : AppCompatActivity() {
                 .circleCrop()
                 .into(binding.launchImage)
         }
+
+        // Cria uma instância do LaunchDetailsFragment
+        val launchDetailsFragment = LaunchDetailsFragment.newInstance(launch)
+
+// Adiciona o fragmento à atividade
+        supportFragmentManager.beginTransaction()
+            .add(R.id.container, launchDetailsFragment)
+            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+            .commit()
     }
 }
