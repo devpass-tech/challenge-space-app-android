@@ -29,7 +29,7 @@
                     android:contentDescription="imagem da api" />
 
                 <TextView
-                    android:id="@+id/launch_title"
+                    android:id="@+id/launchTitleTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -37,6 +37,26 @@
                     android:textSize="24sp"
                     android:textStyle="bold"
                     android:text="titulo" />
+
+                <TextView
+                    android:id="@+id/launchDateTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:text="data" />
+
+                <TextView
+                    android:id="@+id/launchStatusTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:text="status" />
 
             </LinearLayout>
 
