@@ -8,7 +8,7 @@ import com.devpass.spaceapp.data.model.NextLaunchesModel
 import com.devpass.spaceapp.databinding.ActivityMainBinding
 
 
-class NextLaunchesActivity : AppCompatActivity() {
+class NextLaunchesActivity : AppCompatActivity(), OnLaunchClickListener {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: NextLaunchesAdapter
@@ -22,14 +22,19 @@ class NextLaunchesActivity : AppCompatActivity() {
         binding.nextlaunchrecyclerview.layoutManager = LinearLayoutManager(this)
 
         // Inicializar o adapter com os dados
-        adapter = NextLaunchesAdapter(getData())
-
-        //Faltou implementar o click
+        adapter = NextLaunchesAdapter(getData(), this)
 
         // Atribuir o adapter à RecyclerView
         binding.nextlaunchrecyclerview.adapter = adapter
 
     }
+
+    override fun onLaunchClick(launch: NextLaunchesModel) {
+        val intent = Intent(this, LaunchDetailsActivity::class.java)
+        intent.putExtra("nextLaunch", launch) // <- corrigido para "nextLaunch"
+        startActivity(intent)
+    }
+
 
     // Função temporária para gerar os dados
     private fun getData(): List<NextLaunchesModel> {

@@ -7,15 +7,14 @@ import com.devpass.spaceapp.data.model.NextLaunchesModel
 import com.devpass.spaceapp.databinding.ActivityLaunchCellItemBinding
 
 
-interface NextLaunchesListener {
-    fun onItemSelected(position: Int)
+interface OnLaunchClickListener {
+    fun onLaunchClick(launch: NextLaunchesModel)
 }
 
 class NextLaunchesAdapter(
     private val items: List<NextLaunchesModel>,
+    private val listener: NextLaunchesActivity,
 ) : RecyclerView.Adapter<LaunchCellItem>() {
-
-    private var listener: NextLaunchesListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LaunchCellItem {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -25,20 +24,13 @@ class NextLaunchesAdapter(
 
     override fun onBindViewHolder(holder: LaunchCellItem, position: Int) {
         val item = items[position]
-        holder.bind(items[position])
-        holder.view.setOnClickListener {
-            listener?.onItemSelected(position)
+        holder.bind(item)
+        holder.itemView.setOnClickListener {
+            listener.onLaunchClick(item)
         }
     }
 
     override fun getItemCount(): Int = items.size
 
-    fun getItem(position: Int): NextLaunchesModel {
-        return items[position]
-    }
-
-    fun setOnItemClickListener(listener: NextLaunchesListener) {
-        this.listener = listener
-    }
-
 }
+
