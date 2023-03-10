@@ -3,7 +3,6 @@ package com.devpass.spaceapp.presentation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.Target.SIZE_ORIGINAL
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.data.model.NextLaunchesModel
 import com.devpass.spaceapp.databinding.ActivityLaunchDetailsBinding
@@ -22,6 +21,18 @@ class LaunchDetailsActivity : AppCompatActivity() {
         binding.launchTitleTextView.text = launch.name
         binding.launchDateTextView.text = launch.date.toString()
         binding.launchStatusTextView.text = launch.status.toString()
-        Glide.with(this).load(launch.image).into(binding.launchImage)
+        if(launch.image.isEmpty()) {
+            // caso a URL da imagem seja nula ou vazia, carrega uma imagem padrão
+            Glide.with(this)
+                .load(R.drawable.space_logo)
+                .circleCrop()
+                .into(binding.launchImage)
+        } else {
+            // carrega a imagem usando Glide
+            Glide.with(this)
+                .load(launch.image)
+                .circleCrop()
+                .into(binding.launchImage)
+        }
     }
 }
