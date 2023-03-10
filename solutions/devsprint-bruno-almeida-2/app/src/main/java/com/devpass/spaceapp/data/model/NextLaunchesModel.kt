@@ -50,7 +50,7 @@ data class NextLaunchesModel(
     @SerializedName("static_fire_date_utc")
     val static_fire_date_utc: String,
     @SerializedName("success")
-    val success: Boolean,
+    val status: Boolean,
     @SerializedName("tdb")
     val tbd: Boolean,
     @SerializedName("upcoming")
