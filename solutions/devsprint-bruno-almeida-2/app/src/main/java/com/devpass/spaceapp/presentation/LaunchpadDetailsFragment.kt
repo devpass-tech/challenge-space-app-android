@@ -5,38 +5,44 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.devpass.spaceapp.R
-import com.devpass.spaceapp.data.model.LaunchpadModel
-import com.devpass.spaceapp.data.model.RocketModel
+import com.devpass.spaceapp.data.model.NextLaunchesModel
+import com.devpass.spaceapp.databinding.FragmentLaunchpadDetailsBinding
 
-private const val ARG_LAUNCHPAD = "launchpad"
+private const val ARG_LAUNCH = "nextLaunch"
 
 class LaunchpadDetailsFragment : Fragment() {
 
-    private lateinit var launchpadModel: LaunchpadModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            launchpadModel = it.getSerializable(ARG_LAUNCHPAD) as LaunchpadModel
-        }
-    }
+    private var _binding: FragmentLaunchpadDetailsBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_launchpad_details, container, false)
+    ): View {
+        _binding = FragmentLaunchpadDetailsBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Recupera o objeto NextLaunchesModel dos argumentos
+        val launch = arguments?.getSerializable(ARG_LAUNCH) as NextLaunchesModel?
+
+        // Exibe o nome da missão em um TextView
+        binding.launchpadDescription.text = launch?.name ?: "Nome da missão desconhecido"
     }
 
     companion object {
-        @JvmStatic
-        fun newInstance(launchpadModel: LaunchpadModel) =
-            LaunchpadDetailsFragment().apply {
-                arguments = Bundle().apply {
-                    putSerializable(ARG_LAUNCHPAD, launchpadModel)
-                }
+        fun newInstance(launch: NextLaunchesModel) = LaunchpadDetailsFragment().apply {
+            arguments = Bundle().apply {
+                putSerializable(ARG_LAUNCH, launch)
             }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

@@ -2,11 +2,11 @@ package com.devpass.spaceapp.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentTransaction
 import com.bumptech.glide.Glide
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.data.model.NextLaunchesModel
 import com.devpass.spaceapp.databinding.ActivityLaunchDetailsBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 class LaunchDetailsActivity : AppCompatActivity() {
 
@@ -36,13 +36,21 @@ class LaunchDetailsActivity : AppCompatActivity() {
                 .into(binding.launchImage)
         }
 
-        // Cria uma instância do LaunchDetailsFragment
-        val launchDetailsFragment = LaunchDetailsFragment.newInstance(launch)
+        // Cria uma instância do LaunchDetailsPagerAdapter com as informações do lançamento
+        val launchDetailsPagerAdapter = LaunchDetailsPagerAdapter(this, launch)
 
-// Adiciona o fragmento à atividade
-        supportFragmentManager.beginTransaction()
-            .add(R.id.container, launchDetailsFragment)
-            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-            .commit()
+        // Configura o ViewPager para usar o adapter
+        binding.viewPager.adapter = launchDetailsPagerAdapter
+
+        // Adiciona as abas ao TabLayout
+        val titles = arrayOf("Overview", "Mission", "Rocket")
+        for (title in titles) {
+            binding.tabLayout.addTab(binding.tabLayout.newTab().setText(title))
+        }
+
+        // Conecta o TabLayout e ViewPager
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+            tab.text = titles[position]
+        }.attach()
     }
 }

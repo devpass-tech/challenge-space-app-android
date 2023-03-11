@@ -5,35 +5,39 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.devpass.spaceapp.R
-import com.devpass.spaceapp.data.model.RocketModel
+import com.devpass.spaceapp.data.model.NextLaunchesModel
+import com.devpass.spaceapp.databinding.FragmentRocketDetailsBinding
 
-private const val ARG_ROCKET = "rocket"
+private const val ARG_LAUNCH = "rocket"
 
 class RocketDetailsFragment : Fragment() {
-    private lateinit var rocket: RocketModel
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            rocket = it.getSerializable(ARG_ROCKET) as RocketModel
-        }
-    }
+    private var _binding: FragmentRocketDetailsBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_rocket_details, container, false)
+    ): View {
+        _binding = FragmentRocketDetailsBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Recupera o objeto NextLaunchesModel dos argumentos
+        val launch = arguments?.getSerializable(ARG_LAUNCH) as NextLaunchesModel?
+
+        // Exibe o nome da missão em um TextView
+        binding.rocketDescription.text = launch?.name ?: "Nome da missão desconhecido"
     }
 
     companion object {
-        @JvmStatic
-        fun newInstance(rocket: RocketModel) =
-            RocketDetailsFragment().apply {
-                arguments = Bundle().apply {
-                    putSerializable(ARG_ROCKET, rocket)
-                }
+        fun newInstance(launch: NextLaunchesModel) = RocketDetailsFragment().apply {
+            arguments = Bundle().apply {
+                putSerializable(ARG_LAUNCH, launch)
             }
+        }
     }
 }

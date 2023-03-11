@@ -1,27 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".presentation.LaunchpadDetailsFragment">
 
-    <!-- Adicionar o ViewPager e o TabLayout -->
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
+    <TextView
+        android:id="@+id/rocketDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/white"
-        android:elevation="8dp"
-        android:minHeight="?attr/actionBarSize"
-        app:tabGravity="fill"
-        app:tabIndicatorColor="@color/variantColor"
-        app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/primaryColor"
-        app:tabTextColor="@color/black" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-</RelativeLayout>
+</LinearLayout>
+

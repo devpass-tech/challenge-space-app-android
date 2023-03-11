@@ -2,7 +2,8 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -58,8 +59,24 @@
                     android:textStyle="bold"
                     android:text="@string/status_launch" />
 
-                <FrameLayout
-                    android:id="@+id/container"
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:elevation="8dp"
+                    android:minHeight="?attr/actionBarSize"
+                    app:tabGravity="fill"
+                    app:tabIndicatorColor="@color/variantColor"
+                    app:tabMode="fixed"
+                    app:tabSelectedTextColor="@color/primaryColor"
+                    app:tabTextColor="@color/black"
+                    />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/view_pager"
+                    android:backgroundTint="@color/primaryColor"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
