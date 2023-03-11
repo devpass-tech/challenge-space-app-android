@@ -2,7 +2,7 @@ package com.devpass.spaceapp.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Failure(
+data class DetailsFailure(
     @SerializedName("altitude")
     val altitude: Int,
     @SerializedName("reason")
