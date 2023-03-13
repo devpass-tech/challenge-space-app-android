@@ -1,6 +1,7 @@
 package com.devpass.spaceapp.data.model
 
 import com.google.gson.annotations.SerializedName
+import retrofit2.Callback
 
 data class LaunchesResponse (
     @SerializedName("docs")
@@ -25,4 +26,8 @@ data class LaunchesResponse (
     val totalDocs: Int,
     @SerializedName("totalPages")
     val totalPages: Int
-)
+) {
+    fun docs(callback: Callback<List<NextLaunchesModel>>) {
+
+    }
+}
