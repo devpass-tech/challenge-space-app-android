@@ -26,8 +26,4 @@ data class LaunchesResponse (
     val totalDocs: Int,
     @SerializedName("totalPages")
     val totalPages: Int
-) {
-    fun docs(callback: Callback<List<NextLaunchesModel>>) {
-
-    }
-}
+)

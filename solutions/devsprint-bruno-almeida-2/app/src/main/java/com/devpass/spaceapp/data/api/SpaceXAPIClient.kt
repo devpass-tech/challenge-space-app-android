@@ -8,5 +8,5 @@ import retrofit2.http.POST
 
 interface SpaceXAPIClient {
     @POST("launches/query")
-    suspend fun fetchNextLaunches(@Body params: QueryParams ) : LaunchesResponse
+    suspend fun fetchNextLaunches(@Body params: QueryParams) : LaunchesResponse
 }
