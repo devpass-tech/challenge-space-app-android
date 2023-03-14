@@ -6,14 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.devpass.spaceapp.data.model.NextLaunchesModel
 import com.devpass.spaceapp.databinding.ActivityLaunchCellItemBinding
 
-
-interface OnLaunchClickListener {
-    fun onLaunchClick(launch: NextLaunchesModel)
-}
-
 class NextLaunchesAdapter(
     private val items: List<NextLaunchesModel>,
-    private val listener: NextLaunchesActivity,
+    private val listener: (launch: NextLaunchesModel) -> Unit,
 ) : RecyclerView.Adapter<LaunchCellItem>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LaunchCellItem {
@@ -26,7 +21,7 @@ class NextLaunchesAdapter(
         val item = items[position]
         holder.bind(item)
         holder.itemView.setOnClickListener {
-            listener.onLaunchClick(item)
+            listener(item)
         }
     }
 
