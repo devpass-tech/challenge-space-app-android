@@ -2,8 +2,6 @@
     <string name="app_name">SpaceApp</string>
     <string name="titulo_app">Space App</string>
     <string name="launch_number_text">0</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="descricao_da_imagem">Descricao da imagem</string>
     <string name="imagem_nextlaunch">imagem da api</string>
     <string name="titulo_launch">titulo</string>
