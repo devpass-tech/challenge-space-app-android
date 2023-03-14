@@ -13,13 +13,13 @@ class LaunchCellItem(
 
     fun bind(item : NextLaunchesModel) {
         with(binding) {
-            numberRocket.text = item.number.toString()
+            numberRocket.text = item.flight_number.toString()
             nameRocket.text = item.name
-            dateLaunchRocket.text = item.date.toString()
+            dateLaunchRocket.text = item.date_utc
             statusRocket.text = item.status.toString()
             Glide
                 .with(root.context)
-                .load(item.image)
+                .load(item.links.image.small)
                 .circleCrop()
                 .into(binding.imageRocket)
         }

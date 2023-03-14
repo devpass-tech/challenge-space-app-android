@@ -20,9 +20,9 @@ class LaunchDetailsActivity : AppCompatActivity() {
 
         // Preencher os campos com as informações do objeto launch
         binding.launchTitleTextView.text = launch.name
-        binding.launchDateTextView.text = launch.date.toString()
+        binding.launchDateTextView.text = launch.date_utc.toString()
         binding.launchStatusTextView.text = launch.status.toString()
-        if(launch.image.isEmpty()) {
+        if(launch.links.image.small.isEmpty()) {
             // caso a URL da imagem seja nula ou vazia, carrega uma imagem padrão
             Glide.with(this)
                 .load(R.drawable.space_logo)
@@ -31,7 +31,7 @@ class LaunchDetailsActivity : AppCompatActivity() {
         } else {
             // carrega a imagem usando Glide
             Glide.with(this)
-                .load(launch.image)
+                .load(launch.links.image.small)
                 .circleCrop()
                 .into(binding.launchImage)
         }
