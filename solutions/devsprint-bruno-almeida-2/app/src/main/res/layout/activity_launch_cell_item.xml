@@ -6,8 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools">
     <ImageView
         android:id="@+id/imageRocket"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +20,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
+        android:layout_marginTop="16dp"
+        android:textFontWeight="500"
         android:layout_marginBottom="6dp"
+        android:fontFamily="@font/roboto"
+        android:textAllCaps="true"
         app:layout_constraintStart_toEndOf="@id/imageRocket"
         app:layout_constraintTop_toTopOf="@+id/imageRocket"
         tools:text="SRC-20"/>
@@ -30,6 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="6dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto"
         app:layout_constraintTop_toBottomOf="@id/nameRocket"
         app:layout_constraintStart_toStartOf="@id/nameRocket"
         tools:text="01-01-01"
@@ -40,6 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="6dp"
+        android:fontFamily="@font/roboto"
         app:layout_constraintTop_toBottomOf="@id/dateLaunchRocket"
         app:layout_constraintStart_toStartOf="@id/nameRocket"
         tools:text="Success/Failure"/>
@@ -50,6 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="6dp"
         android:layout_marginEnd="24dp"
+        android:fontFamily="@font/roboto"
         app:layout_constraintTop_toTopOf="@id/imageRocket"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="#01" /></androidx.constraintlayout.widget.ConstraintLayout>
