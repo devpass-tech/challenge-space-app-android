@@ -9,4 +9,4 @@ data class DetailsFailure(
     val reason: String,
     @SerializedName("time")
     val time: Int
-)
+): java.io.Serializable

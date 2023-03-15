@@ -9,5 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primaryColor">#0085FF</color>
     <color name="variantColor">#0372D8</color>
-
+    <color name="tabSelectedText">#212121</color>
+    <color name="tabSelectedIndicator">#212121</color>
+    <color name="tabUnselectedText">#DFDFDF</color>
 </resources>

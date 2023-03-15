@@ -23,4 +23,4 @@ data class NextLaunchesModel(
     val rocket: String,
     @SerializedName("success")
     val status: Boolean,
-)
+): java.io.Serializable

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/launchImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_launcher_background"
+                    android:contentDescription="@string/imagem_nextlaunch" />
+
+                <TextView
+                    android:id="@+id/launch_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/launch_number_text" />
+
+                <TextView
+                    android:id="@+id/launchTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineHeight="32sp"
+                    android:textAllCaps="true"
+                    android:layout_marginBottom="8dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto"
+                    android:textStyle="normal"
+                    android:text="@string/titulo_launch"
+                    android:textFontWeight="400"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                   />
+
+                <TextView
+                    android:id="@+id/launchDateTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textFontWeight="400"
+                    android:text="@string/data_launch" />
+
+                <TextView
+                    android:id="@+id/launchStatusTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:textFontWeight="400"
+                    android:textSize="14sp"
+                    android:text="@string/status_launch" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:fontFamily="@font/roboto"
+                    android:layout_marginTop="8dp"
+                    android:elevation="8dp"
+                    android:textAllCaps="true"
+                    android:minHeight="?attr/actionBarSize"
+                    app:tabGravity="fill"
+                    app:tabIndicatorColor="@color/tabSelectedText"
+                    app:tabMode="fixed"
+                    app:tabSelectedTextColor="@color/tabSelectedIndicator"
+                    app:tabTextColor="@color/tabUnselectedText"
+                    />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/view_pager"
+                    android:backgroundTint="@color/primaryColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="14dp"
+                    />
+            </LinearLayout>
+</ScrollView>
+

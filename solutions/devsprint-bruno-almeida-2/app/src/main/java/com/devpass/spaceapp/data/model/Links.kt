@@ -9,4 +9,4 @@ data class Links(
     val image: ImageIcon,
     @SerializedName("wikipedia")
     val wikipedia: String,
-)
+) : java.io.Serializable

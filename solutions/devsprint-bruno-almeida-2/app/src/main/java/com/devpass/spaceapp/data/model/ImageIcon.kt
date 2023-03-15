@@ -7,4 +7,4 @@ data class ImageIcon(
     val large: String,
     @SerializedName("small")
     val small: String
-)
+) : java.io.Serializable

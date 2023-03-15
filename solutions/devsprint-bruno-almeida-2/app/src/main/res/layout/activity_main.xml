@@ -14,7 +14,14 @@
         app:layout_constraintTop_toTopOf="parent"
         android:title="@string/titulo_app" />
 
-
+    <TextView
+        android:id="@+id/titulo_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="656dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/nextlaunchrecyclerview"
         android:layout_width="0dp"
@@ -22,5 +29,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/titulo_activity"
+        tools:listitem="@layout/activity_launch_cell_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

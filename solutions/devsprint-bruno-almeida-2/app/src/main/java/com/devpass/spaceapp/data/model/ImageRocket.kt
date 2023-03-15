@@ -7,4 +7,4 @@ data class ImageRocket(
     val original: List<String>,
     @SerializedName("small")
     val small: List<Any>
-)
+) : java.io.Serializable
