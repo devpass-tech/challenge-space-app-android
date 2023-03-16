@@ -5,9 +5,14 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/launchDescription"
+        android:id="@+id/launchDescriptionFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+    <TextView
+        android:id="@+id/launchViewMore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 
 </LinearLayout>
