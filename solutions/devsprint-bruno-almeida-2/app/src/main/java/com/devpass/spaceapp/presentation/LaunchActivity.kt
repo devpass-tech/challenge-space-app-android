@@ -42,7 +42,7 @@ class LaunchActivity : AppCompatActivity() {
         binding.viewPager.adapter = launchDetailsPagerAdapter
 
         // Adiciona as abas ao TabLayout
-        val titles = arrayOf("Overview", "Mission", "Rocket")
+        val titles = arrayOf(getString(R.string.tab_title_details), getString(R.string.tab_title_launchpad), getString(R.string.tab_title_rocket))
         for (title in titles) {
             binding.tabLayout.addTab(binding.tabLayout.newTab().setText(title))
         }

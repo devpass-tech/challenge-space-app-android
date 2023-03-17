@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.devpass.spaceapp.R
 import com.devpass.spaceapp.data.model.NextLaunchesModel
 import com.devpass.spaceapp.databinding.FragmentLaunchDetailsBinding
 
@@ -31,11 +32,11 @@ class LaunchDetailsFragment : Fragment() {
         // Recupera o objeto NextLaunchesModel dos argumentos
         val launch = arguments?.getSerializable(ARG_LAUNCH) as NextLaunchesModel?
 
-        val fullDescription = launch?.details ?: "Erro ao carregar detalhes"
+        val fullDescription = launch?.details ?: getString(R.string.details_load_error)
 
         binding.launchDescriptionFragment.text = fullDescription
 
-        val viewMore = "View more..."
+        val viewMore = getString(R.string.view_more)
 
         val viewMoreLink = binding.launchViewMore
 
