@@ -18,9 +18,12 @@ class LaunchActivity : AppCompatActivity() {
         val launch = intent.getSerializableExtra("nextLaunch") as NextLaunchesModel
 
         // Preencher os campos com as informações do objeto launch
-        binding.launchTitleTextView.text = launch.name
-        binding.launchDateTextView.text = launch.date_utc
-        binding.launchStatusTextView.text = launch.status.toString()
+        binding.apply {
+            launchTitleTextView.text = launch.name
+            launchDateTextView.text = launch.date_utc
+            launchStatusTextView.text = launch.status.toString()
+        }
+
         if(launch.links.image.small.isEmpty()) {
             // caso a URL da imagem seja nula ou vazia, carrega uma imagem padrão
             Glide.with(this)
@@ -34,6 +37,7 @@ class LaunchActivity : AppCompatActivity() {
                 .circleCrop()
                 .into(binding.launchImage)
         }
+
 
         // Cria uma instância do LaunchDetailsPagerAdapter com as informações do lançamento
         val launchDetailsPagerAdapter = LaunchDetailsPagerAdapter(this, launch)
