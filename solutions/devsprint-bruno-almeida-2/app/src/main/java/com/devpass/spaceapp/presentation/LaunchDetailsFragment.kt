@@ -38,7 +38,7 @@ class LaunchDetailsFragment : Fragment() {
         val shortDescription = fullDescription.lineSequence().take(1).joinToString("\n")
         binding.launchDescriptionFragment.text = shortDescription
 
-        val viewMore:String = "View more..."
+        val viewMore = "View more..."
 
         val viewMoreLink = binding.launchViewMore
 
@@ -49,7 +49,6 @@ class LaunchDetailsFragment : Fragment() {
             intent.putExtra("fullLaunchDescription", fullDescription)
             startActivity(intent)
         }
-
     }
 
     companion object {
