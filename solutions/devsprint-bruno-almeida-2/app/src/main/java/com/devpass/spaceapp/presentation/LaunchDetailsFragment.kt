@@ -17,7 +17,6 @@ class LaunchDetailsFragment : Fragment() {
     private var _binding: FragmentLaunchDetailsBinding? = null
     private val binding get() = _binding!!
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,9 +33,7 @@ class LaunchDetailsFragment : Fragment() {
 
         val fullDescription = launch?.details ?: "Erro ao carregar detalhes"
 
-        // Exibe as 3 primeiras linhas de details em um TextView
-        val shortDescription = fullDescription.lineSequence().take(1).joinToString("\n")
-        binding.launchDescriptionFragment.text = shortDescription
+        binding.launchDescriptionFragment.text = fullDescription
 
         val viewMore = "View more..."
 

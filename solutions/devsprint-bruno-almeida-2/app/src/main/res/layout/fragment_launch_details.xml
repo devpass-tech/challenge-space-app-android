@@ -8,11 +8,15 @@
         android:id="@+id/launchDescriptionFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="3"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     <TextView
         android:id="@+id/launchViewMore"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="13dp"
+        android:textAllCaps="true"
         android:textColor="@color/primaryColor"
         android:linksClickable="true"
         />
