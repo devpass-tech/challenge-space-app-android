@@ -12,6 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SpaceApp">
         <activity
+            android:name=".presentation.RocketDetailsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".presentation.LaunchActivity"
             android:exported="false">
             <meta-data

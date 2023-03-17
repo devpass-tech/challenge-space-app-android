@@ -2,13 +2,19 @@ package com.devpass.spaceapp.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.activity.viewModels
+
 import com.bumptech.glide.Glide
 import com.devpass.spaceapp.R
 import com.devpass.spaceapp.data.model.NextLaunchesModel
+import kotlin.Result
 import com.devpass.spaceapp.databinding.ActivityLaunchBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 class LaunchActivity : AppCompatActivity() {
+    private val rocketDetailsViewModel: RocketDetailsViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityLaunchBinding.inflate(layoutInflater)
@@ -37,6 +43,22 @@ class LaunchActivity : AppCompatActivity() {
                 .circleCrop()
                 .into(binding.launchImage)
         }
+
+        rocketDetailsViewModel.rocketDetail.observe(this, { result ->
+            when (result) {
+                is Result.Success -> {
+                    val rocketDetail = result.data
+                    Log.d("LaunchActivity", "Rocket Detail: $rocketDetail")
+                    // faça algo com os dados de RocketDetail
+                }
+                is Result.Failure -> {
+                    val exception = result.exception
+                    Log.e("LaunchActivity", "Failed to fetch rocket detail", exception)
+                    // trate o erro
+                }
+            }
+        })
+
 
 
         // Cria uma instância do LaunchDetailsPagerAdapter com as informações do lançamento
