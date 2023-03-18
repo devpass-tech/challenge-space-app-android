@@ -7,5 +7,5 @@ import retrofit2.http.Query
 interface RocketdetailAPIClient {
 
     @GET("rockets")
-    suspend fun getRocketDetails(@Query("id") id: String): RocketDetailResponse
+    suspend fun getRocketDetails(@Query("id") id: String): List<RocketDetailResponse>
 }

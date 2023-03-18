@@ -3,17 +3,24 @@ package com.devpass.spaceapp.presentation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.viewModels
 
 import com.bumptech.glide.Glide
 import com.devpass.spaceapp.R
+import com.devpass.spaceapp.RetrofitService
+import com.devpass.spaceapp.data.api.RocketdetailAPIClient
+import com.devpass.spaceapp.data.datasource.RocketDetailsDataSource
 import com.devpass.spaceapp.data.model.NextLaunchesModel
-import kotlin.Result
+import com.devpass.spaceapp.data.repository.RocketDetailsRepository
+
 import com.devpass.spaceapp.databinding.ActivityLaunchBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 class LaunchActivity : AppCompatActivity() {
-    private val rocketDetailsViewModel: RocketDetailsViewModel by viewModels()
+
+    private val service = RetrofitService.retrofit.create(RocketdetailAPIClient::class.java)
+    private val rocketDetailsDataSource = RocketDetailsDataSource(service)
+    private val repository:RocketDetailsRepository = RocketDetailsRepository(rocketDetailsDataSource)
+    private val rocketDetailsViewModel = RocketDetailsViewModel(repository)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,22 +51,17 @@ class LaunchActivity : AppCompatActivity() {
                 .into(binding.launchImage)
         }
 
-        rocketDetailsViewModel.rocketDetail.observe(this, { result ->
-            when (result) {
-                is Result.Success -> {
-                    val rocketDetail = result.data
-                    Log.d("LaunchActivity", "Rocket Detail: $rocketDetail")
-                    // faça algo com os dados de RocketDetail
-                }
-                is Result.Failure -> {
-                    val exception = result.exception
-                    Log.e("LaunchActivity", "Failed to fetch rocket detail", exception)
-                    // trate o erro
-                }
+        rocketDetailsViewModel.rocketDetail.observe(this) { result ->
+            result.onSuccess { rocketDetail ->
+                Log.d("LaunchActivity", "Rocket Detail: $rocketDetail")
+                // faça algo com os dados de RocketDetail
+            }.onFailure { exception ->
+                Log.e("LaunchActivity", "Failed to fetch rocket detail", exception)
+                // trate o erro
             }
-        })
+        }
 
-
+        rocketDetailsViewModel.getRocketDetail(launch.id)
 
         // Cria uma instância do LaunchDetailsPagerAdapter com as informações do lançamento
         val launchDetailsPagerAdapter = LaunchDetailsPagerAdapter(this, launch)

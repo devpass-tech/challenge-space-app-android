@@ -5,7 +5,7 @@ import com.devpass.spaceapp.data.model.RocketDetailResponse
 
 class RocketDetailsRepository(private val rocketDetailsDataSource: RocketDetailsDataSource) {
 
-    suspend fun getRocketDetails(id:String): Result<RocketDetailResponse>{
+    suspend fun getRocketDetails(id: String): Result<RocketDetailResponse> {
         return handleResult(rocketDetailsDataSource.getRocketDetails(id))
     }
 
@@ -17,3 +17,8 @@ class RocketDetailsRepository(private val rocketDetailsDataSource: RocketDetails
         }
     }
 }
+
+
+
+
+

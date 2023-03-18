@@ -1,10 +1,9 @@
 package com.devpass.spaceapp
 
-import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-const val BASE_URL = "https://api.spacexdata.com/v5/"
+const val BASE_URL = "https://api.spacexdata.com/v4/"
 
 object RetrofitService {
 
