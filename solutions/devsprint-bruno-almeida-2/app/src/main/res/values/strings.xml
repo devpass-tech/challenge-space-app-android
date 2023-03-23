@@ -1,10 +1,15 @@
 <resources>
     <string name="app_name">SpaceApp</string>
     <string name="titulo_app">Space App</string>
-    <string name="launch_number_text">0</string>
     <string name="descricao_da_imagem">Descricao da imagem</string>
     <string name="imagem_nextlaunch">imagem da api</string>
     <string name="titulo_launch">titulo</string>
     <string name="data_launch">data</string>
     <string name="status_launch">status</string>
+    <string name="mission_name_unknown">Nome da missão desconhecido</string>
+    <string name="details_load_error">Erro ao carregar detalhes</string>
+    <string name="view_more">View More</string>
+    <string name="tab_title_details">Details</string>
+    <string name="tab_title_launchpad">Launchpad</string>
+    <string name="tab_title_rocket">Rocket</string>
 </resources>

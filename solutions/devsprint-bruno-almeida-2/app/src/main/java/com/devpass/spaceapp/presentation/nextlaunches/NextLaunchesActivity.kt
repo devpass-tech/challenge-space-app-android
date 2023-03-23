@@ -6,15 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 
-import androidx.recyclerview.widget.RecyclerView
-import com.devpass.spaceapp.R
 import com.devpass.spaceapp.RetrofitService
 import com.devpass.spaceapp.data.api.SpaceXAPIClient
 import com.devpass.spaceapp.data.datasource.LaunchesListDataSourceImpl
 import com.devpass.spaceapp.data.model.NextLaunchesModel
 import com.devpass.spaceapp.data.repository.LaunchesListRepositoryImpl
 import com.devpass.spaceapp.databinding.ActivityMainBinding
-import com.devpass.spaceapp.presentation.LaunchDetailsActivity
+import com.devpass.spaceapp.presentation.LaunchActivity
 import com.devpass.spaceapp.presentation.NextLaunchesAdapter
 
 class NextLaunchesActivity : AppCompatActivity() {
@@ -53,7 +51,7 @@ class NextLaunchesActivity : AppCompatActivity() {
     }
 
     private fun onLaunchClick(launch: NextLaunchesModel) {
-        val intent = Intent(this, LaunchDetailsActivity::class.java)
+        val intent = Intent(this, LaunchActivity::class.java)
         intent.putExtra("nextLaunch", launch) // <- corrigido para "nextLaunch"
         startActivity(intent)
     }

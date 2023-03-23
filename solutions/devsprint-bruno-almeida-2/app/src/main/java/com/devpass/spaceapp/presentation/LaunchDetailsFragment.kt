@@ -1,10 +1,12 @@
 package com.devpass.spaceapp.presentation
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.devpass.spaceapp.R
 import com.devpass.spaceapp.data.model.NextLaunchesModel
 import com.devpass.spaceapp.databinding.FragmentLaunchDetailsBinding
 
@@ -15,7 +17,6 @@ class LaunchDetailsFragment : Fragment() {
 
     private var _binding: FragmentLaunchDetailsBinding? = null
     private val binding get() = _binding!!
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,8 +32,21 @@ class LaunchDetailsFragment : Fragment() {
         // Recupera o objeto NextLaunchesModel dos argumentos
         val launch = arguments?.getSerializable(ARG_LAUNCH) as NextLaunchesModel?
 
-        // Exibe o nome da missão em um TextView
-        binding.launchDescription.text = launch?.name ?: "Nome da missão desconhecido"
+        val fullDescription = launch?.details ?: getString(R.string.details_load_error)
+
+        binding.launchDescriptionFragment.text = fullDescription
+
+        val viewMore = getString(R.string.view_more)
+
+        val viewMoreLink = binding.launchViewMore
+
+        viewMoreLink.text = viewMore
+
+        viewMoreLink.setOnClickListener {
+            val intent = Intent(context, LaunchDetailsActivity::class.java)
+            intent.putExtra("fullLaunchDescription", fullDescription)
+            startActivity(intent)
+        }
     }
 
     companion object {
